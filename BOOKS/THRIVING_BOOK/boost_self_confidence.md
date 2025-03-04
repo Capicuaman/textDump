@@ -1,0 +1,67 @@
+- #thrivers
+-
+- ### **Encourage Independence**
+	- **Give them age-appropriate responsibilities.** This could be simple chores like tidying up toys or helping with small tasks in the kitchen.
+		- Allow them to make choices, like picking their outfit or deciding between activities.
+- ### **Praise Effort, Not Just Results**
+	- Focus on the process, like saying, "You worked so hard on this!" rather than only acknowledging the outcome.
+	- Avoid overpraising, as it can feel insincere; be specific about what they did well.
+- ### **Teach Problem-Solving Skills**
+	- Guide them to think through challenges rather than fixing everything for them.
+	- Encourage them to come up with solutions and try them out, reinforcing their sense of capability.
+- ### **Encourage Healthy Risk-Taking**
+	- Support them in trying new things, even if they might fail. For example, trying a new sport, hobby, or speaking up in class.
+	- Normalize failure as a learning opportunity.
+- ### **Celebrate Uniqueness**
+	- Help them recognize their individual strengths and interests.
+	- Celebrate their achievements and encourage them to embrace what makes them different.
+- ### **Be a Role Model**
+	- Show confidence in yourself; children often mimic adult behavior.
+	- Handle your own mistakes gracefully, demonstrating resilience and self-assurance.
+- ### **Foster a Growth Mindset**
+	- Use language that promotes the idea that abilities can improve with practice, such as "You’re learning more every time you try."
+	- Discourage fixed ideas like "I’m just not good at this."
+- ### **Create Opportunities for Success**
+	- Set them up for small wins by assigning tasks or challenges you know they can handle and then gradually increase difficulty.
+	- Celebrate these achievements to build a foundation of confidence.
+- ### **Provide Unconditional Love and Support**
+	- Let them know that your love isn’t based on their accomplishments.
+	- Listen to their feelings and validate their experiences without judgment.
+- ### **Limit Comparisons**
+	- Avoid comparing them to siblings or peers. Emphasize their individual journey and progress.
+	- Teach them to appreciate their own efforts rather than focusing on others’ achievements.
+- ### **Encourage Social Skills**
+	- Help them build friendships by encouraging empathy, kindness, and communication.
+	- Role-play social scenarios to boost their confidence in navigating interactions.
+- ### **Help Them Develop Coping Mechanisms**
+	- Teach them how to manage stress or disappointment through mindfulness, breathing techniques, or talking about their feelings.
+- ### **Encourage Self-Expression**
+	- Let her pick outfits or choose between simple options, like which book to read or game to play.
+	- Offer open-ended art projects like drawing or playing with Play-Doh, where there’s no “right” way to create.
+- ### **Build a Sense of Mastery**
+	- Assign small tasks she can succeed at, like putting toys in a box or helping to water plants.
+- ### **Support Exploration**
+	- Celebrate her efforts with enthusiastic praise like, “Wow, you did that all by yourself!”
+	- Create a safe space for her to explore, such as a play area with age-appropriate toys or nature walks where she can collect leaves or stones.
+	- Encourage curiosity by answering her “why” questions patiently and with excitement.
+- ### **Promote Social Confidence**
+	- Organize playdates or take her to group activities like storytime at the library. Socializing helps build self-assurance.
+	- Teach simple greetings like “hello” and role-play scenarios to practice them.
+- ### **Reinforce Positive Self-Talk**
+	- Use affirmations like, “You are kind, smart, and brave,” and encourage her to repeat them.
+	- When she gets frustrated, guide her with phrases like, “It’s okay to try again” or “You’re learning so much!”
+- ### **Model Confidence**
+	- Show her how to tackle challenges calmly, whether it’s solving a small problem or trying something new.
+	- Use phrases like, “Let’s try this together!” to make challenges feel less intimidating.
+- ### **Encourage Physical Skills**
+	- Provide opportunities for movement, such as dancing, jumping, or climbing at a playground. Success in physical activities can build self-assurance.
+	- Celebrate milestones like learning to pedal a tricycle or hopping on one foot.
+- ### **Acknowledge Emotions**
+	- Help her label and validate her feelings. For example, “I see you’re upset because the block tower fell, but you can try again!”
+	- Teach her calming techniques like deep breaths or counting to three.
+- ### **Read Together**
+	- Choose books with themes of overcoming challenges or self-belief, like *The Little Engine That Could*.
+	- Ask questions about the story, encouraging her to share her thoughts and feelings.
+- ### **Use Positive Reinforcement**
+	- Acknowledge her efforts with specific feedback, such as, “You were so careful stacking those blocks!” instead of general praise like “Good job.”
+	- Use small rewards like stickers or hugs to reinforce behaviors.
