@@ -1,0 +1,18 @@
+{
+  "theme": "GitHub",
+  "selectedAuthType": "oauth-personal",
+    "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "taskmaster-ai": {
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "env": {
+        "DEEPSEEK_API_KEY": "sk-11ed3fa6e5fd4eb79acf3be03b363f86"
+      }
+    }
+
+  }
+}
