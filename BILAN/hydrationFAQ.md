@@ -1,0 +1,8 @@
+•	How much water should I drink daily? The old advice of 8 glasses (64 ounces) per day is a simple guideline but not one-size-fits-all. Hydration needs vary by individual factors such as age, activity level, climate, pregnancy, and health conditions. For example, men generally need about 3.7 liters (125 ounces) and women about 2.7 liters (91 ounces) daily from all sources including food and beverages.
+	•	Is thirst a reliable indicator of dehydration? Thirst signals that your body is already in early stages of dehydration, so it’s best to drink fluids regularly rather than waiting to feel thirsty.
+	•	Do caffeinated or fizzy drinks dehydrate you? Moderate caffeine intake does not cause dehydration as the diuretic effect is balanced out. Fizzy drinks also contribute to hydration.
+	•	Are sports drinks better than water? For everyday hydration, plain water is sufficient. Sports drinks with electrolytes are helpful mainly during intense exercise or in hot, humid conditions when you sweat a lot.
+	•	Can you drink too much water? Yes, excessive water intake can dilute blood sodium levels, causing symptoms like nausea, headache, confusion, and in extreme cases, can be fatal. This is rare but important to note.
+	•	What are signs of dehydration? Common symptoms include headache, fatigue, dry skin, and dizziness. Children and elderly are more vulnerable and should monitor hydration carefully.
+	•	Do foods contribute to hydration? Yes, fruits, vegetables, soups, and stews with high water content contribute significantly to daily fluid intake.
+	•	How can I personalize my hydration needs? A practical approach is to drink about 1 mL of water per calorie consumed, adjusting for activity and environmental factors
