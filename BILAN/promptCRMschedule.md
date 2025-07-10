@@ -1,0 +1,1 @@
+I want to get into crm so I can offer electrolytes to my existing customers, I have a whatrsapp list, give me a prompt for generating a professional grade yearly whatsapp message schedule, using sales, promotions, and any other marketing excuses to remind my customers that we still exist and to buy from us 
