@@ -7,7 +7,7 @@ mottos
 
 guerilla
 
-"Act as a Senior Guerrilla Marketing Strategist specializing in CPG beverage campaigns. Develop a comprehensive QR sticker campaign for [Your Drink Company Name - e.g., 'Nexus Beverage Co.'], targeting [Target Audience - e.g., 'urban millennials seeking functional energy drinks'].  
+"Act as a Senior Guerrilla Marketing Strategist specializing in CPG beverage campaigns. Develop a comprehensive QR sticker campaign for Bilan electrolytes, targeting [Target Audience - e.g., 'urban millennials seeking functional energy drinks'].  
 
 Core Requirements:  
 1. Sticker Psychology:  
