@@ -1,0 +1,43 @@
+{
+  "BusinessOverview": {
+    "Industry": "",
+    "Sector": "",
+    "BusinessModel": "",
+    "PrimaryProductsServices": "",
+    "TargetMarket": "",
+    "CustomerDemographics": ""
+  },
+  "MarketPositioning": {
+    "KeyCompetitors": "",
+    "MarketStrategies": "",
+    "UniqueSellingPropositions": "",
+    "CurrentMarketShare": "",
+    "GrowthObjectives": ""
+  },
+  "CustomerInsights": {
+    "CustomerPersonas": "",
+    "SegmentationCriteria": "",
+    "PreferencesBehaviors": ""
+  },
+  "MarketingGoalsObjectives": {
+    "ShortTermGoals": "",
+    "LongTermGoals": "",
+    "KeyPerformanceIndicators": "",
+    "SpecificCampaignsInitiatives": ""
+  },
+  "CurrentMarketingStrategies": {
+    "MarketingChannelsTactics": "",
+    "ContentStrategy": "",
+    "PerformanceMetricsPastCampaigns": ""
+  },
+  "DataAnalytics": {
+    "DataSources": "",
+    "AnalyticsReportingTools": "",
+    "InsightsPreviousDataAnalysis": ""
+  },
+  "BudgetResources": {
+    "MarketingBudgetAllocation": "",
+    "AvailableResources": "",
+    "ConstraintsLimitations": ""
+  }
+}
