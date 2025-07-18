@@ -1,21 +1,21 @@
 {
   "BusinessOverview": {
     "Industry": "Health and Wellness",
-    "Sector": "Nutritional Supplements",
+    "Sector": "essential minerals",
     "BusinessModel": "Direct-to-Consumer (D2C) and Retail Distribution",
-    "PrimaryProductsServices": "Electrolyte powder mixes, hydration tablets",
-    "TargetMarket": "Athletes, fitness enthusiasts, health-conscious individuals",
-    "CustomerDemographics": "Age 18-45, active lifestyle, health-focused"
+    "PrimaryProductsServices": "Electrolyte powder mixes",
+    "TargetMarket": "Athletes, fitness enthusiasts, health-conscious individuals, Yoga studios, yoga retreats, massage studios",
+    "CustomerDemographics": "Age 18-65, active lifestyle, health-focused"
   },
   "MarketPositioning": {
-    "KeyCompetitors": "Nuun, Dioralyte, Liquid I.V.",
-    "MarketStrategies": "Focus on natural ingredients, competitive pricing, strong branding",
-    "UniqueSellingPropositions": "Organic ingredients, enhanced absorption formula, eco-friendly packaging",
-    "CurrentMarketShare": "5% in the hydration supplement market",
+    "KeyCompetitors": "LMNT, Nuun, Dioralyte, Liquid I.V.",
+    "MarketStrategies": "Focus on natural ingredients, no additives, competitive pricing, strong branding",
+    "UniqueSellingPropositions": "farmecutical grade salts, enhanced absorption formula, eco-friendly packaging",
+    "CurrentMarketShare": "1% in the hydration supplement market",
     "GrowthObjectives": "Increase market share to 10% within two years"
   },
   "CustomerInsights": {
-    "CustomerPersonas": "Fitness Fred, Health-conscious Hannah, Athlete Allie",
+    "CustomerPersonas": "Fitness Fred, Health-conscious Hannah, Athlete Allie, Yoga Yolanda",
     "SegmentationCriteria": "Activity level, health goals, purchasing behavior",
     "PreferencesBehaviors": "Preference for natural products, frequent online shopping, engagement with fitness content"
   },
@@ -26,8 +26,8 @@
     "SpecificCampaignsInitiatives": "Summer hydration campaign, influencer partnerships"
   },
   "CurrentMarketingStrategies": {
-    "MarketingChannelsTactics": "Social media advertising, email marketing, content marketing",
-    "ContentStrategy": "Educational content on hydration, user-generated content, testimonials",
+    "MarketingChannelsTactics": "Social media advertising, whatsapp marketing, content marketing",
+    "ContentStrategy": "Educational content on hydration, Educational contnet on the dangers of aditives, user-generated content, testimonials",
     "PerformanceMetricsPastCampaigns": "30% increase in website traffic, 20% conversion rate"
   },
   "DataAnalytics": {
@@ -36,8 +36,8 @@
     "InsightsPreviousDataAnalysis": "High engagement with fitness-related content, strong brand loyalty among repeat customers"
   },
   "BudgetResources": {
-    "MarketingBudgetAllocation": "$100,000 annually",
-    "AvailableResources": "Marketing team of 5, in-house graphic designer",
+    "MarketingBudgetAllocation": "$50,000 annually",
+    "AvailableResources": "Marketing team of 1, in-house graphic designer",
     "ConstraintsLimitations": "Limited budget for TV advertising, reliance on online channels"
   }
 }
