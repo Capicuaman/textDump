@@ -1,0 +1,40 @@
+{
+  "discount_strategy": {
+    "product_details": {
+      "product_id": "string",
+      "product_name": "string",
+      "original_price": "number",
+      "category": "string",
+      "inventory_level": "number"
+    },
+    "discount_type": {
+      "percentage_discount": "number",
+      "fixed_amount_discount": "number",
+      "buy_one_get_one": "boolean",
+      "tiered_discount": {
+        "min_quantity": "number",
+        "discount_percentage": "number"
+      }
+    },
+    "target_audience": {
+      "customer_segment": "string",
+      "loyalty_status": "string",
+      "purchase_history": "array"
+    },
+    "time_parameters": {
+      "start_date": "date",
+      "end_date": "date",
+      "seasonal": "boolean"
+    },
+    "performance_metrics": {
+      "expected_sales_boost": "number",
+      "profit_margin_impact": "number",
+      "customer_acquisition_cost": "number"
+    },
+    "implementation": {
+      "promotion_channels": ["email", "social_media", "in_store"],
+      "coupon_codes": "array",
+      "terms_and_conditions": "string"
+    }
+  }
+}
