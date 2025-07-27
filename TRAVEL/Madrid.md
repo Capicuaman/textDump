@@ -1,5 +1,5 @@
 
-**Restaurants
+*Restaurants*
 
 **DiverXO** - A three-Michelin-starred restaurant by chef Dabiz Muñoz, known for its avant-garde cuisine.\n2. 
 
@@ -19,4 +19,4 @@
 
 **Santceloni** - A two-Michelin-starred restaurant offering refined Mediterranean cuisine.\n10. 
 
-**Ten Con Ten** - A trendy spot with modern Spanish dishes and a lively atmosphere.\n\nWould you like recommendations for a specific type of cuisine or budget?	
+**Ten Con Ten** - A trendy spot with modern Spanish dishes and a lively atmosphere.\n\n
