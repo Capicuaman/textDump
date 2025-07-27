@@ -22,9 +22,9 @@
 
  **kid-friendly activities in Madrid**
 * [Madrid for Kids | Tourism Madrid](https://www.esmadrid.com/en/madrid-for-kids)  \n   Offers a variety of family-friendly activities, including parks, museums, and interactive experiences.\n\n2. 
-* [THE 10 BEST Things to Do in Madrid with Kids (2025) - Tripadvisor](https://www.tripadvisor.com/Attractions-g187514-Activities-zft11306-Madrid.html)  \n   Highlights include Retiro Park, perfect for picnicking, boat-rowing, and strolling.\n\n3. 
-*[Activities with Children in Madrid | spain.info](https://www.spain.info/en/top/activities-children-madrid/)  \n   Features unique spots like the Sweet Space Museum and the National Museum of Natural Sciences.\n\n4. 
-* [Madrid with Kids: Things to Do, Itinerary, and Top Tips](https://travelynnfamily.com/2-days-madrid-with-kids/)  \n   A compact 2-day itinerary with maps of playgrounds and family-friendly accommodations.\n\n5. 
+* [THE 10 BEST Things to Do in Madrid with Kids (2025) - Tripadvisor](https://www.tripadvisor.com/Attractions-g187514-Activities-zft11306-Madrid.html)  \n   Highlights include Retiro Park, perfect for picnicking, boat-rowing, and strolling.\n\n3.
+* [Activities with Children in Madrid | spain.info](https://www.spain.info/en/top/activities-children-madrid/)  \n   Features unique spots like the Sweet Space Museum and the National Museum of Natural Sciences.\n\n4.
+* [Madrid with Kids: Things to Do, Itinerary, and Top Tips](https://travelynnfamily.com/2-days-madrid-with-kids/)  \n   A compact 2-day itinerary with maps of playgrounds and family-friendly accommodations.\n\n5.
 * [Activities in Madrid for Kids | Tourism Madrid](https://www.esmadrid.com/en/activities-madrid-kids)  \n   Includes fun experiences like Autocine Madrid Race and Plaza de España’s play area.\n\n
 
 
