@@ -1,0 +1,85 @@
+{
+    "brand": "Bilan",
+    "product": "Electrolitos",
+    "front": {
+        "highlights": {
+            "sodium": "1000mg",
+            "potassium": "200mg",
+            "magnesium": "80mg"
+        },
+        "claims": [
+            "Rehidratación basada en la ciencia",
+            "Polvo para preparar bebida a base de electrolitos",
+            "Sin conservadores",
+            "Sin azúcar",
+            "Sin saborizantes ni colorantes"
+        ],
+        "net_content": "1 Kg",
+        "servings_per_package": 333,
+        "warning_labels": [
+            {
+                "label": "Exceso Sodio",
+                "authority": "Secretaría de Salud (México)"
+            }
+        ]
+    },
+    "back": {
+        "tagline": "Sube de nivel tu hidratación",
+        "nutritional_information": {
+            "serving_size": "3g",
+            "servings_per_package": 333,
+            "calories": 0,
+            "nutrients": {
+                "sodium": "1000mg",
+                "potassium": "200mg",
+                "magnesium": "80mg",
+                "total_fat": "0g",
+                "saturated_fat": "0g",
+                "trans_fat": "0g",
+                "total_carbohydrates": "0g",
+                "fiber": "0g",
+                "sugars": "0g",
+                "added_sugars": "0g",
+                "protein": "0g"
+            }
+        },
+        "ingredients": [
+            "Cloruro de sodio",
+            "Cloruro de potasio",
+            "Cloruro de magnesio"
+        ],
+        "instructions": {
+            "text": "Mezcla 1 cucharadita (3g) de nuestras sales en mínimo 350ml de agua",
+            "scoop_included": true
+        },
+        "storage": "Consérvese en un lugar fresco y seco",
+        "qr_code": "Información adicional (QR en el empaque)"
+    },
+    "packaging": {
+        "material": "Bolsa kraft con sello hermético",
+        "color_scheme": {
+            "primary": "kraft natural",
+            "secondary": "negro",
+            "accent": "azul"
+        },
+        "graphics": [
+            "Logotipo Bilan",
+            "Símbolos de libre de conservadores, azúcar, saborizantes y colorantes",
+            "Iconografía de gota de agua/electrolitos"
+        ],
+        "dimensions": {
+            "height_cm": 26,
+            "width_cm": 18,
+            "depth_cm": 8
+        },
+        "weight": {
+            "net_weight_g": 1000,
+            "gross_weight_g": 1020
+        },
+        "barcode": {
+            "UPC": null,
+            "EAN": null,
+            "GTIN": null
+        }
+    }
+}
