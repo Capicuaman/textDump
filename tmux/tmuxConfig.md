@@ -3,6 +3,10 @@ Sep 14, 2023
 
 First published on May 27, 2020
 
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
 The main pieces of functionality that you will use in Tmux are:
 
 Splitting Tmux "windows" into multiple "panes," each of which is a separate shell session.
@@ -140,5 +144,8 @@ That basically covers my entire Tmux config, which you can check out on GitHub. 
 Footnotes
 https://github.com/morhetz/gruvbox ↩
 https://github.com/powerline/fonts ↩
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
 
 }}}}}}}

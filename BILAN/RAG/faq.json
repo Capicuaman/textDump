@@ -122,251 +122,245 @@
           "answer": "Drink fluids regularly, eat balanced meals, monitor urine color, adjust intake for activity and weather, and be aware of medications that affect fluid balance."
         }
       ]
+    },
+    {
+      "category": "Other Electrolyte Imbalances",
+      "questions": [
+        {
+          "question": "What is Hypokalemia or Hyperkalemia (potassium)?",
+          "answer": "Hypokalemia is low potassium and can cause weakness or cramps. Hyperkalemia is high potassium, which can affect heart rhythm. Both require medical evaluation."
+        },
+        {
+          "question": "What is Hypocalcemia or Hypercalcemia (calcium)?",
+          "answer": "Hypocalcemia is low calcium, leading to muscle spasms or tingling. Hypercalcemia is high calcium, often from overactive glands or excess vitamin D."
+        },
+        {
+          "question": "What is Hypomagnesemia or Hypermagnesemia (magnesium)?",
+          "answer": "Low magnesium may cause fatigue or irregular heartbeat. High magnesium is rare but can cause low blood pressure or slowed breathing."
+        },
+        {
+          "question": "What causes chloride and phosphate imbalances?",
+          "answer": "They can result from dehydration, kidney issues, or acid-base imbalances. Phosphate also changes with diet or certain medications."
+        }
+      ]
+    },
+    {
+      "category": "Medical Conditions & Electrolytes",
+      "questions": [
+        {
+          "question": "How does kidney disease affect electrolyte balance?",
+          "answer": "The kidneys regulate electrolytes, so kidney disease can lead to abnormal sodium, potassium, or phosphate levels."
+        },
+        {
+          "question": "How do heart conditions influence fluid and electrolyte needs?",
+          "answer": "Heart disease can require fluid restriction and careful sodium control to prevent swelling and strain on the heart."
+        },
+        {
+          "question": "What should people with diabetes know about hydration?",
+          "answer": "High blood sugar increases urine output and dehydration risk, so stable glucose and regular fluids are essential."
+        },
+        {
+          "question": "How do gastrointestinal disorders like IBD or celiac disease impact electrolytes?",
+          "answer": "Chronic diarrhea or malabsorption can cause low sodium, potassium, and magnesium levels."
+        },
+        {
+          "question": "What role do thyroid and adrenal disorders play in electrolyte regulation?",
+          "answer": "Adrenal issues affect sodium and potassium via hormones; thyroid problems can indirectly change fluid balance."
+        }
+      ]
+    },
+    {
+      "category": "Age-Specific Considerations",
+      "questions": [
+        {
+          "question": "What are the signs of dehydration in children?",
+          "answer": "Dry mouth, few wet diapers, no tears when crying, and tiredness. Children dehydrate faster than adults."
+        },
+        {
+          "question": "Why are older adults more at risk for electrolyte imbalances?",
+          "answer": "They may have reduced thirst, take medications that affect fluids, or have chronic health issues."
+        },
+        {
+          "question": "How does pregnancy or breastfeeding affect hydration needs?",
+          "answer": "Fluid needs increase due to blood volume expansion and milk production; mild dehydration can worsen morning sickness."
+        }
+      ]
+    },
+    {
+      "category": "Exercise & Athletic Performance",
+      "questions": [
+        {
+          "question": "What are effective pre-workout hydration strategies?",
+          "answer": "Drink water or electrolyte beverages 2–3 hours before exercise and avoid starting dehydrated."
+        },
+        {
+          "question": "When should electrolytes be taken during a workout?",
+          "answer": "For sessions longer than an hour, sip electrolyte drinks every 20–30 minutes to replace sodium and fluids."
+        },
+        {
+          "question": "How should hydration be managed after exercise?",
+          "answer": "Rehydrate with water and electrolytes equal to about 1.5 times the fluid lost through sweat."
+        },
+        {
+          "question": "How do you prepare for hydration during endurance events?",
+          "answer": "Start hydrated, use scheduled intake of fluids and electrolytes, and test your plan in training."
+        },
+        {
+          "question": "What are the best ways to acclimate to heat while maintaining hydration?",
+          "answer": "Gradually increase exposure over 1–2 weeks, hydrate consistently, and monitor for signs of overheating."
+        }
+      ]
+    },
+    {
+      "category": "Dietary & Lifestyle Factors",
+      "questions": [
+        {
+          "question": "How do low-carb or keto diets affect electrolytes?",
+          "answer": "They increase sodium and water loss, so replenishing salt, potassium, and magnesium is important."
+        },
+        {
+          "question": "What are good vegan or vegetarian sources of electrolytes?",
+          "answer": "Bananas, avocados, leafy greens, coconut water, nuts, and seeds provide potassium and magnesium."
+        },
+        {
+          "question": "How do alcohol and caffeine affect hydration?",
+          "answer": "Both can increase urine output, especially in excess, so balance them with water intake."
+        },
+        {
+          "question": "What hydration challenges occur during travel or at high altitudes?",
+          "answer": "Airplane air and altitude increase fluid loss through breathing; drink water regularly."
+        },
+        {
+          "question": "How do seasonal changes influence hydration needs?",
+          "answer": "Hot weather increases sweat loss; in cold weather, thirst may drop but fluid needs remain."
+        }
+      ]
+    },
+    {
+      "category": "Medications & Supplements",
+      "questions": [
+        {
+          "question": "How do diuretics cause electrolyte depletion?",
+          "answer": "They increase urine output, leading to sodium and potassium loss, especially with long-term use."
+        },
+        {
+          "question": "Which blood pressure medications impact electrolyte balance?",
+          "answer": "ACE inhibitors, ARBs, and diuretics can raise or lower potassium levels."
+        },
+        {
+          "question": "Can laxatives affect hydration levels?",
+          "answer": "Yes, chronic use causes fluid and electrolyte loss through the stool."
+        },
+        {
+          "question": "What is the proper way to use electrolyte supplements?",
+          "answer": "Use as directed for hydration or recovery; avoid excess intake that can upset electrolyte balance."
+        },
+        {
+          "question": "What are the benefits and risks of IV hydration therapy?",
+          "answer": "It rapidly restores fluids and electrolytes but should be used medically, not as routine wellness treatment."
+        }
+      ]
+    },
+    {
+      "category": "Diagnostic & Monitoring",
+      "questions": [
+        {
+          "question": "How can blood tests reveal electrolyte imbalances?",
+          "answer": "They measure sodium, potassium, calcium, and others to detect dehydration or organ issues."
+        },
+        {
+          "question": "What does urine specific gravity indicate about hydration?",
+          "answer": "It reflects urine concentration; high values suggest dehydration, while low values mean overhydration."
+        },
+        {
+          "question": "What physical signs suggest dehydration or imbalance?",
+          "answer": "Dry mouth, low urine output, fatigue, muscle cramps, and dizziness are common warning signs."
+        },
+        {
+          "question": "How can you monitor hydration at home?",
+          "answer": "Track urine color, body weight changes, and thirst levels for daily guidance."
+        },
+        {
+          "question": "When should medical testing for electrolytes be done?",
+          "answer": "If you have persistent symptoms, take certain medications, or have chronic health conditions."
+        }
+      ]
+    },
+    {
+      "category": "Emergency Situations",
+      "questions": [
+        {
+          "question": "What’s the difference between heat stroke and heat exhaustion?",
+          "answer": "Heat exhaustion causes heavy sweating and fatigue; heat stroke is life-threatening with high body temperature and confusion."
+        },
+        {
+          "question": "What should be done for severe dehydration?",
+          "answer": "Move to a cool place, sip oral rehydration solution, and seek medical help if unable to keep fluids down."
+        },
+        {
+          "question": "When should someone go to the emergency room for hydration issues?",
+          "answer": "If there’s confusion, rapid heartbeat, no urination for 8+ hours, or signs of severe electrolyte imbalance."
+        },
+        {
+          "question": "What first aid steps help in electrolyte emergencies?",
+          "answer": "Cool the person, provide oral rehydration solution, and monitor breathing until help arrives."
+        },
+        {
+          "question": "How can you prepare oral rehydration therapy at home?",
+          "answer": "Mix 1 liter of water with 6 teaspoons sugar and ½ teaspoon salt; stir until dissolved."
+        }
+      ]
+    },
+    {
+      "category": "Myths & Misconceptions",
+      "questions": [
+        {
+          "question": "Is drinking 8 glasses of water a day really necessary?",
+          "answer": "Not for everyone; needs vary by activity, diet, and climate. Drink to thirst and monitor urine color."
+        },
+        {
+          "question": "Are all sports drinks good for hydration?",
+          "answer": "Some have excess sugar; choose low-sugar versions with proper electrolytes for intense activity."
+        },
+        {
+          "question": "Can overhydration be dangerous?",
+          "answer": "Yes, drinking excessive water without electrolytes can dilute sodium, causing hyponatremia."
+        },
+        {
+          "question": "Is clear urine always a sign of proper hydration?",
+          "answer": "No, completely clear urine can mean overhydration; pale yellow is ideal."
+        },
+        {
+          "question": "Does caffeine actually cause dehydration?",
+          "answer": "Mild caffeine intake has minimal effect, but high amounts can increase fluid loss slightly."
+        }
+      ]
+    },
+    {
+      "category": "Practical Daily Management",
+      "questions": [
+        {
+          "question": "What apps or methods help track hydration?",
+          "answer": "Apps like WaterMinder or manual logs can remind and track daily intake."
+        },
+        {
+          "question": "How can meals be planned to include more electrolytes?",
+          "answer": "Add fruits, vegetables, nuts, and moderate salt; include hydrating foods like soups or smoothies."
+        },
+        {
+          "question": "What should be in a travel hydration kit?",
+          "answer": "Water bottle, electrolyte packets, and oral rehydration salts for emergencies."
+        },
+        {
+          "question": "How can workplace hydration be improved?",
+          "answer": "Keep water accessible, set reminders, and drink small amounts regularly throughout the day."
+        },
+        {
+          "question": "What are cost-effective ways to stay hydrated daily?",
+          "answer": "Use filtered tap water, homemade electrolyte mixes, and reusable bottles instead of bottled drinks."
+        }
+      ]
     }
   ],
   "disclaimer": "This information is for educational purposes only. Always consult healthcare professionals for medical advice and treatment."
 }
-
-
-
-[
-  {
-    "category": "Other Electrolyte Imbalances",
-    "questions": [
-      {
-        "question": "What is Hypokalemia or Hyperkalemia (potassium)?",
-        "answer": "Hypokalemia is low potassium and can cause weakness or cramps. Hyperkalemia is high potassium, which can affect heart rhythm. Both require medical evaluation."
-      },
-      {
-        "question": "What is Hypocalcemia or Hypercalcemia (calcium)?",
-        "answer": "Hypocalcemia is low calcium, leading to muscle spasms or tingling. Hypercalcemia is high calcium, often from overactive glands or excess vitamin D."
-      },
-      {
-        "question": "What is Hypomagnesemia or Hypermagnesemia (magnesium)?",
-        "answer": "Low magnesium may cause fatigue or irregular heartbeat. High magnesium is rare but can cause low blood pressure or slowed breathing."
-      },
-      {
-        "question": "What causes chloride and phosphate imbalances?",
-        "answer": "They can result from dehydration, kidney issues, or acid-base imbalances. Phosphate also changes with diet or certain medications."
-      }
-    ]
-  },
-  {
-    "category": "Medical Conditions & Electrolytes",
-    "questions": [
-      {
-        "question": "How does kidney disease affect electrolyte balance?",
-        "answer": "The kidneys regulate electrolytes, so kidney disease can lead to abnormal sodium, potassium, or phosphate levels."
-      },
-      {
-        "question": "How do heart conditions influence fluid and electrolyte needs?",
-        "answer": "Heart disease can require fluid restriction and careful sodium control to prevent swelling and strain on the heart."
-      },
-      {
-        "question": "What should people with diabetes know about hydration?",
-        "answer": "High blood sugar increases urine output and dehydration risk, so stable glucose and regular fluids are essential."
-      },
-      {
-        "question": "How do gastrointestinal disorders like IBD or celiac disease impact electrolytes?",
-        "answer": "Chronic diarrhea or malabsorption can cause low sodium, potassium, and magnesium levels."
-      },
-      {
-        "question": "What role do thyroid and adrenal disorders play in electrolyte regulation?",
-        "answer": "Adrenal issues affect sodium and potassium via hormones; thyroid problems can indirectly change fluid balance."
-      }
-    ]
-  },
-  {
-    "category": "Age-Specific Considerations",
-    "questions": [
-      {
-        "question": "What are the signs of dehydration in children?",
-        "answer": "Dry mouth, few wet diapers, no tears when crying, and tiredness. Children dehydrate faster than adults."
-      },
-      {
-        "question": "Why are older adults more at risk for electrolyte imbalances?",
-        "answer": "They may have reduced thirst, take medications that affect fluids, or have chronic health issues."
-      },
-      {
-        "question": "How does pregnancy or breastfeeding affect hydration needs?",
-        "answer": "Fluid needs increase due to blood volume expansion and milk production; mild dehydration can worsen morning sickness."
-      }
-    ]
-  },
-  {
-    "category": "Exercise & Athletic Performance",
-    "questions": [
-      {
-        "question": "What are effective pre-workout hydration strategies?",
-        "answer": "Drink water or electrolyte beverages 2–3 hours before exercise and avoid starting dehydrated."
-      },
-      {
-        "question": "When should electrolytes be taken during a workout?",
-        "answer": "For sessions longer than an hour, sip electrolyte drinks every 20–30 minutes to replace sodium and fluids."
-      },
-      {
-        "question": "How should hydration be managed after exercise?",
-        "answer": "Rehydrate with water and electrolytes equal to about 1.5 times the fluid lost through sweat."
-      },
-      {
-        "question": "How do you prepare for hydration during endurance events?",
-        "answer": "Start hydrated, use scheduled intake of fluids and electrolytes, and test your plan in training."
-      },
-      {
-        "question": "What are the best ways to acclimate to heat while maintaining hydration?",
-        "answer": "Gradually increase exposure over 1–2 weeks, hydrate consistently, and monitor for signs of overheating."
-      }
-    ]
-  },
-  {
-    "category": "Dietary & Lifestyle Factors",
-    "questions": [
-      {
-        "question": "How do low-carb or keto diets affect electrolytes?",
-        "answer": "They increase sodium and water loss, so replenishing salt, potassium, and magnesium is important."
-      },
-      {
-        "question": "What are good vegan or vegetarian sources of electrolytes?",
-        "answer": "Bananas, avocados, leafy greens, coconut water, nuts, and seeds provide potassium and magnesium."
-      },
-      {
-        "question": "How do alcohol and caffeine affect hydration?",
-        "answer": "Both can increase urine output, especially in excess, so balance them with water intake."
-      },
-      {
-        "question": "What hydration challenges occur during travel or at high altitudes?",
-        "answer": "Airplane air and altitude increase fluid loss through breathing; drink water regularly."
-      },
-      {
-        "question": "How do seasonal changes influence hydration needs?",
-        "answer": "Hot weather increases sweat loss; in cold weather, thirst may drop but fluid needs remain."
-      }
-    ]
-  },
-  {
-    "category": "Medications & Supplements",
-    "questions": [
-      {
-        "question": "How do diuretics cause electrolyte depletion?",
-        "answer": "They increase urine output, leading to sodium and potassium loss, especially with long-term use."
-      },
-      {
-        "question": "Which blood pressure medications impact electrolyte balance?",
-        "answer": "ACE inhibitors, ARBs, and diuretics can raise or lower potassium levels."
-      },
-      {
-        "question": "Can laxatives affect hydration levels?",
-        "answer": "Yes, chronic use causes fluid and electrolyte loss through the stool."
-      },
-      {
-        "question": "What is the proper way to use electrolyte supplements?",
-        "answer": "Use as directed for hydration or recovery; avoid excess intake that can upset electrolyte balance."
-      },
-      {
-        "question": "What are the benefits and risks of IV hydration therapy?",
-        "answer": "It rapidly restores fluids and electrolytes but should be used medically, not as routine wellness treatment."
-      }
-    ]
-  },
-  {
-    "category": "Diagnostic & Monitoring",
-    "questions": [
-      {
-        "question": "How can blood tests reveal electrolyte imbalances?",
-        "answer": "They measure sodium, potassium, calcium, and others to detect dehydration or organ issues."
-      },
-      {
-        "question": "What does urine specific gravity indicate about hydration?",
-        "answer": "It reflects urine concentration; high values suggest dehydration, while low values mean overhydration."
-      },
-      {
-        "question": "What physical signs suggest dehydration or imbalance?",
-        "answer": "Dry mouth, low urine output, fatigue, muscle cramps, and dizziness are common warning signs."
-      },
-      {
-        "question": "How can you monitor hydration at home?",
-        "answer": "Track urine color, body weight changes, and thirst levels for daily guidance."
-      },
-      {
-        "question": "When should medical testing for electrolytes be done?",
-        "answer": "If you have persistent symptoms, take certain medications, or have chronic health conditions."
-      }
-    ]
-  },
-  {
-    "category": "Emergency Situations",
-    "questions": [
-      {
-        "question": "What’s the difference between heat stroke and heat exhaustion?",
-        "answer": "Heat exhaustion causes heavy sweating and fatigue; heat stroke is life-threatening with high body temperature and confusion."
-      },
-      {
-        "question": "What should be done for severe dehydration?",
-        "answer": "Move to a cool place, sip oral rehydration solution, and seek medical help if unable to keep fluids down."
-      },
-      {
-        "question": "When should someone go to the emergency room for hydration issues?",
-        "answer": "If there’s confusion, rapid heartbeat, no urination for 8+ hours, or signs of severe electrolyte imbalance."
-      },
-      {
-        "question": "What first aid steps help in electrolyte emergencies?",
-        "answer": "Cool the person, provide oral rehydration solution, and monitor breathing until help arrives."
-      },
-      {
-        "question": "How can you prepare oral rehydration therapy at home?",
-        "answer": "Mix 1 liter of water with 6 teaspoons sugar and ½ teaspoon salt; stir until dissolved."
-      }
-    ]
-  },
-  {
-    "category": "Myths & Misconceptions",
-    "questions": [
-      {
-        "question": "Is drinking 8 glasses of water a day really necessary?",
-        "answer": "Not for everyone; needs vary by activity, diet, and climate. Drink to thirst and monitor urine color."
-      },
-      {
-        "question": "Are all sports drinks good for hydration?",
-        "answer": "Some have excess sugar; choose low-sugar versions with proper electrolytes for intense activity."
-      },
-      {
-        "question": "Can overhydration be dangerous?",
-        "answer": "Yes, drinking excessive water without electrolytes can dilute sodium, causing hyponatremia."
-      },
-      {
-        "question": "Is clear urine always a sign of proper hydration?",
-        "answer": "No, completely clear urine can mean overhydration; pale yellow is ideal."
-      },
-      {
-        "question": "Does caffeine actually cause dehydration?",
-        "answer": "Mild caffeine intake has minimal effect, but high amounts can increase fluid loss slightly."
-      }
-    ]
-  },
-  {
-    "category": "Practical Daily Management",
-    "questions": [
-      {
-        "question": "What apps or methods help track hydration?",
-        "answer": "Apps like WaterMinder or manual logs can remind and track daily intake."
-      },
-      {
-        "question": "How can meals be planned to include more electrolytes?",
-        "answer": "Add fruits, vegetables, nuts, and moderate salt; include hydrating foods like soups or smoothies."
-      },
-      {
-        "question": "What should be in a travel hydration kit?",
-        "answer": "Water bottle, electrolyte packets, and oral rehydration salts for emergencies."
-      },
-      {
-        "question": "How can workplace hydration be improved?",
-        "answer": "Keep water accessible, set reminders, and drink small amounts regularly throughout the day."
-      },
-      {
-        "question": "What are cost-effective ways to stay hydrated daily?",
-        "answer": "Use filtered tap water, homemade electrolyte mixes, and reusable bottles instead of bottled drinks."
-      }
-    ]
-  }
-]
-

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Business Masterclass Study Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .topic-content { margin-left: 20px; }
+        .module-card { margin-bottom: 30px; }
+        .error-message { color: red; padding: 20px; }
+        .loading { text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div id="loading" class="loading">Loading content...</div>
+        <div id="error" class="error-message" style="display:none;"></div>
+        <div id="content" style="display:none;">
+            <h1 id="title" class="mb-4 text-center"></h1>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p><strong>Version:</strong> <span id="version"></span></p>
+                    <p><strong>Last Updated:</strong> <span id="last_updated"></span></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Target Audience:</strong></p>
+                    <p id="audience"></p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Learning Objectives</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="learning_objectives"></ul>
+                </div>
+            </div>
+
+            <h2 class="mb-4">Course Modules</h2>
+            <div id="modules"></div>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Assessment Criteria</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="assessment_criteria"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Resources</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="resources"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Completion Certificate Criteria</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="completion_certificate_criteria"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update the fetch path to work with local server
+        fetch('whatsappMasterClass.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                
+                const guide = data[0];
+                
+                // Basic Info
+                document.getElementById('title').textContent = guide.study_guide_title;
+                document.getElementById('version').textContent = guide.version;
+                document.getElementById('last_updated').textContent = guide.last_updated;
+                document.getElementById('audience').textContent = guide.target_audience;
+
+                // Learning Objectives
+                const objectivesList = document.getElementById('learning_objectives');
+                guide.learning_objectives.forEach(objective => {
+                    const li = document.createElement('li');
+                    li.textContent = objective;
+                    objectivesList.appendChild(li);
+                });
+
+                // Modules
+                const modulesContainer = document.getElementById('modules');
+                guide.modules.forEach(module => {
+                    const moduleDiv = document.createElement('div');
+                    moduleDiv.className = 'card module-card';
+                    
+                    let topicsHTML = '';
+                    module.topics.forEach(topic => {
+                        topicsHTML += `
+                            <div class="topic mb-4">
+                                <h5 class="text-primary">${topic.topic}</h5>
+                                <div class="topic-content">
+                                    ${Object.entries(topic.content).map(([key, items]) => `
+                                        <div class="mb-3">
+                                            <strong>${key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}:</strong>
+                                            <ul>
+                                                ${Array.isArray(items) ? items.map(item => `<li>${item}</li>`).join('') : ''}
+                                            </ul>
+                                        </div>
+                                    `).join('')}
+                                    
+                                    <div class="mb-3">
+                                        <strong>Learning Objectives:</strong>
+                                        <ul>
+                                            ${topic.learning_objectives.map(obj => `<li>${obj}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <strong>Practical Exercises:</strong>
+                                        <ul>
+                                            ${topic.practical_exercises.map(ex => `<li>${ex}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    moduleDiv.innerHTML = `
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Module ${module.module_number}: ${module.module_title}</h4>
+                            <span class="badge bg-light text-dark">${module.estimated_time}</span>
+                        </div>
+                        <div class="card-body">
+                            ${topicsHTML}
+                        </div>
+                    `;
+                    
+                    modulesContainer.appendChild(moduleDiv);
+                });
+
+                // Assessment Criteria
+                const criteriaList = document.getElementById('assessment_criteria');
+                Object.entries(guide.assessment_criteria).forEach(([level, description]) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${level.charAt(0).toUpperCase() + level.slice(1)}:</strong> ${description}`;
+                    criteriaList.appendChild(li);
+                });
+
+                // Resources
+                const resourcesList = document.getElementById('resources');
+                Object.entries(guide.resources).forEach(([name, value]) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${name.replace(/_/g, ' ')}:</strong> ${
+                        value.startsWith('http') ? `<a href="${value}" target="_blank">${value}</a>` : value
+                    }`;
+                    resourcesList.appendChild(li);
+                });
+
+                // Certificate Criteria
+                const certList = document.getElementById('completion_certificate_criteria');
+                guide.completion_certificate_criteria.forEach(criterion => {
+                    const li = document.createElement('li');
+                    li.textContent = criterion;
+                    certList.appendChild(li);
+                });
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = `Error loading content: ${error.message}`;
+            });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
