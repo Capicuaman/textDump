@@ -1,0 +1,24 @@
+Personnel:
+- Bus Drivers: 
+- Bus Monitors/Aides: 
+- Salaries/Wages: 
+
+Buses:
+- Bus Company: [Name of Company]
+- Contract Details: [Terms of contract, e.g., cost per bus, cost per mile, etc.]
+- Services Provided by Company: Maintenance, logistics, bus ownership, etc.
+
+Questions to Ask:
+1. What is the name of the bus company?
+2. What is the structure of the contract? (e.g., fixed fee per bus, per route, per mile?)
+3. Is there a separate charge for personnel (drivers, monitors)?
+4. When does the current contract expire?
+
+Routes & Ridership:
+- Number of Students: 
+- Number of Routes: 
+- Average Route Length: 
+
+Current Budget:
+- Total Annual Budget: 
+- Current Fee per Student: 

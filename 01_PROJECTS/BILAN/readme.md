@@ -1,81 +1,35 @@
 # BILAN Project
 
-This repository contains various documents related to the BILAN project, a comprehensive initiative focused on health, wellness, and marketing strategies. The project explores the science of hydration, electrolyte balance, and nutrition, while also detailing marketing campaigns, competitive analysis, and product development.
+This repository contains business, marketing, and research materials for **BILAN**, a brand of electrolyte powder mixes. The purpose of this file is to serve as a starting point for any developer or team member to understand the project's structure, key components, and how to interact with them.
 
-## Informational Documents
+## Directory Overview
 
-This section provides a collection of documents covering a wide range of topics, from scientific explanations to marketing and sales strategies.
+The directory is organized into the following key areas:
 
-- **bilanBoost.md**: Details on the BILAN Boost, a product or initiative designed to enhance performance and well-being.
-- **bilanCFI.md**: Information on the BILAN CFI, likely a core project component or financial instrument.
-- **dangerousChemicals.md**: A guide to understanding and avoiding dangerous chemicals in food and beverages.
-- **envios.md**: Guidelines and information on shipping and logistics for BILAN products.
-- **guerillaCamoaign.md**: A creative and unconventional marketing campaign strategy.
-- **hydrationFAQ.md**: Frequently asked questions about hydration, its importance, and best practices.
-- **initialWebSearh.md**: The results and analysis of the initial web search conducted for the BILAN project.
-- **metaPromptsBilan.md**: A collection of meta prompts related to the BILAN project.
-- **naturalFlavors.md**: An exploration of natural flavors, their sources, and their role in BILAN products.
-- **pricingBilan.md**: A detailed breakdown of the pricing strategy for BILAN products.
-- **promoappPrompt.md**: A prompt for developing a promotional application for BILAN.
-- **promptCRMschedule.md**: A prompt for creating a CRM schedule to manage customer relationships.
-- **qrDesign.md**: The design and strategy behind the QR codes used in BILAN's marketing.
-- **salesPlaybook.md**: A comprehensive guide for the sales team, outlining strategies, scripts, and best practices.
-- **secondTierAdvantage.md**: An analysis of the advantages of being a second-tier competitor in the market.
-- **sheduleCRM.md**: The schedule for CRM activities and customer engagement.
-- **slogans.md**: A list of creative and catchy slogans for the BILAN brand.
-- **stickers.md**: Designs and ideas for promotional stickers.
-- **whatareElectrolytes.md**: A scientific explanation of electrolytes and their importance for the human body.
+*   **BUSINESS/**: Contains documents related to pricing, shipping, and the overall business plan.
+*   **COMPETITIVEANALYSIS/**: Research and analysis of BILAN's main competitors, with a significant amount of material on `LMNT`.
+*   **MARKETING/**: A comprehensive collection of marketing strategies, sales playbooks, and campaign materials.
+*   **METAPROMPTS/**: Prompts for AI models, likely used for content generation.
+*   **PACKAGING/**: Templates and designs for BILAN's product packaging.
+*   **PRODUCT/**: Documents detailing the science behind the products, including `whatareElectrolytes.md` and `naturalFlavors.md`.
+*   **RAG/**: Contains a small Python-based web server and data files for a Retrieval-Augmented Generation (RAG) system, likely used to answer customer questions.
+*   **SALES/**: A detailed, multi-part sales playbook for the sales team.
+*   **WEB/**: Contains materials related to BILAN's online presence, including SEO and blog content.
 
-## Competitive Analysis
+## Key Files
 
-The `competitiveAnalysis` directory contains research and analysis of competitors in the market.
+Here is a list of the most important files in this directory and their purpose:
 
-- **Readme.md**: An introduction to the competitive analysis and the key competitors being analyzed.
+*   `nextSteps.md`: A document outlining the next steps for developing the business, covering areas like customer service, finance, and operations.
+*   `BUSINESS/bilanMarketingDosier.json`: A detailed marketing plan for BILAN.
+*   `SALES/1_Introduction_Sales_Playbook.md`: The starting point for the company's sales strategy.
+*   `RAG/faq.json`: A set of frequently asked questions and answers about hydration and electrolytes, used by the RAG application.
+*   `GEMINI.md`: A detailed overview of the project structure and key files.
 
-## Marketing
+## Usage
 
-The `marketing` directory holds a variety of documents related to marketing strategies, campaigns, and sales psychology.
+This directory is intended to be a central repository for all information related to the BILAN brand. It is used for:
 
-- **expos.md**: A plan for participating in expos and trade shows.
-- **qrCampaign.md**: A detailed plan for a QR code-based marketing campaign.
-- **recomendations.md**: Recommendations for improving marketing and sales efforts.
-- **salesPsychology**: An exploration of the psychological principles of sales and how to apply them.
-- **stratergies.md**: A collection of marketing strategies for the BILAN project.
-- **yoga/yogaSalesScript.md**: A sales script tailored for the yoga and wellness community.
-
-## Packaging
-
-The `packaging` directory contains templates and designs for BILAN's product packaging.
-
-- **packageTemplate0.json**: A JSON file defining the first package template.
-- **packageTemplate1.json**: A JSON file defining the second package template.
-
-## Meta Prompts
-
-The `metaPrompts` directory contains prompts for generating content and ideas for the BILAN project.
-
-- **ONE.MD**: A meta prompt for generating a comprehensive document about the BILAN project.
-
-## RAG
-
-The `RAG` directory contains documents related to the "Retrieval-Augmented Generation" model, likely for generating content and answering questions.
-
-- **electrolytes.md**: A document about electrolytes, likely used as a source for the RAG model.
-- **tooMuchWater.md**: A document about the dangers of drinking too much water, likely used as a source for the RAG model.
-
-## LMNT
-
-The `LMNT` directory contains a collection of articles and guides related to electrolytes, hydration, and nutrition, likely from the brand LMNT.
-
-- **A guide to foods high in magnesium and potassium.md**: A guide to foods rich in essential minerals.
-- **electrolytes.md**: A comprehensive overview of electrolytes.
-- **Half-marathon fuel guide Energy and electrolytes.md**: A guide for athletes on how to fuel their bodies for a half-marathon.
-- **How electrolytes can support quality sleep.md**: An article on the link between electrolytes and sleep quality.
-- **How to stay hydrated as an older adult.md**: A guide for older adults on how to maintain proper hydration.
-- **lmnt_electrolyte_articles.md**: A collection of articles about electrolytes from LMNT.
-- **LMNT's electrolyte ratios explained.md**: An explanation of the specific electrolyte ratios used in LMNT products.
-- **Science-backed healthful electrolyte drinks (and how to make them).md**: A guide to creating healthy electrolyte drinks at home.
-- **The FDA's (mis)guidance on sodium.md**: A critical analysis of the FDA's recommendations on sodium intake.
-- **The WHO's (mis)guidance on sodium.md**: A critical analysis of the WHO's recommendations on sodium intake.
-- **what_you_need_to_know_about_hydration.md**: A comprehensive guide to hydration.
-- **Why electrolytes matter for cardiovascular health.md**: An article on the importance of electrolytes for heart health.
+*   **Onboarding:** New team members can use this directory to get up to speed on the product, marketing, and sales strategies.
+*   **Strategic Planning:** The documents in this directory, especially `nextSteps.md`, can be used to inform strategic decisions about product development, marketing, and sales.
+*   **Content Generation:** The `RAG/` directory and the various `.md` files can be used as a source of truth for generating marketing copy, social media posts, and customer support responses.
