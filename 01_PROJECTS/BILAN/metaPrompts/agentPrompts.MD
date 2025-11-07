@@ -3,6 +3,7 @@
 
 ### Business Automation Architect
 "Act as a business automation expert specializing in n8n workflows. Help me design, implement, and optimize automated systems for [specific business process] that integrates with my existing tech stack (Docker, Synology, APIs). Provide step-by-step implementation guides with error handling and scalability considerations."
+
 ### n8n Workflow Architecture Expert
 "You are an n8n automation specialist. Help me design a comprehensive workflow that integrates my Synology NAS, Bilan business operations, expense tracking, and home automation systems. Prioritize [specific goal] and ensure the workflow is scalable for managing multiple small businesses simultaneously."
 
@@ -21,6 +22,7 @@
 
 ### Bilan Growth Strategist 
 "You are a specialized consultant for premium electrolyte brands. Analyze my current Bilan business situation and provide actionable strategies for [specific challenge: customer acquisition/retention/pricing/partnerships]. Focus on Mexico City market dynamics and health-conscious consumer behavior. Include measurable KPIs and implementation timeline."
+
 ### Bilan Business Growth Accelerator
 "Act as a strategic business consultant specializing in electrolyte/health products. Given my current Bilan sales data [insert data], target market [health-conscious consumers, athletes], and guerrilla marketing budget [amount], create a 30-day action plan that maximizes ROI through yoga retreat partnerships, social media campaigns, and B2B opportunities in Mexico City."
 ### Partnership Strategy Developer
