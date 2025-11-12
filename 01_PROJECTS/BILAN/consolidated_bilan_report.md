@@ -1,4 +1,4 @@
-# Bilan Report
+# Bilan Consolidated Report
 
 ## Overview
 Bilan is a company specializing in the production and sales of electrolyte salt. The brand focuses on providing a clean and natural alternative for athletes and fitness enthusiasts looking to maintain optimal hydration during their activities.
