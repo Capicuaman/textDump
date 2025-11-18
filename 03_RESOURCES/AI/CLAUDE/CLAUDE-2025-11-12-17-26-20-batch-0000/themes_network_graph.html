@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversation Themes Network Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+    var nodes = new vis.DataSet([{"id": 0, "label": "Python Poetry dependency management"}, {"id": 1, "label": "Book download method"}, {"id": 2, "label": "Becoming an Ollama Power User"}, {"id": 3, "label": "N8n social media automation workflow"}, {"id": 4, "label": "Scheduling Focus Time and Coffee"}, {"id": 5, "label": "Medical appointment scheduling"}, {"id": 6, "label": "Traffic Signal Driving Game"}, {"id": 7, "label": "Claude Desktop Onboarding Request"}, {"id": 8, "label": "Mountain Bike Platform Game"}, {"id": 9, "label": "Varying $83,333 to $100,000"}, {"id": 10, "label": "Pulling Product Data from Another Spreadsheet"}, {"id": 11, "label": "Create Bash Alias for n8n"}, {"id": 12, "label": "VS Code Chrome Permission Error"}, {"id": 13, "label": "Artificial Food Additives Health Risks"}, {"id": 14, "label": "Electrolyte Production Guidance"}, {"id": 15, "label": "Chemical Substance Mass Ratio Calculation"}, {"id": 16, "label": "Restoring Vintage Family Photo"}, {"id": 17, "label": "Bilan Electrolyte Company Strategy"}, {"id": 18, "label": "Docker container duplication"}, {"id": 19, "label": "GitHub Access Inquiry"}, {"id": 20, "label": "Scraping Images from Infinite Scroll Site"}, {"id": 21, "label": "AI Reasoning Models Explained"}, {"id": 22, "label": "Popular Oakley sunglasses for cycling"}, {"id": 23, "label": "GitHub Spec Kit Overview"}, {"id": 24, "label": "Vite development setup error"}, {"id": 25, "label": "Educational Rubric Creation"}, {"id": 26, "label": "AI Assistant Capabilities"}, {"id": 27, "label": "Counting Words in Text and Markdown Files"}, {"id": 28, "label": "Alice in Wonderland Trivia"}, {"id": 29, "label": "Alicia's appointment with Dr. Chavez"}, {"id": 30, "label": "Seasoning a Pan with the Right Oil"}, {"id": 31, "label": "Resolving Go Module Version and Directive Errors"}, {"id": 32, "label": "Pork Shoulder in Spanish"}, {"id": 33, "label": "Chrome Open Tabs List"}, {"id": 34, "label": "Boosting 3-Year-Old Daughter's Self-Confidence"}, {"id": 35, "label": "Getting Started with CrewAI"}, {"id": 36, "label": "Building a Single-Page React App"}, {"id": 37, "label": "Postgres and Redis integration in n8n"}, {"id": 38, "label": "GitHub Repository Listing"}, {"id": 39, "label": "Alicia's lab work reminder"}, {"id": 40, "label": "Electrolyte drink comparison web app"}, {"id": 41, "label": "Superglue Accelerator Alternatives"}, {"id": 42, "label": "n8n AI Agent Workflow"}, {"id": 43, "label": "Smelting Ore in Path of Exile"}, {"id": 44, "label": "Troubleshooting Docker Daemon Connection Error"}, {"id": 45, "label": "Accessing Logseq Notes Across Devices with NAS"}, {"id": 46, "label": "Visualizing Flows with Plotly Sankey Diagrams"}, {"id": 47, "label": "GitHub Repository Creation Guide"}, {"id": 48, "label": "Ideal Pan Temperature for Cooking Steak"}, {"id": 49, "label": "Story Time with Friends"}, {"id": 50, "label": "n8n Docker Deployment on Portainer"}, {"id": 51, "label": "Troubleshooting pip3 command not found"}, {"id": 52, "label": "Resolving Go module version and toolchain issues"}, {"id": 53, "label": "Placeholder text"}, {"id": 54, "label": "Burger doneness temperatures in Celsius"}, {"id": 55, "label": "Debian System Freezing Troubleshooting"}, {"id": 56, "label": "Exploring Psychological Phenomena"}, {"id": 57, "label": "DuckDuckGo Search Capabilities"}, {"id": 58, "label": "Setting up Logseq sync with Dropbox on iOS"}, {"id": 59, "label": "Fabric Pattern Setup with Ollama LLMs"}, {"id": 60, "label": "Comparaci\u00f3n de Bicicletas: Ruta vs Monta\u00f1a"}, {"id": 61, "label": "Bar Cash Flow Analysis Template"}, {"id": 62, "label": "Manjaro Sway ARM Image for Raspberry Pi"}, {"id": 63, "label": "\ud83d\udcac tell me about context lenght i..."}, {"id": 64, "label": "Electrolyte salts for runners"}, {"id": 65, "label": "Cyclist right of way rules"}, {"id": 66, "label": "how can I upgrade an instance ..."}, {"id": 67, "label": "Science Expert Ollama Model"}, {"id": 68, "label": "Workflow Clarification Request"}, {"id": 69, "label": "Minimum Python Setup for Beautiful Soup"}, {"id": 70, "label": "Daughter's Ear Pain"}, {"id": 71, "label": "Orthopedic appointment scheduling"}, {"id": 72, "label": "Hydration Hero: Science Quiz Game"}, {"id": 73, "label": "Smash Burger Onion Technique"}, {"id": 74, "label": "Claude Conversation Export Guide"}, {"id": 75, "label": "Weekend schedule check"}, {"id": 76, "label": "Portainer authentication on Manjaro Raspberry Pi"}, {"id": 77, "label": "Dentist appointment rescheduling"}, {"id": 78, "label": "Psychological Marketing of Electrolytes"}, {"id": 79, "label": "Bilan.mx Website Optimization"}, {"id": 80, "label": "Ollma Framework for CLI Gamification"}, {"id": 81, "label": "Viral Hydration Quiz Marketing Strategy"}, {"id": 82, "label": "Gradient Design HTML Showcase"}, {"id": 83, "label": "Resolving Permission Denied Error When Installing Python Packages"}, {"id": 84, "label": "DNS Error Connecting to Airtable in n8n Workflow"}, {"id": 85, "label": "Fresh Start Project"}, {"id": 86, "label": "Intelligent AI Model Routing Workflow"}, {"id": 87, "label": "Merida Big Brother Joke Reminder"}, {"id": 88, "label": "Scraping Images from a Gallery Website"}, {"id": 89, "label": "2016 Subaru XV Motor Oil Capacity"}, {"id": 90, "label": "Medical liability insurance brokers in Mexico"}, {"id": 91, "label": "Recurring medical calendar events"}, {"id": 92, "label": "Roadmap for Learning Angular"}, {"id": 93, "label": "Optimal Air Fryer Burger Temperature"}, {"id": 94, "label": "Tomorrow's calendar check"}, {"id": 95, "label": "Programming for kids"}, {"id": 96, "label": "Smashburger Recipe Tips"}, {"id": 97, "label": "Boss appointment at Greenhills"}, {"id": 98, "label": "Daughter's palatal expansion treatment"}, {"id": 99, "label": "Repository Listing Request"}, {"id": 100, "label": "Portainer Network Connection Troubleshooting"}, {"id": 101, "label": "Using AMD GPUs with Ollama"}, {"id": 102, "label": "MCP Technology Integration Guide"}, {"id": 103, "label": "Connecting Groq to Telegram"}, {"id": 104, "label": "Docker Desktop Cursor Integration"}, {"id": 105, "label": "Implementing MPC with Claude"}, {"id": 106, "label": "Greengates school calendar events"}, {"id": 107, "label": "Windsurf Web Development Tips"}, {"id": 108, "label": "Weekend camping trip near Mexico City"}, {"id": 109, "label": "Pasting in Vim on PowerShell"}, {"id": 110, "label": "Setting Up a Web Development Environment with Docker"}, {"id": 111, "label": "Bus committee meeting invitation"}, {"id": 112, "label": "Claude Artifacts Overview"}, {"id": 113, "label": "Emergency Room Heart Rate Challenge"}, {"id": 114, "label": "Accessing Home Assistant on Raspberry Pi from Windows"}, {"id": 115, "label": "Product feature benchmark template"}, {"id": 116, "label": "Converting Website to React App"}, {"id": 117, "label": "Halloween cocktail party details"}, {"id": 118, "label": "Understanding Model Context Length"}, {"id": 119, "label": "Troubleshooting Missing Python Pip Module"}, {"id": 120, "label": "Family visa application for Mexico"}, {"id": 121, "label": "K-pop demon hunters top hits"}, {"id": 122, "label": "Electrolyte drink market analysis"}, {"id": 123, "label": "Sodium chloride elemental composition"}, {"id": 124, "label": "Ngrok oauth endpoint setup"}, {"id": 125, "label": "Minecraft with Dinosaurs"}]);
+    var edges = new vis.DataSet([{"from": 0, "to": 69}, {"from": 0, "to": 83}, {"from": 0, "to": 119}, {"from": 69, "to": 83}, {"from": 69, "to": 119}, {"from": 83, "to": 119}, {"from": 2, "to": 59}, {"from": 2, "to": 67}, {"from": 2, "to": 101}, {"from": 59, "to": 67}, {"from": 59, "to": 101}, {"from": 67, "to": 101}, {"from": 3, "to": 11}, {"from": 3, "to": 37}, {"from": 3, "to": 42}, {"from": 3, "to": 50}, {"from": 3, "to": 84}, {"from": 11, "to": 37}, {"from": 11, "to": 42}, {"from": 11, "to": 50}, {"from": 11, "to": 84}, {"from": 37, "to": 42}, {"from": 37, "to": 50}, {"from": 37, "to": 84}, {"from": 42, "to": 50}, {"from": 42, "to": 84}, {"from": 50, "to": 84}, {"from": 3, "to": 42}, {"from": 3, "to": 68}, {"from": 3, "to": 84}, {"from": 3, "to": 86}, {"from": 42, "to": 68}, {"from": 42, "to": 84}, {"from": 42, "to": 86}, {"from": 68, "to": 84}, {"from": 68, "to": 86}, {"from": 84, "to": 86}, {"from": 4, "to": 5}, {"from": 4, "to": 71}, {"from": 5, "to": 71}, {"from": 4, "to": 49}, {"from": 5, "to": 90}, {"from": 5, "to": 91}, {"from": 90, "to": 91}, {"from": 5, "to": 29}, {"from": 5, "to": 71}, {"from": 5, "to": 77}, {"from": 5, "to": 97}, {"from": 29, "to": 71}, {"from": 29, "to": 77}, {"from": 29, "to": 97}, {"from": 71, "to": 77}, {"from": 71, "to": 97}, {"from": 77, "to": 97}, {"from": 6, "to": 8}, {"from": 6, "to": 72}, {"from": 8, "to": 72}, {"from": 7, "to": 74}, {"from": 7, "to": 105}, {"from": 7, "to": 112}, {"from": 74, "to": 105}, {"from": 74, "to": 112}, {"from": 105, "to": 112}, {"from": 7, "to": 104}, {"from": 7, "to": 68}, {"from": 7, "to": 99}, {"from": 68, "to": 99}, {"from": 10, "to": 115}, {"from": 12, "to": 33}, {"from": 12, "to": 83}, {"from": 12, "to": 24}, {"from": 12, "to": 44}, {"from": 12, "to": 83}, {"from": 12, "to": 84}, {"from": 24, "to": 44}, {"from": 24, "to": 83}, {"from": 24, "to": 84}, {"from": 44, "to": 83}, {"from": 44, "to": 84}, {"from": 83, "to": 84}, {"from": 14, "to": 17}, {"from": 14, "to": 40}, {"from": 14, "to": 64}, {"from": 14, "to": 122}, {"from": 17, "to": 40}, {"from": 17, "to": 64}, {"from": 17, "to": 122}, {"from": 40, "to": 64}, {"from": 40, "to": 122}, {"from": 64, "to": 122}, {"from": 16, "to": 120}, {"from": 17, "to": 79}, {"from": 17, "to": 81}, {"from": 18, "to": 44}, {"from": 18, "to": 50}, {"from": 18, "to": 104}, {"from": 18, "to": 110}, {"from": 44, "to": 50}, {"from": 44, "to": 104}, {"from": 44, "to": 110}, {"from": 50, "to": 104}, {"from": 50, "to": 110}, {"from": 104, "to": 110}, {"from": 19, "to": 23}, {"from": 19, "to": 38}, {"from": 19, "to": 47}, {"from": 23, "to": 38}, {"from": 23, "to": 47}, {"from": 38, "to": 47}, {"from": 20, "to": 88}, {"from": 20, "to": 88}, {"from": 23, "to": 112}, {"from": 24, "to": 107}, {"from": 24, "to": 110}, {"from": 107, "to": 110}, {"from": 24, "to": 59}, {"from": 24, "to": 69}, {"from": 24, "to": 124}, {"from": 59, "to": 69}, {"from": 59, "to": 124}, {"from": 69, "to": 124}, {"from": 25, "to": 47}, {"from": 26, "to": 114}, {"from": 26, "to": 57}, {"from": 27, "to": 53}, {"from": 29, "to": 39}, {"from": 30, "to": 48}, {"from": 30, "to": 65}, {"from": 30, "to": 89}, {"from": 31, "to": 52}, {"from": 31, "to": 83}, {"from": 52, "to": 83}, {"from": 31, "to": 52}, {"from": 31, "to": 119}, {"from": 52, "to": 119}, {"from": 31, "to": 52}, {"from": 34, "to": 70}, {"from": 34, "to": 98}, {"from": 70, "to": 98}, {"from": 36, "to": 116}, {"from": 36, "to": 40}, {"from": 36, "to": 116}, {"from": 40, "to": 116}, {"from": 37, "to": 102}, {"from": 37, "to": 104}, {"from": 102, "to": 104}, {"from": 38, "to": 47}, {"from": 38, "to": 99}, {"from": 47, "to": 99}, {"from": 38, "to": 99}, {"from": 39, "to": 87}, {"from": 40, "to": 122}, {"from": 40, "to": 107}, {"from": 40, "to": 110}, {"from": 107, "to": 110}, {"from": 44, "to": 51}, {"from": 44, "to": 55}, {"from": 44, "to": 100}, {"from": 44, "to": 119}, {"from": 51, "to": 55}, {"from": 51, "to": 100}, {"from": 51, "to": 119}, {"from": 55, "to": 100}, {"from": 55, "to": 119}, {"from": 100, "to": 119}, {"from": 44, "to": 100}, {"from": 45, "to": 114}, {"from": 45, "to": 58}, {"from": 47, "to": 74}, {"from": 47, "to": 102}, {"from": 74, "to": 102}, {"from": 48, "to": 93}, {"from": 50, "to": 76}, {"from": 50, "to": 100}, {"from": 76, "to": 100}, {"from": 54, "to": 73}, {"from": 54, "to": 93}, {"from": 73, "to": 93}, {"from": 56, "to": 78}, {"from": 58, "to": 110}, {"from": 61, "to": 122}, {"from": 61, "to": 115}, {"from": 62, "to": 76}, {"from": 62, "to": 76}, {"from": 62, "to": 114}, {"from": 76, "to": 114}, {"from": 63, "to": 118}, {"from": 67, "to": 72}, {"from": 67, "to": 86}, {"from": 67, "to": 118}, {"from": 86, "to": 118}, {"from": 72, "to": 81}, {"from": 72, "to": 81}, {"from": 75, "to": 108}, {"from": 75, "to": 94}, {"from": 78, "to": 81}, {"from": 79, "to": 88}, {"from": 79, "to": 116}, {"from": 88, "to": 116}, {"from": 84, "to": 103}, {"from": 90, "to": 108}, {"from": 90, "to": 120}, {"from": 108, "to": 120}, {"from": 91, "to": 94}, {"from": 91, "to": 106}, {"from": 94, "to": 106}, {"from": 91, "to": 106}, {"from": 96, "to": 107}]);
+
+    var container = document.getElementById('mynetwork');
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+        nodes: {
+            shape: 'dot',
+            size: 16,
+            font: {
+                size: 14,
+                color: '#333'
+            },
+            borderWidth: 2
+        },
+        edges: {
+            width: 2,
+            color: {
+                color: '#848484',
+                highlight: '#848484',
+                hover: '#848484'
+            }
+        },
+        physics: {
+            forceAtlas2Based: {
+                gravitationalConstant: -26,
+                centralGravity: 0.005,
+                springLength: 230,
+                springConstant: 0.18
+            },
+            maxVelocity: 146,
+            solver: 'forceAtlas2Based',
+            timestep: 0.35,
+            stabilization: {iterations: 150}
+        }
+    };
+
+    var network = new vis.Network(container, data, options);
+</script>
+
+</body>
+</html>

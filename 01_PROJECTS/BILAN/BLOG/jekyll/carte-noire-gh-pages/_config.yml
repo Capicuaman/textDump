@@ -1,0 +1,38 @@
+# Site settings
+title: "Richi Coffee"
+email: jacob@jacobtomlinson.co.uk
+description: "A dark blog theme for Jekyll."
+baseurl: ""
+url: "http://richicoffe.com/"
+title_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi delectus aliquam consequuntur cupiditate qui voluptatum. Culpa consectetur aliquam tempora aspernatur obcaecati eaque, accusantium ut modi corporis. Delectus tempora recusandae modi!"
+title_image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=500&d=mm"
+google_analytics: ""
+disqus_account: cartenoire
+github_repository: 
+addthis_id: 
+post_limit: 5
+
+# Social usernames/URLs
+twitter_username: richicoffee
+github_username:  
+instagram_username: 
+reddit_username: 
+linkedin_link: 
+google_plus_link: 
+stackoverflow_link: 
+xing_link:
+facebook_link: https://www.facebook.com/richicoffee1/
+
+# Footer
+footer_left: "  <a href=\"http://richicoffe.com\">Derechos Reservados © Richi Coffee - 2018</a>"
+# footer_right: "&lt;/&gt; on <a href=\"https://github.com/jacobtomlinson/carte-noire\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: pretty
+exclude: [vendor]
