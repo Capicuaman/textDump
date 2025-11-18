@@ -32,31 +32,11 @@ Usted puede no presentar síntomas. Si usted presenta síntomas, estos dependen 
 
 ---
 
-# Hipernatremia (concentración alta de sodio en la sangre)
-
-La **hipernatremia** es muy rara (1‑2 % de pacientes) y consiste en una concentración alta de sodio en la sangre. Por lo general, la hipernatremia es consecuencia de la deshidratación. Por ejemplo, se pierden fluidos corporales y se produce deshidratación debido a:
-- Sudoración excesiva
-- Beber demasiado poco
-- Vómitos
-- Diarrea
-- Uso de diuréticos 
-
-## Síntomas de la hipernatremia
-De modo característico, provoca sed. Los síntomas más graves son resultado de la disfunción cerebral. La hipernatremia grave puede conducir a:
-- Confusión (delirio)
-- Espasmos musculares (mioclonía)
-- Convulsiones
-- Coma
-- Muerte
 
 
----
-
-Estos son los tres escenarios de la hiponatremia y su relación con la presión arterial.
 
 
----
-An electrolyte imbalance during running can occur from losing minerals through sweat (like sodium, potassium, and magnesium) and not replacing them adequately, or from drinking too much plain water, which dilutes your body's sodium levels (a condition called hyponatremia).
+An electrolyte imbalance can occur from losing minerals through sweat (like sodium, potassium, and magnesium) and not replacing them adequately, or from drinking too much plain water, which dilutes your body's sodium levels (a condition called hyponatremia).
 
 Here are the key signs and symptoms to watch for while running, ranging from mild to severe:
 
@@ -83,5 +63,5 @@ It's important to know there are two main, and opposite, causes for these sympto
 1.  **Dehydration-Related Imbalance:** This happens when you lose significant amounts of both water and electrolytes (especially sodium) through sweat and don't replace them. This is common in hot, humid weather or during very long runs.
 2.  **Overhydration (Hyponatremia):** This happens when you drink too much plain water, diluting the sodium concentration in your blood. This is a risk during long-distance events (like marathons or ultramarathons) where runners may diligently drink water at every aid station, regardless of thirst, without also taking in electrolytes.
 
-If you experience mild symptoms, try to consume an electrolyte-specific sports drink, a salt tablet, or salty food (like pretzels) and see if you improve. If symptoms are severe, especially any confusion, vomiting, or swelling, it is crucial to stop running and seek medical help immediately.
+If you experience mild symptoms, try to consume an electrolyte-specific sports drink, a salt tablet, or salty food (like pretzels) and see if you improve. If symptoms are severe, especially any confusion, vomiting, or swelling, it is crucial to seek medical help immediately.
 
