@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  html, body, svg {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+  }
+  .nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+  text {
+    font-family: sans-serif;
+    font-size: 10px;
+  }
+</style>
+<svg></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var graph = {
+  "nodes": [
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/_map.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/.DS_Store",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/APP",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/APP/promoappPrompt.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/bilan.csv",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/.DS_Store",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/bestElectrolyte.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/blog1SP.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/electrolyteBlog.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/GEMINI.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/.DS_Store",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages.zip",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_config.yml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_data",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_data/thumbnail.yml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/footer.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/head.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/header.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/social_links.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/default.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/none.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/page.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/post.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-08-using-thumbnails.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-09-so-what-is-jekyll.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-10-carte-noire-in-action.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2015-03-23-welcome-to-carte-noir.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/404.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/CNAME",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/highlightjs.piperita.css",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/jquery.mmenu.all.css",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/style.css",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-192x192.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-36x36.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-48x48.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-72x72.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-96x96.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-114x114.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-120x120.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-152x152.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-180x180.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-57x57.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-60x60.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-72x72.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-76x76.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-precomposed.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/browserconfig.xml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-16x16.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-32x32.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-96x96.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon.ico",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/manifest.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-150x150.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-310x150.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-310x310.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-70x70.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/README.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/feed.xml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08/using-thumbnails",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08/using-thumbnails/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09/so-what-is-jekyll",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09/so-what-is-jekyll/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10/carte-noire-in-action",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10/carte-noire-in-action/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23/welcome-to-carte-noir",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23/welcome-to-carte-noir/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js/jekyll-search.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js/jquery.mmenu.min.all.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/LICENSE",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts-by-categories",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts-by-categories/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/README.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/.DS_Store",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/.gitignore",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/404.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/CNAME",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/highlightjs.piperita.scss",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/jquery.mmenu.all.css",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/style.scss",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-192x192.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-36x36.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-48x48.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-72x72.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-96x96.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-114x114.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-120x120.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-152x152.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-180x180.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-57x57.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-60x60.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-72x72.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-76x76.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-precomposed.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/browserconfig.xml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-16x16.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-32x32.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-96x96.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon.ico",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/manifest.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-144x144.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-150x150.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-310x150.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-310x310.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-70x70.png",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/README.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/feed.xml",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/index.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js/jekyll-search.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js/jquery.mmenu.min.all.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/LICENSE",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/posts-by-categories.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/posts.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/README.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/search.html",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/search.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/bilanCFI.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/bilanMarketingDosier.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/discounts.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/envios.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/pricingBilan.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/A guide to foods high in magnesium and potassium.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/electrolytes.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Half-marathon fuel guide Energy and electrolytes.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/How electrolytes can support quality sleep.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/How to stay hydrated as an older adult.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/lmnt_electrolyte_articles.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/LMNT's electrolyte ratios explained.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Science-backed healthful electrolyte drinks (and how to make them).md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/The FDA's (mis)guidance on sodium.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/The WHO's (mis)guidance on sodium.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/what_you_need_to_know_about_hydration.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Why electrolytes matter for cardiovascular health.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/Readme.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/secondTierAdvantage.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/consolidated_bilan_report.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/GEMINI.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/gitkeep.txt",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/campaigns",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/campaigns/guerillaCamoaign.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/consolidated_marketing_manual.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/expos.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/initialWebSearh.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/qrCampaign.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/qrDesign.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/recomendations.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/elecrolytesForRunners.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/enduranceSportsElectrolytes.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/todo.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/salesPsychology",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/slogans.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/stickers.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/stratergies.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/yoga",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/yoga/yogaSalesScript.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/agentPrompts.MD",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/metaPromptsBilan.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/promptCRMschedule.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/sheduleCRM.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/nextSteps.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING/packageTemplate0.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING/packageTemplate1.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/bilanBoost.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/dangerousChemicals.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/hydrationFAQ.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/naturalFlavors.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/whatareElectrolytes.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/.DS_Store",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/electrolytes.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/faq.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hypernatremia.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hyponatremia.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hyponatremiaHypernatremia.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/The-Salt-Fix-Dr_-James-DiNicolantonio-1_-2017-Harmony-9780349417387-0aba24b960facd6b6067bec4da5b7230 (1).txt",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/tooMuchWater.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/readme.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/1_Introduction_Sales_Playbook.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/10_Training_and_Development.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/11_Common_Scenarios_and_FAQs.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/12_Appendix.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/2_Sales_Team_Structure.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/3_Sales_Process_Overview.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/4_Prospecting.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/5_Qualification.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/6_Product_Demo_Presentation.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/7_Negotiation_and_Closing.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/8_Post_Sale_Process.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/9_Tools_and_Technology.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/consolidated_sales_manual.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/AMAZON",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/AMAZON/how_to_signup.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/MERCADO_LIBRE",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/MERCADO_LIBRE/how_to_signup.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/salesPlaybook.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/BLOG",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/BLOG/jekyll.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/essentialJekyllPlugins.md",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/jekyllm.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/SEO",
+      "type": "directory"
+    },
+    {
+      "id": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/SEO/outboundLinks.md",
+      "type": "file"
+    }
+  ],
+  "edges": [
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/_map.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/.DS_Store"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/APP"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/APP",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/APP/promoappPrompt.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/bilan.csv"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/.DS_Store"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/bestElectrolyte.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/blog1SP.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/electrolyteBlog.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/GEMINI.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/.DS_Store"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages.zip"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_config.yml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_data"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_data",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_data/thumbnail.yml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/footer.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/head.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/header.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_includes/social_links.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/default.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/none.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/page.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_layouts/post.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-08-using-thumbnails.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-09-so-what-is-jekyll.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2014-06-10-carte-noire-in-action.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_posts/2015-03-23-welcome-to-carte-noir.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/404.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/CNAME"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/highlightjs.piperita.css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/jquery.mmenu.all.css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/css/style.css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-192x192.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-36x36.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-48x48.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-72x72.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/android-chrome-96x96.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-114x114.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-120x120.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-152x152.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-180x180.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-57x57.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-60x60.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-72x72.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-76x76.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon-precomposed.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/apple-touch-icon.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/browserconfig.xml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-16x16.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-32x32.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon-96x96.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/favicon.ico"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/manifest.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-150x150.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-310x150.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-310x310.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/mstile-70x70.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/favicons/README.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/feed.xml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08/using-thumbnails"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08/using-thumbnails",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/08/using-thumbnails/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09/so-what-is-jekyll"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09/so-what-is-jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/09/so-what-is-jekyll/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10/carte-noire-in-action"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10/carte-noire-in-action",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2014/06/10/carte-noire-in-action/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23/welcome-to-carte-noir"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23/welcome-to-carte-noir",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/jekyll/2015/03/23/welcome-to-carte-noir/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js/jekyll-search.js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/js/jquery.mmenu.min.all.js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/LICENSE"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts-by-categories"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts-by-categories",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts-by-categories/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/posts/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/README.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/_site/search/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/.DS_Store"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/.gitignore"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/404.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/CNAME"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/highlightjs.piperita.scss"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/jquery.mmenu.all.css"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/css/style.scss"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-192x192.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-36x36.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-48x48.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-72x72.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/android-chrome-96x96.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-114x114.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-120x120.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-152x152.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-180x180.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-57x57.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-60x60.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-72x72.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-76x76.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon-precomposed.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/apple-touch-icon.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/browserconfig.xml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-16x16.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-32x32.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon-96x96.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/favicon.ico"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/manifest.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-144x144.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-150x150.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-310x150.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-310x310.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/mstile-70x70.png"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/favicons/README.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/feed.xml"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/index.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js/jekyll-search.js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/js/jquery.mmenu.min.all.js"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/LICENSE"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/posts-by-categories.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/posts.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/README.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/search.html"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BLOG/jekyll/carte-noire-gh-pages/search.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/bilanCFI.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/bilanMarketingDosier.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/discounts.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/envios.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/BUSINESS/pricingBilan.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/A guide to foods high in magnesium and potassium.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/electrolytes.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Half-marathon fuel guide Energy and electrolytes.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/How electrolytes can support quality sleep.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/How to stay hydrated as an older adult.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/lmnt_electrolyte_articles.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/LMNT's electrolyte ratios explained.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Science-backed healthful electrolyte drinks (and how to make them).md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/The FDA's (mis)guidance on sodium.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/The WHO's (mis)guidance on sodium.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/what_you_need_to_know_about_hydration.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/LMNT/Why electrolytes matter for cardiovascular health.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/Readme.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/COMPETITIVEANALYSIS/secondTierAdvantage.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/consolidated_bilan_report.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/GEMINI.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/gitkeep.txt"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/campaigns"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/campaigns",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/campaigns/guerillaCamoaign.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/consolidated_marketing_manual.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/expos.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/initialWebSearh.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/qrCampaign.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/qrDesign.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/recomendations.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/elecrolytesForRunners.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/enduranceSportsElectrolytes.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/RUNNING/todo.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/salesPsychology"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/slogans.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/stickers.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/stratergies.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/yoga"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/yoga",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/MARKETING/yoga/yogaSalesScript.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/agentPrompts.MD"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/metaPromptsBilan.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/promptCRMschedule.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/METAPROMPTS/sheduleCRM.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/nextSteps.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING/packageTemplate0.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PACKAGING/packageTemplate1.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/bilanBoost.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/dangerousChemicals.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/hydrationFAQ.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/naturalFlavors.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/PRODUCT/whatareElectrolytes.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/.DS_Store"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/electrolytes.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/faq.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hypernatremia.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hyponatremia.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/hyponatremiaHypernatremia.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/The-Salt-Fix-Dr_-James-DiNicolantonio-1_-2017-Harmony-9780349417387-0aba24b960facd6b6067bec4da5b7230 (1).txt"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/RAG/tooMuchWater.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/readme.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/1_Introduction_Sales_Playbook.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/10_Training_and_Development.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/11_Common_Scenarios_and_FAQs.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/12_Appendix.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/2_Sales_Team_Structure.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/3_Sales_Process_Overview.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/4_Prospecting.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/5_Qualification.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/6_Product_Demo_Presentation.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/7_Negotiation_and_Closing.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/8_Post_Sale_Process.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/9_Tools_and_Technology.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/consolidated_sales_manual.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/AMAZON"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/AMAZON",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/AMAZON/how_to_signup.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/MERCADO_LIBRE"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/MERCADO_LIBRE",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/ECOMMERCE/MERCADO_LIBRE/how_to_signup.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/SALES/salesPlaybook.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/BLOG"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/BLOG",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/BLOG/jekyll.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/essentialJekyllPlugins.md"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/jekyllm.json"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/SEO"
+    },
+    {
+      "source": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/SEO",
+      "target": "/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN/WEB/SEO/outboundLinks.md"
+    }
+  ]
+};
+
+var svg = d3.select("svg"),
+    width = window.innerWidth,
+    height = window.innerHeight;
+
+svg.attr("width", width).attr("height", height);
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody().strength(-50))
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+var g = svg.append("g");
+
+var link = g.append("g")
+    .attr("class", "links")
+  .selectAll("line")
+  .data(graph.edges)
+  .enter().append("line")
+    .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+var node = g.append("g")
+    .attr("class", "nodes")
+  .selectAll("g")
+  .data(graph.nodes)
+  .enter().append("g")
+    .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+var circles = node.append("circle")
+    .attr("r", 5)
+    .attr("fill", function(d) { return color(d.type); });
+
+var lables = node.append("text")
+      .text(function(d) {
+        return d.id.split('/').pop();
+      })
+      .attr('x', 6)
+      .attr('y', 3)
+      .attr('font-size', function(d) {
+        return d.id === '/Users/ideaopedia/Documents/textDump/01_PROJECTS/BILAN' ? '18px' : '10px';
+      });
+node.append("title")
+    .text(function(d) { return d.id; });
+
+simulation
+    .nodes(graph.nodes)
+    .on("tick", ticked);
+
+simulation.force("link")
+    .links(graph.edges);
+
+function ticked() {
+  link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node
+      .attr("transform", function(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+      })
+}
+
+function dragstarted(d) {
+if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+d.fx = d.x;
+d.fy = d.y;
+}
+
+function dragged(d) {
+d.fx = d3.event.x;
+d.fy = d3.event.y;
+}
+
+function dragended(d) {
+if (!d3.event.active) simulation.alphaTarget(0);
+d.fx = null;
+d.fy = null;
+}
+
+svg.call(d3.zoom()
+    .extent([[0, 0], [width, height]])
+    .scaleExtent([1, 8])
+    .on("zoom", zoomed));
+
+function zoomed() {
+  g.attr("transform", d3.event.transform);
+}
+
+</script>
