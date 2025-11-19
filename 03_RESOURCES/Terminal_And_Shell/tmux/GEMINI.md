@@ -2,7 +2,7 @@
 
 ## Directory Overview
 
-This directory contains documentation and configuration examples for `tmux`, a terminal multiplexer. It provides a guide for getting started with `tmux` and a file to store sample configuration settings.
+This `tmux` directory, located under `03_RESOURCES/Terminal_And_Shell/`, contains documentation and configuration examples for `tmux`, a terminal multiplexer. It provides a guide for getting started with `tmux` and a file to store sample configuration settings.
 
 ## Key Files
 

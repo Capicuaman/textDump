@@ -503,4 +503,4 @@ These use cases highlight the Gemini CLI's potential to significantly enhance de
 
 ## Usage
 
-The files within this directory are intended to be used as primary reference and learning resources. Users can consult `geminiFeatures.md` to quickly grasp the breadth of the Gemini CLI's functionalities, `geminiUsecases.md` to understand practical applications, and then utilize `geminiStudy.md` to systematically work through and practice using these features. This collection aims to empower users to leverage the Gemini CLI effectively in their development workflows and other command-line tasks.
+The files within this directory are intended to be used as primary reference and learning resources. Users can consult `geminiFeatures.md` within this directory to quickly grasp the breadth of the Gemini CLI's functionalities, `geminiUsecases.md` within this directory to understand practical applications, and then utilize `geminiStudy.md` within this directory to systematically work through and practice using these features. This collection aims to empower users to leverage the Gemini CLI effectively in their development workflows and other command-line tasks.
