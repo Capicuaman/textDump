@@ -1,0 +1,73 @@
+{
+  "tituloDelPlan": "Mensajes Centrales de BILAN para Redes Sociales",
+  "objetivo": "Asegurar un mensaje consistente y de impacto en todas las plataformas de redes sociales, reforzando los pilares clave de la marca.",
+  "pilaresCentrales": [
+    {
+      "nombreDelPilar": "Euhidratación y Equilibrio",
+      "mensajeClave": "BILAN no es solo hidratación, es alcanzar la 'Euhidratación' - el equilibrio científico óptimo de agua y electrolitos para un rendimiento máximo. Somos la forma más limpia de lograr este equilibrio.",
+      "palabrasClave": ["Euhidratación", "Equilibrio Perfecto", "Balance", "Ciencia", "La forma más limpia"]
+    },
+    {
+      "nombreDelPilar": "La Batería Humana",
+      "mensajeClave": "Posicionar el cuerpo humano como una 'batería de sal' impulsada por minerales esenciales. BILAN proporciona el combustible limpio necesario para mantenerse cargado y rendir al máximo.",
+      "palabrasClave": ["Batería Humana", "Batería de Sal", "Energía Sostenida", "Rendimiento", "Impulsado por minerales"]
+    },
+    {
+      "nombreDelPilar": "Pureza y Calidad Científica",
+      "mensajeClave": "Destacar la calidad superior de nuestros ingredientes. Nuestros electrolitos son de grado farmacéutico, importados de Alemania, y nuestra fórmula está respaldada por la investigación científica más reciente.",
+      "palabrasClave": ["Grado Farmacéutico", "Fórmula Científica", "Calidad Alemana", "Estudios Recientes", "Importado"]
+    },
+    {
+      "nombreDelPilar": "Vitalidad y Rendimiento Óptimos",
+      "mensajeClave": "BILAN es la clave para desbloquear todo el potencial de tu cuerpo, ayudándote a sentirte energizado, concentrado y listo para cualquier desafío, especialmente en climas cálidos o durante la actividad física intensa.",
+      "palabrasClave": ["Vitalidad Óptima", "Bienestar", "Concentrado", "Rendimiento Máximo", "Actividad Física Intensa"]
+    },
+    {
+      "nombreDelPilar": "La Alternativa Pura",
+      "mensajeClave": "BILAN es la única opción verdaderamente libre de aditivos, sin saborizantes, edulcorantes, ácido cítrico o ácido málico.",
+      "palabrasClave": ["Alternativa Pura", "Sin Aditivos", "Sin Saborizantes", "Sin Stevia", "Transparencia"]
+    },
+    {
+      "nombreDelPilar": "Enfoque en la Salud",
+      "mensajeClave": "Mientras que otros se enfocan en nichos como keto o paleo, BILAN se expande a audiencias con sensibilidad a los químicos, uso médico y puristas que buscan la máxima pureza.",
+      "palabrasClave": ["Salud Primero", "Sensibilidad Química", "Uso Médico", "Puristas", "Sin Alérgenos"]
+    },
+    {
+      "nombreDelPilar": "Sostenibilidad",
+      "mensajeClave": "Ofrecemos empaques ecológicos y sostenibles como una alternativa a los empaques de un solo uso de la competencia.",
+      "palabrasClave": ["Sostenibilidad", "Empaque Ecológico", "Compostable", "Menos Desperdicio"]
+    },
+    {
+      "nombreDelPilar": "Salud y Bienestar",
+      "mensajeClave": "Productos naturales y libres de aditivos para apoyar un estilo de vida activo y saludable.",
+      "palabrasClave": ["Salud", "Bienestar", "Ingredientes Naturales", "Sin Aditivos"]
+    },
+    {
+      "nombreDelPilar": "Innovación en Producto",
+      "mensajeClave": "Fórmula de absorción mejorada y sales de grado farmacéutico para una hidratación óptima.",
+      "palabrasClave": ["Innovación", "Absorción Mejorada", "Calidad Farmacéutica", "Hidratación Eficaz"]
+    },
+    {
+      "nombreDelPilar": "Enfoque en el Cliente",
+      "mensajeClave": "Soluciones personalizadas para atletas, entusiastas del fitness y personas conscientes de su salud.",
+      "palabrasClave": ["Personalización", "Atletas", "Fitness", "Salud Consciente"]
+    },
+    {
+      "nombreDelPilar": "Educación y Conciencia",
+      "mensajeClave": "Educamos a nuestros clientes sobre la importancia de la hidratación y los peligros de los aditivos artificiales.",
+      "palabrasClave": ["Educación", "Conciencia", "Hidratación", "Sin Artificial"]
+    },
+    {
+      "nombreDelPilar": "Crecimiento de Mercado",
+      "mensajeClave": "Objetivo de aumentar nuestra participación en el mercado de suplementos de hidratación al 10% en dos años.",
+      "palabrasClave": ["Crecimiento", "Participación de Mercado", "Liderazgo", "Expansión"]
+    },
+    {
+      "nombreDelPilar": "Marketing Digital y Contenido",
+      "mensajeClave": "Estrategias de marketing digital centradas en contenido educativo, redes sociales y alianzas con influencers.",
+      "palabrasClave": ["Marketing Digital", "Contenido Educativo", "Redes Sociales", "Influencers"]
+    }
+  ],
+  "tonoDeVoz": "Autoritario, científico, pero accesible y empoderador.",
+  "llamadaALaAccion": "Siempre incluir una llamada a la acción clara, como visitar el sitio web, aprender más sobre la ciencia o probar un sabor específico."
+}
