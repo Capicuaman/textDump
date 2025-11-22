@@ -28,6 +28,8 @@ This directory is a mix of personal projects, learning materials, and notes. Her
 
 *   **`BOOKS/BorbaTED.md`**: Notes from a TED talk by Michele Borba on empathy, reflecting an interest in personal growth and understanding human behavior.
 
+*   **`03_RESOURCES/Misc/YouTube/_MOC_YouTube.md`**: A Map of Content for YouTube video transcripts.
+
 ## Usage
 
 This directory is used as a dynamic and evolving knowledge base. Here's how it seems to be used:
