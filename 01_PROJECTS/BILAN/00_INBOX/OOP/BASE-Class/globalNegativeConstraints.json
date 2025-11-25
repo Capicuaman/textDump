@@ -1,0 +1,49 @@
+{
+  "globalNegativeConstraints": {
+    "description": "This document outlines the topics and behaviors strictly prohibited in all of BILAN's social media and public posts to maintain brand integrity, avoid legal issues, and foster a positive community.",
+    "contentRestrictions": [
+      {
+        "category": "Health & Medical Claims",
+        "constraint": "Do not make unsubstantiated health claims. Avoid promising to 'cure,' 'treat,' or 'prevent' any disease. All statements about health benefits must be supported by scientific evidence and include appropriate disclaimers.",
+        "examples_to_avoid": [
+          "BILAN cures dehydration.",
+          "Our product prevents muscle cramps.",
+          "Guaranteed to improve your sleep."
+        ]
+      },
+      {
+        "category": "Legal & Regulatory",
+        "constraint": "Do not provide medical advice. Always recommend consulting with a healthcare professional for personal health concerns. Do not violate advertising standards (e.g., FTC guidelines) regarding endorsements and testimonials.",
+        "examples_to_avoid": [
+          "If you have XYZ symptoms, you should take BILAN.",
+          "Skip the doctor, just drink our electrolytes."
+        ]
+      },
+      {
+        "category": "Brand Image & Tone",
+        "constraint": "Avoid negativity, fear-mongering, or shaming. Do not engage in arguments or hostile interactions with users. Maintain a positive, empowering, and supportive tone. Do not make direct, unsubstantiated negative comparisons to competitors.",
+        "examples_to_avoid": [
+          "You're harming your body if you don't use electrolytes.",
+          "Competitor X is full of sugar and chemicals, unlike us.",
+          "Engaging in heated political or religious debates."
+        ]
+      },
+      {
+        "category": "Content & Community",
+        "constraint": "Do not post offensive, discriminatory, or explicit content. This includes hate speech, harassment, and inappropriate imagery. Do not share user-generated content without explicit permission and proper credit.",
+        "examples_to_avoid": [
+          "Posting memes that could be considered offensive.",
+          "Using a customer's photo without asking them first."
+        ]
+      },
+      {
+        "category": "Confidentiality",
+        "constraint": "Do not share confidential company information, internal data, or private customer information.",
+        "examples_to_avoid": [
+          "Posting about upcoming unannounced products.",
+          "Sharing a customer's order details publicly."
+        ]
+      }
+    ]
+  }
+}

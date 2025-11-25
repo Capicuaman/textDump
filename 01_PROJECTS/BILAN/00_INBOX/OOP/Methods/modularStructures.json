@@ -1,0 +1,96 @@
+{
+  "suggestedModularStructures": [
+    {
+      "moduleName": "Content Block",
+      "description": "A self-contained unit of content (text, image, video, CTA) that can be easily reused across different platforms and contexts. Focuses on a single idea or message.",
+      "useCases": [
+        "Blog post paragraphs",
+        "Website section (e.g., 'About Us' snippet)",
+        "Email body sections",
+        "Social media post components"
+      ],
+      "attributes": [
+        "title (optional)",
+        "bodyText",
+        "imageUrl (optional)",
+        "videoUrl (optional)",
+        "callToAction (text, link)"
+      ]
+    },
+    {
+      "moduleName": "Fact/Statistic Card",
+      "description": "A concise, visually appealing module to present a single, verifiable fact or statistic. Ideal for quick consumption and shareability.",
+      "useCases": [
+        "Social media graphics",
+        "Infographics",
+        "Blog post highlights",
+        "Presentations"
+      ],
+      "attributes": [
+        "factText",
+        "source (optional)",
+        "visualElement (icon, small graphic)"
+      ]
+    },
+    {
+      "moduleName": "Product Feature Highlight",
+      "description": "A module dedicated to showcasing a specific feature or benefit of a product. Designed for consistency across marketing materials.",
+      "useCases": [
+        "Product pages",
+        "Email marketing",
+        "Social media ads",
+        "Sales collateral"
+      ],
+      "attributes": [
+        "featureTitle",
+        "featureDescription",
+        "featureIcon/Image",
+        "benefitStatement"
+      ]
+    },
+    {
+      "moduleName": "Testimonial/Quote",
+      "description": "A module for displaying customer testimonials or expert quotes, including attribution. Builds trust and social proof.",
+      "useCases": [
+        "Website landing pages",
+        "Social media posts",
+        "Email campaigns",
+        "Print materials"
+      ],
+      "attributes": [
+        "quoteText",
+        "authorName",
+        "authorTitle/Context (optional)",
+        "authorPhoto (optional)"
+      ]
+    },
+    {
+      "moduleName": "Call to Action (CTA)",
+      "description": "A distinct, actionable module designed to prompt a specific user response (e.g., 'Shop Now', 'Learn More').",
+      "useCases": [
+        "Website banners",
+        "Email footers",
+        "Social media posts",
+        "Blog post endings"
+      ],
+      "attributes": [
+        "ctaText",
+        "ctaLink",
+        "buttonStyle (optional)"
+      ]
+    },
+    {
+      "moduleName": "FAQ Item",
+      "description": "A question and answer pair, designed for easy integration into FAQ sections or knowledge bases.",
+      "useCases": [
+        "FAQ pages",
+        "Customer support resources",
+        "Chatbot responses"
+      ],
+      "attributes": [
+        "question",
+        "answer"
+      ]
+    }
+  ]
+}

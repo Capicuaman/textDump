@@ -1,0 +1,47 @@
+{
+  "primaryToneAndVoice": {
+    "overallTone": "Empowering, Knowledgeable, Supportive, and Approachable",
+    "keyCharacteristics": [
+      {
+        "characteristic": "Empowering",
+        "description": "Inspire and motivate our audience to take control of their health and hydration. Focus on the positive outcomes and benefits of balanced living.",
+        "do": "'Fuel your potential with optimal hydration.'",
+        "dont": "'Don't let dehydration slow you down.'"
+      },
+      {
+        "characteristic": "Knowledgeable",
+        "description": "Provide accurate, science-backed information in an easy-to-understand manner. Position BILAN as a trusted authority in electrolyte and hydration science.",
+        "do": "'Understand the vital role electrolytes play in cellular function.'",
+        "dont": "'Just trust us, our product works wonders.'"
+      },
+      {
+        "characteristic": "Supportive",
+        "description": "Foster a sense of community and care. Offer solutions and guidance without being preachy or judgmental. Be a helpful partner in their wellness journey.",
+        "do": "'We're here to help you achieve your hydration goals.'",
+        "dont": "'You're probably not hydrating correctly.'"
+      },
+      {
+        "characteristic": "Approachable",
+        "description": "Use clear, concise language that resonates with a broad audience. Avoid overly technical jargon. Be friendly and relatable.",
+        "do": "'Simple steps for better daily hydration.'",
+        "dont": "'Optimize your osmolality with our advanced electrolyte matrix.'"
+      },
+      {
+        "characteristic": "Authentic & Transparent",
+        "description": "Be genuine and honest about our products, ingredients, and brand values. Build trust through openness.",
+        "do": "'Discover the natural ingredients in every scoop of BILAN.'",
+        "dont": "'Our secret formula is unlike anything else.'"
+      }
+    ],
+    "brandKeywords": [
+      "Balance",
+      "Hydration",
+      "Wellness",
+      "Vitality",
+      "Performance",
+      "Natural",
+      "Science-backed",
+      "Empowerment"
+    ]
+  }
+}

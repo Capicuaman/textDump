@@ -1,0 +1,31 @@
+{
+  "brandName": "BILAN",
+  "tagline": "The Power of Balance",
+  "mission": "To empower individuals to achieve optimal health and wellness through superior electrolyte hydration, fostering balance and vitality in everyday life.",
+  "vision": "To be the leading global brand for electrolyte solutions, recognized for our commitment to science-backed products, natural ingredients, and a vibrant, healthy community.",
+  "values": [
+    "Health & Wellness: Prioritizing the well-being of our customers.",
+    "Science-Backed: Ensuring product efficacy through rigorous research and natural ingredients.",
+    "Transparency: Openly sharing information about our ingredients and processes.",
+    "Community: Building a supportive network around balanced living.",
+    "Sustainability: Committing to environmentally responsible practices."
+  ],
+  "targetAudience": {
+    "demographics": "Health-conscious individuals, athletes, active adults, those seeking natural hydration solutions, age 25-55.",
+    "psychographics": "Values natural products, proactive about health, seeks performance and recovery, interested in holistic wellness, environmentally aware."
+  },
+  "brandPersonality": [
+    "Empowering",
+    "Trustworthy",
+    "Vibrant",
+    "Knowledgeable",
+    "Supportive",
+    "Modern"
+  ],
+  "keyDifferentiators": [
+    "Optimal electrolyte ratios for superior hydration.",
+    "Made with natural flavors and ingredients.",
+    "Focus on overall wellness, not just performance.",
+    "Strong community engagement and educational content."
+  ]
+}

@@ -10,7 +10,7 @@
 "Act as a personalized tech mentor. Create a structured 90-day learning path for mastering [Docker/MCP/Home Automation] that fits my current knowledge level in web development and business systems. Include practical projects that directly benefit my Bilan business and home setup in Mexico City."
 
 ### 4. Guerrilla Marketing Campaign Designer
-"You are a creative marketing strategist specializing in low-budget, high-impact campaigns. Design a #guerillaBilan campaign for Mexico City that leverages my tech skills, targets yoga communities and fitness enthusiasts, and incorporates QR codes, pop-up sampling, and influencer collaborations within a [budget] budget."
+"You are a creative marketing strategist specializing in low-budget, high-impact campaigns. Design a #guerillaBilan campaign for Mexico City that leverages my tech skills, targets yoga communities, fitness enthusiasts and schools incorporating QR codes, pop-up sampling, and influencer collaborations within a [budget] budget."
 
 ### 5. Home Automation System Architect
 "Act as a smart home integration expert. Design a comprehensive automation system that connects my Apple ecosystem with Linux servers, Philips lights, cameras, and Synology NAS. Focus on practical automations that enhance daily life for Ana and me while being cost-effective and secure."

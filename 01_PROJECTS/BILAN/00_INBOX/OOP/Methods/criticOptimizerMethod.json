@@ -1,0 +1,96 @@
+{
+  "criticOptimizerMethod": {
+    "methodName": "The Critic/Optimizer Method for Prompt Refinement",
+    "objective": "To systematically improve the quality of a prompt by first identifying its weaknesses (The Critic) and then constructively addressing them (The Optimizer). This ensures the final prompt is clear, comprehensive, and precisely aligned with the desired output.",
+    "process": [
+      {
+        "step": 1,
+        "name": "Initial Draft",
+        "description": "Create a first version of the prompt. Focus on getting the core idea down without worrying about perfection."
+      },
+      {
+        "step": 2,
+        "name": "Assume the Critic Role",
+        "description": "Analyze the initial draft with a critical perspective. Your goal is to find every potential flaw, ambiguity, or missing piece of information. Use the 'Critic's Checklist' to guide your analysis."
+      },
+      {
+        "step": 3,
+        "name": "Assume the Optimizer Role",
+        "description": "Address every point raised by the Critic. Your goal is to refine, clarify, and enrich the prompt. Use the 'Optimizer's Actions' to implement improvements."
+      },
+      {
+        "step": 4,
+        "name": "Final Review",
+        "description": "Read the optimized prompt one last time. It should now be robust, clear, and ready to generate a high-quality response."
+      }
+    ],
+    "criticsChecklist": [
+      {
+        "category": "Clarity & Specificity",
+        "questions": [
+          "Is the core request unambiguous? Could any part of it be misinterpreted?",
+          "Are there vague words like 'good,' 'interesting,' or 'engaging'? What do they actually mean in this context?",
+          "Is the desired length or scope clearly defined?"
+        ]
+      },
+      {
+        "category": "Context & Background",
+        "questions": [
+          "Does the prompt assume knowledge that the AI might not have?",
+          "Is all necessary context provided (e.g., brand DNA, target audience, previous content)?",
+          "Is the ultimate goal or 'why' behind the prompt clear?"
+        ]
+      },
+      {
+        "category": "Constraints & Formatting",
+        "questions": [
+          "Is the desired output format specified (e.g., JSON, Markdown, bullet points)?",
+          "Are the tone of voice and persona clearly instructed?",
+          "Are there any negative constraints (what to avoid) explicitly stated?"
+        ]
+      },
+      {
+        "category": "Completeness",
+        "questions": [
+          "Is any crucial information missing?",
+          "Does the prompt include a clear call to action or final instruction?",
+          "If it's part of a sequence, does it reference the previous or next steps?"
+        ]
+      }
+    ],
+    "optimizersActions": [
+      {
+        "action": "Replace Vague Terms",
+        "description": "Substitute subjective words with objective descriptions. Instead of 'make it engaging,' use 'include a question to encourage comments.'"
+      },
+      {
+        "action": "Inject Context",
+        "description": "Add references to brand guides, audience personas, or provide concise summaries of necessary background information directly in the prompt."
+      },
+      {
+        "action": "Define the Output Structure",
+        "description": "Provide a clear template or schema for the desired output. For example: 'Return a JSON object with the keys: `headline`, `body`, `cta`.'"
+      },
+      {
+        "action": "Set Explicit Constraints",
+        "description": "Clearly state the persona to adopt ('Act as a witty but knowledgeable fitness coach'), the tone to use, and things to avoid ('Do not make medical claims')."
+      },
+      {
+        "action": "Sharpen the Core Task",
+        "description": "Refine the central command to be as direct and precise as possible. Ensure it directly aligns with the overall goal."
+      }
+    ],
+    "example": {
+      "scenario": "Creating an Instagram post about the benefits of sodium.",
+      "initialPrompt": "Write an Instagram post about sodium.",
+      "criticsAnalysis": [
+        "Too vague. What about sodium?",
+        "No context. Who is this for? What's the brand voice?",
+        "No format specified. Caption only? Image ideas?",
+        "No constraints. What should be avoided?",
+        "Goal is unclear. Is it for education, sales, or engagement?"
+      ],
+      "optimizedPrompt": "Act as the social media manager for BILAN, with an Empowering, Knowledgeable, and Supportive tone.\n\n**Goal:** Educate our 'Wellness-Seeker Wendy' persona about the importance of sodium, busting the myth that it's always bad.\n\n**Task:** Create an Instagram post consisting of a caption and a carousel slide concept.\n\n**Constraints:**\n- Do not make medical claims.\n- Avoid fear-based language.\n- Keep the caption under 150 words.\n- Reference the BILAN brand DNA for voice.\n\n**Output Format:**\n{\n  \"carousel_slide_1_concept\": \"A myth vs. fact graphic. Myth: 'All Salt is Bad.' Fact: 'Sodium is an essential electrolyte for nerve function.'\",\n  \"caption\": \"(Your generated caption here, including a question to drive engagement and relevant hashtags)\"\n}"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+create for me a master prompt for my rol as [insert use-case], list for me all the relevant questions you need to create that master prompt 

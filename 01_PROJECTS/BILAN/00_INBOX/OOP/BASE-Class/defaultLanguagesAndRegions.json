@@ -1,0 +1,14 @@
+{
+  "defaultLanguagesAndRegions": [
+    {
+      "language": "Spanish",
+      "region": "Mexico",
+      "locale": "es-MX"
+    },
+    {
+      "language": "English",
+      "region": "United Kingdom",
+      "locale": "en-GB"
+    }
+  ]
+}

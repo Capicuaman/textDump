@@ -1,0 +1,70 @@
+{
+  "suggestedContentFormats": [
+    {
+      "formatName": "SEO Blog Post",
+      "platform": "Website/Blog",
+      "description": "In-depth, keyword-optimized articles (1000-2000 words) that answer common questions about electrolytes, hydration, and wellness. Designed to attract organic search traffic.",
+      "bestFor": "Building authority, educating the audience, driving organic traffic, lead generation.",
+      "exampleTopics": [
+        "The Ultimate Guide to Electrolyte Balance",
+        "5 Signs You're Dehydrated (And What to Do About It)",
+        "Natural vs. Artificial Flavors: What's in Your Drink?"
+      ]
+    },
+    {
+      "formatName": "Instagram Carousel / Reel",
+      "platform": "Instagram",
+      "description": "Visually engaging multi-slide posts or short videos that break down complex topics into bite-sized, shareable tips. Reels can demonstrate product use or quick health hacks.",
+      "bestFor": "Audience engagement, education, brand storytelling, showcasing product benefits visually.",
+      "exampleTopics": [
+        "Carousel: '3 Ways to Stay Hydrated on a Busy Day'",
+        "Reel: 'How to Mix the Perfect BILAN Drink'",
+        "Carousel: 'Myth vs. Fact: Electrolytes'"
+      ]
+    },
+    {
+      "formatName": "Email Newsletter",
+      "platform": "Email",
+      "description": "A weekly or bi-weekly roundup of valuable content, product updates, community stories, and exclusive offers sent directly to subscribers.",
+      "bestFor": "Nurturing leads, building customer loyalty, driving sales, sharing company news.",
+      "exampleSections": [
+        "Tip of the Week: A quick hydration hack",
+        "Community Spotlight: Featuring a customer story",
+        "Exclusive Offer for subscribers"
+      ]
+    },
+    {
+      "formatName": "LinkedIn Article / Carousel",
+      "platform": "LinkedIn",
+      "description": "Content tailored to a professional audience, focusing on the science of hydration for performance, workplace wellness, and the business side of health.",
+      "bestFor": "B2B marketing, establishing thought leadership, connecting with health professionals and corporate partners.",
+      "exampleTopics": [
+        "How Proper Hydration Can Boost Workplace Productivity",
+        "The Science Behind BILAN: Our Commitment to Quality",
+        "Partnering for a Healthier Team: Corporate Wellness Programs"
+      ]
+    },
+    {
+      "formatName": "TikTok/YouTube Shorts Video",
+      "platform": "TikTok, YouTube",
+      "description": "Short, trending, and educational videos (15-60 seconds) that are fast-paced and highly engaging. Can include quick tips, myth-busting, or user-generated content challenges.",
+      "bestFor": "Brand awareness, reaching a younger demographic, going viral, showcasing brand personality.",
+      "exampleConcepts": [
+        "Quick 'Day in the Life' featuring BILAN",
+        "Before/After energy level skit",
+        "Answering a common hydration question in under 30 seconds"
+      ]
+    },
+    {
+      "formatName": "Customer Testimonial / Case Study",
+      "platform": "Website, Social Media, Email",
+      "description": "Authentic stories from real customers detailing their experience with BILAN. Can be a short quote with a photo, a blog post, or a video.",
+      "bestFor": "Building trust and social proof, overcoming objections, demonstrating product effectiveness.",
+      "exampleFormats": [
+        "Instagram post with a customer quote and photo.",
+        "Blog post detailing an athlete's journey with BILAN.",
+        "A dedicated section on the website for reviews."
+      ]
+    }
+  ]
+}

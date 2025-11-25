@@ -1,0 +1,52 @@
+{
+  "audiencePersonas": [
+    {
+      "personaName": "Active Athlete Alex",
+      "demographics": {
+        "age": "25-35",
+        "occupation": "Fitness Instructor, Semi-Pro Athlete, Gym Enthusiast",
+        "location": "Urban/Suburban, active lifestyle communities",
+        "income": "Mid to High"
+      },
+      "psychographics": {
+        "goals": "Optimize performance, improve recovery, maintain peak physical condition, prevent cramps.",
+        "challenges": "Dehydration during intense workouts, muscle fatigue, finding clean and effective supplements.",
+        "values": "Performance, natural ingredients, scientific backing, efficiency, health.",
+        "mediaConsumption": "Fitness blogs, sports nutrition websites, Instagram (fitness influencers), YouTube (workout routines, product reviews)."
+      },
+      "needs": "Fast and effective hydration, electrolyte balance, clean ingredients, convenient format."
+    },
+    {
+      "personaName": "Wellness-Seeker Wendy",
+      "demographics": {
+        "age": "30-50",
+        "occupation": "Yoga Instructor, Health Coach, Office Professional with active hobbies",
+        "location": "Suburban, health-conscious communities",
+        "income": "Mid to High"
+      },
+      "psychographics": {
+        "goals": "Maintain overall well-being, support daily energy levels, improve hydration for skin and general health, reduce brain fog.",
+        "challenges": "Feeling sluggish, difficulty staying consistently hydrated, avoiding sugary drinks, finding natural health solutions.",
+        "values": "Holistic health, natural living, sustainability, mental clarity, preventative care.",
+        "mediaConsumption": "Wellness podcasts, health and lifestyle blogs, Pinterest (healthy recipes, self-care), Facebook groups (wellness communities)."
+      },
+      "needs": "Gentle and effective hydration, natural and clean ingredients, support for daily vitality, easy to incorporate into routine."
+    },
+    {
+      "personaName": "Busy Parent Ben",
+      "demographics": {
+        "age": "30-45",
+        "occupation": "Working Parent (various professions)",
+        "location": "Suburban, family-oriented communities",
+        "income": "Mid"
+      },
+      "psychographics": {
+        "goals": "Maintain energy for daily tasks, stay hydrated amidst a busy schedule, find healthy options for the family, avoid burnout.",
+        "challenges": "Lack of time for self-care, forgetting to drink enough water, managing family's health, finding quick and healthy solutions.",
+        "values": "Family health, convenience, practicality, natural solutions, energy.",
+        "mediaConsumption": "Parenting blogs, family health websites, Facebook (parenting groups), quick news summaries."
+      },
+      "needs": "Convenient and quick hydration, energy support, safe for occasional family use (if applicable), easy to prepare."
+    }
+  ]
+}
