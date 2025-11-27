@@ -1,0 +1,63 @@
+    <style>
+      /* Mobile-first responsive typography (large fonts) */
+      :root{
+        --base-font: 18px;
+        --max-width:1100px;
+        --accent:#0d6efd;
+      }
+
+      html{font-size:var(--base-font); -webkit-text-size-adjust:100%;}
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.55;
+        color:#111;
+        margin:0;
+        background-color:#fff;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+      }
+
+      /* Container optimized for mobile first */
+      .app-container{
+        padding:1rem;
+        max-width:var(--max-width);
+        margin:0 auto;
+      }
+
+      /* Headline scales fluidly — large readable size on mobile & larger screens */
+      h1 {
+        font-weight:700;
+        margin-bottom:.75rem;
+        font-size: clamp(1.6rem, 6.5vw, 3rem);
+        letter-spacing: -0.01em;
+      }
+
+      /* Accordion touch-targets and typography */
+      .accordion-item { margin-bottom: .5rem; border-radius:.5rem; overflow:hidden; border:1px solid rgba(0,0,0,.06); }
+      .accordion-button{
+        padding: .9rem 1rem;
+        font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+        line-height:1.2;
+      }
+      .accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(13,110,253,.15); }
+
+      /* Content list styles for readability on small screens */
+      .accordion-body ul { padding-left: 1.1rem; margin-bottom: 0; }
+      .accordion-body li{
+        margin-bottom: .65rem;
+        font-size: clamp(.98rem, 3vw, 1.15rem);
+        line-height:1.5;
+      }
+
+      /* Slight separation on larger screens */
+      @media(min-width:768px){
+        .app-container{ padding:1.5rem; }
+        h1 { margin-bottom:1.25rem; }
+        .accordion-body li { margin-bottom:.85rem; }
+      }
+
+      /* Accessibility: ensure strong contrast for interactive UI */
+      .accordion-header { background: #fff; }
+      .accordion-button { color: #111; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); }
+    </style>

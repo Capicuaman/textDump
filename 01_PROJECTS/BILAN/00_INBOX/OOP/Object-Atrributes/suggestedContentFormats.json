@@ -45,13 +45,40 @@
       ]
     },
     {
+      "formatName": "whatsapp status video",
+      "platform": "WhatsApp",
+      "description": "Short, trending, and educational videos (15-60 seconds) that are fast-paced and highly engaging. Can include quick tips, myth-busting, or user-generated content challenges.",
+      "bestFor": "Brand awareness, reaching a younger demographic, going viral, showcasing brand personality.",
+      "exampleConcepts": [
+        "Quick 'how-to' on mixing the perfect Bilan drink.",
+        "A time-lapse of a person's energy levels before and after drinking Bilan.",
+        "Myth vs. Fact: Debunking a common hydration myth in 15 seconds.",
+        "User-generated content challenge: 'Show us your #BilanGlow'.",
+        "Answering a common hydration question in under 30 seconds"
+      ]
+    },{
       "formatName": "TikTok/YouTube Shorts Video",
       "platform": "TikTok, YouTube",
       "description": "Short, trending, and educational videos (15-60 seconds) that are fast-paced and highly engaging. Can include quick tips, myth-busting, or user-generated content challenges.",
       "bestFor": "Brand awareness, reaching a younger demographic, going viral, showcasing brand personality.",
       "exampleConcepts": [
-        "Quick 'Day in the Life' featuring BILAN",
-        "Before/After energy level skit",
+        "Quick 'how-to' on mixing the perfect Bilan drink.",
+        "A time-lapse of a person's energy levels before and after drinking Bilan.",
+        "Myth vs. Fact: Debunking a common hydration myth in 15 seconds.",
+        "User-generated content challenge: 'Show us your #BilanGlow'.",
+        "Answering a common hydration question in under 30 seconds"
+      ]
+    },
+    {
+      "formatName": "whatsapp status video",
+      "platform": "WhatsApp",
+      "description": "Short, trending, and educational videos (15-60 seconds) that are fast-paced and highly engaging. Can include quick tips, myth-busting, or user-generated content challenges.",
+      "bestFor": "Brand awareness, reaching a younger demographic, going viral, showcasing brand personality.",
+      "exampleConcepts": [
+        "Quick 'how-to' on mixing the perfect Bilan drink.",
+        "A time-lapse of a person's energy levels before and after drinking Bilan.",
+        "Myth vs. Fact: Debunking a common hydration myth in 15 seconds.",
+        "User-generated content challenge: 'Show us your #BilanGlow'.",
         "Answering a common hydration question in under 30 seconds"
       ]
     },

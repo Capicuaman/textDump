@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Bilan Electrolitos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      /* Mobile-first typography and spacing (LARGER) */
+      :root{
+        --base-min: 18px; /* mobile minimum */
+        --base-max: 22px; /* large-screen max */
+        -webkit-font-smoothing: antialiased;
+      }
+      html{font-size: clamp(var(--base-min), 4.5vw, var(--base-max));}
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color:#111;
+        margin:0;
+        background-color:#fff;
+      }
+
+      .app-container{ padding:1rem 1rem 2rem; max-width:1100px; margin:0 auto; }
+
+      /* Headline large and responsive */
+      h1 {
+        font-weight:700;
+        margin-bottom:.75rem;
+        font-size: clamp(1.6rem, 7vw, 3rem);
+        letter-spacing: -0.02em;
+      }
+
+      /* Accordion touch-targets, larger text */
+      .accordion-item { margin-bottom: .6rem; border-radius:.5rem; overflow:hidden; border:1px solid rgba(0,0,0,.06); }
+      .accordion-button{
+        display:flex;
+        align-items:center;
+        width:100%;
+        padding: 1rem 1rem;
+        font-size: clamp(1.05rem, 3.5vw, 1.4rem);
+        line-height:1.2;
+        touch-action: manipulation;
+      }
+
+      .accordion-body ul { padding-left: 1.1rem; margin-bottom: 0; }
+      .accordion-body li{
+        margin-bottom: .75rem;
+        font-size: clamp(1.0rem, 3.2vw, 1.25rem);
+        line-height:1.5;
+      }
+
+      @media(min-width:768px){
+        .app-container{ padding:1.5rem; }
+        h1{ margin-bottom:1.25rem; }
+        .accordion-body li{ margin-bottom:.9rem; }
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid app-container" role="main">
+        <h1 class="mb-3">Bilan Electrolitos</h1>
+
+        <div class="accordion" id="factsAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingElectrolitos">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseElectrolitos" aria-expanded="true" aria-controls="collapseElectrolitos">
+                        Hechos Electrolitos
+                    </button>
+                </h2>
+                <div id="collapseElectrolitos" class="accordion-collapse collapse show" aria-labelledby="headingElectrolitos" data-bs-parent="#factsAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Los electrolitos son minerales con carga eléctrica que regulan funciones vitales en el cuerpo humano.</li>
+                            <li>El sodio, potasio, calcio, magnesio, cloruro, fosfato y bicarbonato son los principales electrolitos en el cuerpo.</li>
+                            <li>El sodio es el electrolito más abundante en el líquido extracelular y regula el equilibrio hídrico y la presión arterial.</li>
+                            <li>El potasio es el electrolito principal dentro de las células y es esencial para la función muscular y nerviosa.</li>
+                            <li>El calcio participa en la contracción muscular, la coagulación sanguínea y la transmisión nerviosa.</li>
+                            <li>El magnesio es necesario para más de 300 reacciones enzimáticas, incluyendo la producción de energía y síntesis de proteínas.</li>
+                            <li>El cloruro ayuda a mantener el equilibrio ácido-base y la presión osmótica en los líquidos corporales.</li>
+                            <li>El bicarbonato actúa como un importante buffer para mantener el pH sanguíneo estable.</li>
+                            <li>La concentración de electrolitos se mide en milimoles por litro (mmol/L) en sangre y otros fluidos.</li>
+                            <li>Los riñones regulan la concentración de electrolitos mediante la filtración y reabsorción en la orina.</li>
+                            <li>La deshidratación puede causar desequilibrios electrolíticos, afectando la función muscular y cerebral.</li>
+                            <li>El ejercicio intenso aumenta la pérdida de electrolitos por el sudor, especialmente sodio y potasio.</li>
+                            <li>La hiponatremia es el bajo nivel de sodio en sangre y puede causar confusión, convulsiones y coma.</li>
+                            <li>La hiperkalemia (exceso de potasio) puede provocar arritmias cardíacas potencialmente mortales.</li>
+                            <li>La hipocalcemia (bajo calcio) puede causar espasmos musculares y alteraciones neurológicas.</li>
+                            <li>El equilibrio de electrolitos es fundamental para la transmisión de impulsos eléctricos en nervios y músculos.</li>
+                            <li>Las bebidas deportivas contienen electrolitos para ayudar a reponer las pérdidas durante el ejercicio prolongado.</li>
+                            <li>El vómito y la diarrea pueden causar pérdida significativa de electrolitos y requerir reposición médica.</li>
+                            <li>El consumo excesivo de agua sin electrolitos puede diluir el sodio y causar hiponatremia.</li>
+                            <li>El equilibrio ácido-base depende de la interacción entre bicarbonato y otros electrolitos.</li>
+                            <li>El magnesio ayuda a regular el ritmo cardíaco y la función muscular.</li>
+                            <li>El potasio regula el potencial eléctrico de las membranas celulares y la contracción muscular.</li>
+                            <li>La insuficiencia renal puede causar acumulación de electrolitos y desequilibrios graves.</li>
+                            <li>El sudor humano contiene principalmente sodio y cloruro, pero también pequeñas cantidades de potasio y magnesio.</li>
+                            <li>El equilibrio de electrolitos es esencial para la función cerebral y la memoria.</li>
+                            <li>La hipomagnesemia (bajo magnesio) puede causar debilidad muscular, calambres y arritmias.</li>
+                            <li>El bicarbonato es clave para neutralizar los ácidos producidos por el metabolismo celular.</li>
+                            <li>El consumo de alimentos ricos en potasio, como plátanos y espinacas, ayuda a mantener el equilibrio electrolítico.</li>
+                            <li>Los desequilibrios electrolíticos pueden ser detectados mediante análisis de sangre y orina.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEuhidratacion">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEuhidratacion" aria-expanded="false" aria-controls="collapseEuhidratacion">
+                        Hechos Euhidratacion
+                    </button>
+                </h2>
+                <div id="collapseEuhidratacion" class="accordion-collapse collapse" aria-labelledby="headingEuhidratacion" data-bs-parent="#factsAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>El cuerpo humano está formado en su mayor parte por agua; en adultos representa alrededor del 60 % del peso corporal (0.5 % de electrolitos).</li>
+                            <li>El agua es el principal componente del plasma sanguíneo (≈ 90 %).</li>
+                            <li>Beber ≈ 250 ml de agua cada 15‑20 min durante ejercicio intenso ayuda a mantener la temperatura corporal.</li>
+                            <li>Perder ≈ 2 % del peso corporal por falta de agua ya afecta la capacidad de concentración y la memoria.</li>
+                            <li>La orina clara indica una hidratación adecuada; la orina oscura señala que necesitas más líquido.</li>
+                            <li>La hormona vasopresina (ADH) controla cuánta agua reabsorbe el riñón y, por tanto, el nivel de hidratación.</li>
+                            <li>La sed no es un buen indicador de déficit hídrico; muchas personas no sienten sed hasta perder alrededor del 2 % de su peso en agua.</li>
+                            <li>El café y el té tienen un leve efecto diurético, pero en consumidores habituales no provocan deshidratación significativa.</li>
+                            <li>El agua facilita la digestión y la absorción de nutrientes, especialmente de vitaminas solubles en agua.</li>
+                            <li>La piel pierde agua por transpiración y evaporación, contribuyendo al balance hídrico diario.</li>
+                            <li>En climas calurosos y con ejercicio vigoroso, el sudor puede superar los 2 L por hora.</li>
+                            <li>Beber demasiada agua sin reponer electrolitos puede causar hiponatremia, una condición de bajo sodio que afecta al cerebro.</li>
+                            <li>El agua mantiene la lubricación de las articulaciones, reduciendo el riesgo de lesiones.</li>
+                            <li>Los riñones ajustan la cantidad de agua que reabsorben según la concentración de solutos en la sangre.</li>
+                            <li>Una buena hidratación disminuye la probabilidad de formar cálculos renales al diluir la orina.</li>
+                            <li>El agua es necesaria para producir saliva, que protege la boca y ayuda a tragar.</li>
+                            <li>La deshidratación aumenta la viscosidad de la sangre, lo que eleva el riesgo de coágulos.</li>
+                            <li>Beber agua fría genera un pequeño aumento del gasto energético por termogénesis.</li>
+                            <li>La hidratación influye en la presión arterial al modificar el volumen sanguíneo.</li>
+                            <li>La fiebre provoca pérdida de agua de aproximadamente 0,5 L al día si no se repone.</li>
+                            <li>El agua es el medio principal para eliminar toxinas a través de la orina y el sudor.</li>
+                            <li>Estar bien hidratado mejora la memoria de trabajo y la velocidad de procesamiento mental.</li>
+                            <li>Una pérdida de agua del 1 % ya hace que el ejercicio se perciba como más difícil.</li>
+                            <li>El agua es esencial para la síntesis de proteínas y la reparación muscular.</li>
+                            <li>Una hidratación adecuada ayuda a mantener la elasticidad de la piel y a reducir arrugas temporales.</li>
+                            <li>Tomar un vaso de agua antes de comer puede reducir la ingesta calórica en un 10‑15 %.</li>
+                            <li>La deshidratación crónica está asociada a un mayor riesgo de enfermedades cardiovasculares.</li>
+                            <li>El agua actúa como amortiguador en los discos intervertebrales, protegiendo la columna.</li>
+                            <li>La hidratación es clave para la producción de lágrimas, esenciales para la salud ocular.</li>
+                            <li>Las recomendaciones diarias de ingesta de agua para adultos varían entre 2,0 y 3,7 L, según edad, sexo, nivel de actividad y clima.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingHidratacion">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHidratacion" aria-expanded="false" aria-controls="collapseHidratacion">
+                        Hechos Hidratacion
+                    </button>
+                </h2>
+                <div id="collapseHidratacion" class="accordion-collapse collapse" aria-labelledby="headingHidratacion" data-bs-parent="#factsAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>El cuerpo humano adulto está compuesto aproximadamente en un 60 % de agua.</li>
+                            <li>El agua es el principal componente del plasma sanguíneo (≈ 90 %).</li>
+                            <li>La deshidratación del 2 % de la masa corporal puede reducir el rendimiento cognitivo.</li>
+                            <li>Beber ≈ 250 ml de agua cada 15‑20 min durante ejercicio intenso ayuda a mantener la temperatura corporal.</li>
+                            <li>La orina clara indica una hidratación adecuada; la orina oscura sugiere déficit hídrico.</li>
+                            <li>El balance hídrico se regula principalmente por la hormona vasopresina (ADH).</li>
+                            <li>La sed no es un indicador fiable de déficit hídrico; el 40 % de la población no siente sed hasta perder ≈ 2 % de peso corporal.</li>
+                            <li>El consumo de bebidas con cafeína (café, té) produce un efecto diurético leve, pero no causa deshidratación significativa en consumidores habituales.</li>
+                            <li>El agua es esencial para la digestión y absorción de nutrientes; facilita la disolución de vitaminas solubles en agua.</li>
+                            <li>La piel pierde agua por transpiración y evaporación, contribuyendo al balance hídrico diario.</li>
+                            <li>En climas cálidos, la pérdida de agua por sudor puede superar los 2 L/h en ejercicio vigoroso.</li>
+                            <li>La hiponatremia (bajo nivel de sodio) puede ocurrir por consumo excesivo de agua sin reposición de electrolitos.</li>
+                            <li>El agua ayuda a mantener la elasticidad articular y lubricación de las articulaciones.</li>
+                            <li>La reabsorción renal de agua está influenciada por la concentración de solutos en la sangre.</li>
+                            <li>La hidratación adecuada reduce la incidencia de cálculos renales al diluir la orina.</li>
+                            <li>El agua es necesario para la producción de saliva, que protege la mucosa bucal y facilita la deglución.</li>
+                            <li>La deshidratación aumenta la viscosidad de la sangre, incrementando el riesgo de coágulos.</li>
+                            <li>El consumo de agua fría puede aumentar ligeramente el gasto energético por termogénesis.</li>
+                            <li>La hidratación influye en la regulación de la presión arterial mediante el volumen sanguíneo.</li>
+                            <li>La pérdida de agua durante la fiebre puede ser de ≈ 0,5 L/día sin reposición adecuada.</li>
+                            <li>El agua es el medio principal para la eliminación de toxinas a través de la orina y el sudor.</li>
+                            <li>La hidratación mejora la memoria de trabajo y la velocidad de procesamiento mental.</li>
+                            <li>La deshidratación leve (≈ 1 %) puede aumentar la percepción de esfuerzo durante el ejercicio.</li>
+                            <li>El agua es necesaria para la síntesis de proteínas y la reparación muscular.</li>
+                            <li>La hidratación adecuada favorece la elasticidad de la piel y reduce la aparición de arrugas temporales.</li>
+                            <li>El consumo de agua antes de una comida puede reducir la ingesta calórica en un 10‑15 %.</li>
+                            <li>La deshidratación crónica está asociada a un mayor riesgo de enfermedades cardiovasculares.</li>
+                            <li>El agua actúa como amortiguador en los discos intervertebrales, protegiendo la columna.</li>
+                            <li>La hidratación influye en la producción de lágrimas, esenciales para la salud ocular.</li>
+                            <li>La recomendación diaria de ingesta de agua varía entre 2,0‑3,7 L para adultos, dependiendo de edad, sexo, actividad y clima.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingHipernatremia">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHipernatremia" aria-expanded="false" aria-controls="collapseHipernatremia">
+                        Hipernatremia
+                    </button>
+                </h2>
+                <div id="collapseHipernatremia" class="accordion-collapse collapse" aria-labelledby="headingHipernatremia" data-bs-parent="#factsAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>La hipernatremia es muy rara (1‑2 % de pacientes) y consiste en una concentración alta de sodio en la sangre.</li>
+                            <li>Por lo general, la hipernatremia es consecuencia de la deshidratación.</li>
+                            <li>Se pierden fluidos corporales y se produce deshidratación debido a: Sudoración excesiva, Beber demasiado poco, Vómitos, Diarrea, Uso de diuréticos.</li>
+                            <li>De modo característico, provoca sed.</li>
+                            <li>Los síntomas más graves son resultado de la disfunción cerebral.</li>
+                            <li>La hipernatremia grave puede conducir a: Confusión (delirio), Espasmos musculares (mioclonía), Convulsiones, Coma, Muerte.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingHiponatremia">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHiponatremia" aria-expanded="false" aria-controls="collapseHiponatremia">
+                        Hiponatremia
+                    </button>
+                </h2>
+                <div id="collapseHiponatremia" class="accordion-collapse collapse" aria-labelledby="headingHiponatremia" data-bs-parent="#factsAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>La Hiponatremia Asociada al Ejercicio (EAH) es una concentración de sodio sérico < 135 mEq/L que ocurre durante o dentro de 24 horas después del ejercicio prolongado.</li>
+                            <li>Es un trastorno potencialmente mortal pero prevenible en más del 95% de los casos.</li>
+                            <li>Riesgo vital: Edema cerebral, convulsiones, coma, muerte.</li>
+                            <li>Población principalmente afectada: Atletas recreacionales (no élite).</li>
+                            <li>Deportes comunes: Maratón, triatlón, ultramaratón, carreras militares, senderismo de larga distancia.</li>
+                            <li>Puede ocurrir durante el evento O hasta 24 horas después.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+
+    <!-- JS fallback to ensure accordion toggles on phones if bootstrap JS is blocked -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // if Bootstrap exists, it manages accordion behavior - no fallback necessary.
+        if (typeof bootstrap !== 'undefined') return;
+
+        // fallback: simple toggle of collapse class and aria-expanded
+        document.querySelectorAll('.accordion-button').forEach(function(btn){
+          btn.addEventListener('click', function(e){
+            var targetSel = btn.getAttribute('data-bs-target') || btn.getAttribute('data-target');
+            if(!targetSel) return;
+            var target = document.querySelector(targetSel);
+            if(!target) return;
+            var isShown = target.classList.contains('show');
+            // close other siblings if data-bs-parent present
+            var parent = target.getAttribute('data-bs-parent');
+            if(parent){
+              document.querySelectorAll(parent + ' .accordion-collapse.show').forEach(function(open){
+                if(open !== target){
+                  open.classList.remove('show');
+                  var headerBtn = document.querySelector('[data-bs-target="#' + open.id + '"]');
+                  if(headerBtn) headerBtn.setAttribute('aria-expanded', 'false');
+                }
+              });
+            }
+            target.classList.toggle('show', !isShown);
+            btn.setAttribute('aria-expanded', String(!isShown));
+          }, {passive:true});
+        });
+      });
+    </script>
+</body>
+</html>
