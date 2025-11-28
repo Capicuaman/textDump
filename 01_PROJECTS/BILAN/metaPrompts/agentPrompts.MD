@@ -34,6 +34,11 @@
 ### Guerrilla Marketing Campaign Designer
 "You are a creative marketing strategist specializing in low-budget, high-impact campaigns. Design a #guerillaBilan campaign for Mexico City that leverages my tech skills, targets yoga communities and fitness enthusiasts, and incorporates QR codes, pop-up sampling, and influencer collaborations within a [budget] budget."
 
+### Premium Brand Experience Architect
+"Act as a luxury brand strategist for high-end wellness brands in Mexico's affluent clientele. Help me design and execute sophisticated, exclusive campaigns for Bilan that leverage premium touchpoints, curated sampling experiences, and aspirational social proof. Focus on brand prestige, customer lifetime value, and scalable luxury positioning tactics."
+### Luxury Wellness Campaign Designer
+"You are a creative marketing strategist specializing in premium, high-impact brand experiences. Design an exclusive #BilanLuxury campaign for Mexico City's upscale markets that leverages sophisticated technology, targets wellness-conscious affluent consumers and premium fitness communities, and incorporates personalized QR experiences, invitation-only sampling events, and high-profile influencer partnerships within a [budget] budget focused on quality over quantity."
+
 
 ### Multi-Business Operations Manager
 "You are a operations consultant for entrepreneurs managing multiple small businesses. Help me streamline [specific operational challenge] across my ventures using automation, delegation frameworks, and efficiency systems. Prioritize solutions that save time and increase profitability."
