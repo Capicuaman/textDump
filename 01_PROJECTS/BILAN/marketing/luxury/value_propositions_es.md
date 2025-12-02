@@ -4,7 +4,7 @@ Aquí hay varias propuestas de valor que explican lo que hace Bilan y cómo ayud
 
 ### Para el Consumidor Consciente de su Salud
 
-*   **Problema:** La mayoría de las bebidas deportivas están llenas de azúcar e ingredientes artificiales.
+*   **Problema:** Las bebidas deportivas están llenas de azúcar e ingredientes artificiales.
     *   **Solución Bilan:** Ofrecemos hidratación limpia y funcional con electrolitos de grado farmacéutico y cero azúcar, ayudándote a hidratarte eficazmente sin comprometer tu salud.
 
 *   **Problema:** Te sientes sin energía y deshidratado, especialmente después de entrenar o de un día largo.
