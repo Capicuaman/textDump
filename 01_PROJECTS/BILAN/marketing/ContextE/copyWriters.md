@@ -1,20 +1,6 @@
+# Copywriters
 
-## Marketing
-
-### copy creation
-
-### Prompt
-
-crystal clear value proposition
-what we do and how it helps them in 5 seconds
-
-top benefits
-pain points it 
-
-write a list of headline in the style of Dan Kenedy, alex hormozi, John Carlton Gary for a product with these benefits, that solves these pain points and rank them by conversion potential
-
-
-https://www.youtube.com/@TheJimmyReilly/shorts
+## Alex Hormozi
 
 Alex Hormozi's copywriting style focuses on clear, direct, and persuasive communication that connects deeply with the audience's pain points while offering a compelling solution. Some examples and principles of his copy include:
 
@@ -54,6 +40,7 @@ Here are 10 short headline examples inspired by Alex Hormozi's style, which focu
 
 These headlines follow Hormozi’s principles: they are direct, outcome-focused, address specific audience pain points or goals, and suggest a clear transformation or benefit. They avoid fluff and keep the message crystal clear to grab attention quickly
 
+## Dan Kennedy
 
 Dan Kennedy's copywriting examples and techniques you can train your AI on include these key elements:
 
@@ -100,6 +87,7 @@ How to Get More Results with Less Effort Starting Today
 
 These headlines reflect Dan Kennedy’s proven tactics: clear benefit promises, curiosity, addressing pain points, social proof, and urgent calls to action. They showcase the direct, benefit-focused, and emotionally compelling style typical of Kennedy’s direct response copywriting.
 
+## John Carlton
 
 Here are examples and key elements of John Carlton and Gary Halbert copywriting styles you can use to train your AI:
 
