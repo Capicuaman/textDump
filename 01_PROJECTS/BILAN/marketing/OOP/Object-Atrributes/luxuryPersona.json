@@ -1,0 +1,25 @@
+
+{
+  "audiencePersonas": [
+    {
+      "personaName": "Sofía, the Modern Mexican Connoisseur",
+      "demographics": {
+        "age": "35-50",
+        "occupation": "Successful Entrepreneur, High-Level Executive, or Spouse of a High-Net-Worth Individual",
+        "location": "Mexico City (Polanco, Lomas de Chapultepec), Monterrey (San Pedro Garza García), Guadalajara",
+        "income": "High to Very High"
+      },
+      "psychographics": {
+        "goals": "Invest in her health and well-being as a status symbol, seek out the best products and experiences, maintain a sophisticated and aspirational lifestyle.",
+        "challenges": "Finding brands that meet her high standards of quality, purity, and design; cutting through the noise of mass-market wellness trends.",
+        "values": "Quality, craftsmanship, brand heritage, exclusivity, authenticity, and beautiful design.",
+        "mediaConsumption": {
+          "socialMedia": "Instagram, LinkedIn, and private social clubs.",
+          "publications": "Vogue México, Robb Report, Forbes México, and high-end travel and lifestyle magazines.",
+          "influencers": "Follows a curated list of 'taste-makers' in Mexico: socialites, top architects, renowned chefs, and successful entrepreneurs who embody a sophisticated lifestyle."
+        }
+      },
+      "needs": "A wellness product that is not only effective but also beautifully designed and packaged; a brand that aligns with her values and reflects her status."
+    }
+  ]
+}

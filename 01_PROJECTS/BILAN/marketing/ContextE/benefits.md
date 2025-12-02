@@ -10,3 +10,8 @@
      stamina, helping you stay sharp and productive.
    * Premium Quality: Crafted with the purest pharmaceutical-grade ingredients for a
      sophisticated, healthy lifestyle.
+   * Biodregadable package
+   * Keto
+   * Paleo
+   * no gluten
+   * zero carbohydrates 
