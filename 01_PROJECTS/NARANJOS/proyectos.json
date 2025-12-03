@@ -1,0 +1,108 @@
+{
+  "apartments": [
+    {
+      "id": "apt-001",
+      "name": "Apartamento A",
+      "address": "Calle Falsa 123, Piso 1",
+      "rooms": [
+        {
+          "name": "Cocina",
+          "type": "kitchen",
+          "floor_level": 1,
+          "area_sqm": 8.5,
+          "features": ["encimera", "fregadero", "ventana"],
+          "appliances": ["nevera", "horno", "microondas", "lavavajillas"],
+          "storage": ["mueble superior", "mueble inferior", "pantry"],
+          "notes": "Espacio para una mesa pequeña. Tomas eléctricas adicionales en la pared oeste."
+        },
+        {
+          "name": "Baño Principal",
+          "type": "bathroom",
+          "floor_level": 1,
+          "area_sqm": 4.2,
+          "features": ["ducha", "lavabo", "inodoro", "espejo con luz"],
+          "fixtures": ["grifería monomando", "barandilla en ducha"],
+          "storage": ["mueble lavabo", "estantería sobre inodoro"],
+          "notes": "Revisar junta de la ducha, ligera humedad en la esquina."
+        },
+        {
+          "name": "Salón",
+          "type": "living_room",
+          "floor_level": 1,
+          "area_sqm": 16.0,
+          "features": ["balcón", "iluminación empotrada"],
+          "furniture": ["sofá 3 plazas", "mesa de centro", "mueble TV"],
+          "storage": ["estantería empotrada"],
+          "notes": "Buena entrada de luz natural por la tarde."
+        },
+        {
+          "name": "Dormitorio Principal",
+          "type": "bedroom",
+          "floor_level": 1,
+          "area_sqm": 12.0,
+          "features": ["armario empotrado", "ventana"],
+          "furniture": ["cama doble 160x200", "mesitas de noche"],
+          "storage": ["armario empotrado"],
+          "notes": "Puerta corredera hacia el pasillo."
+        }
+      ]
+    },
+    {
+      "id": "apt-002",
+      "name": "Apartamento B",
+      "address": "Avenida Siempre Viva 45, Piso 3",
+      "rooms": [
+        {
+          "name": "Cocina / Comedor",
+          "type": "kitchen",
+          "floor_level": 3,
+          "area_sqm": 10.0,
+          "features": ["isla central", "campana extractora", "ventana grande"],
+          "appliances": ["nevera", "placa vitrocerámica", "horno", "lavadora"],
+          "storage": ["mueble alto", "mueble bajo", "cajonera"],
+          "notes": "Isla con enchufe integrado; espacio para 2 taburetes."
+        },
+        {
+          "name": "Baño",
+          "type": "bathroom",
+          "floor_level": 3,
+          "area_sqm": 3.8,
+          "features": ["bañera", "lavabo", "inodoro"],
+          "fixtures": ["grifería termostática"],
+          "storage": ["armario espejo"],
+          "notes": "Cortina de baño a renovar."
+        },
+        {
+          "name": "Salón Principal",
+          "type": "living_room",
+          "floor_level": 3,
+          "area_sqm": 18.5,
+          "features": ["terraza", "aire acondicionado"],
+          "furniture": ["sofa esquinero", "mesa comedor 4 plazas", "mueble TV"],
+          "storage": ["mueble auxiliar"],
+          "notes": "Terraza con vistas; proteger suelos durante eventos."
+        },
+        {
+          "name": "Dormitorio 1",
+          "type": "bedroom",
+          "floor_level": 3,
+          "area_sqm": 11.0,
+          "features": ["armario", "ventana"],
+          "furniture": ["cama 135x190", "escritorio"],
+          "storage": ["cajonera bajo cama"],
+          "notes": "Ideal como habitación de invitados o despacho."
+        },
+        {
+          "name": "Dormitorio 2",
+          "type": "bedroom",
+          "floor_level": 3,
+          "area_sqm": 9.5,
+          "features": ["ventana"],
+          "furniture": ["cama individual", "estantería"],
+          "storage": [],
+          "notes": "Habitación más pequeña; buena para niño o almacenamiento."
+        }
+      ]
+    }
+  ]
+}
