@@ -1,0 +1,42 @@
+{
+  "description": "Cinematic shot of a minimalist, modern study where the air is thick with a soft, visual 'brain fog,' making everything slightly blurry and out of focus. On a sleek desk sits a glass of water. A scoop of BILAN electrolyte powder is added, and as it dissolves, it doesn't just mix—it sends out a shimmering, visible wave of clarity. This wave expands, pushing the fog away. As it passes, blurry book titles on the shelves snap into sharp focus, jumbled papers on the desk magically arrange themselves into neat stacks, and complex, glowing architectural blueprints materialize and organize themselves in mid-air. The entire room transforms from a muted, confusing space into a bright, hyper-focused, and serene environment of calm energy.",
+
+  "style": "photorealistic minimalism, conceptual, clean aesthetic, cinematic",
+
+  "camera": "Starts with a shallow depth of field, focused tightly on the glass with a blurry background. As the clarity wave expands, the depth of field deepens, and the camera slowly pulls back to reveal the entire sharpened, organized room.",
+
+  "lighting": "Transitions from soft, diffused, and slightly dim lighting (representing the fog) to bright, crisp, and clean natural light, as if the sun has just broken through clouds.",
+
+  "environment": "A minimalist, modern study with a sleek desk, bookshelves, and a large window. Initially blurry and muted, it becomes sharp, bright, and organized.",
+
+  "elements": [
+    "A glass of water on a sleek, dark wood desk.",
+    "BILAN electrolyte powder dissolving with a clarifying effect.",
+    "A visible, shimmering 'wave of clarity' emanating from the glass.",
+    "Bookshelves with initially blurry titles that snap into sharp focus.",
+    "Jumbled, out-of-focus papers that magically stack themselves neatly.",
+    "Floating, glowing holographic diagrams and data streams that appear and organize themselves.",
+    "Dust motes in the air that are initially blurry and then become crisp in the sharp light."
+  ],
+
+  "motion": "The powder dissolves, triggering a ripple effect. The 'clarity wave' expands outwards from the glass. The environment transforms in sync with the wave: blurriness sharpens, chaos becomes order, and complex information becomes clear and structured.",
+
+  "ending": "A pristine glass of BILAN sits on the desk in the foreground, perfectly clear. In the background, the study is now a bright, hyper-focused, and serene workspace, with organized diagrams glowing softly in the air.",
+
+  "text": "none",
+
+  "keywords": [
+    "16:9",
+    "brain fog",
+    "clarity",
+    "focus",
+    "mental performance",
+    "electrolytes",
+    "hydration",
+    "minimalist",
+    "cinematic",
+    "transformation",
+    "calm energy",
+    "no text"
+  ]
+}

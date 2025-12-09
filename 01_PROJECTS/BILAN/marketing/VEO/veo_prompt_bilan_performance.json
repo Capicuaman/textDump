@@ -1,0 +1,44 @@
+{
+  "description": "Cinematic shot in a gritty, high-tech gym. An exhausted athlete slumps over, sweat dripping in slow motion onto the concrete floor. A sleek shaker bottle with BILAN powder is violently shaken once. The cap doesn't open—it bursts with a contained explosion of pure energy. Streams of glowing, electric light (representing electrolytes) shoot out and wrap around the athlete's arms and legs. In a rapid, magical sequence, holographic muscle fibers ignite and contract with power, sweat droplets reverse and are reabsorbed as glowing particles, and the athlete's posture transforms from fatigued to explosive. They complete a powerful, gravity-defying kettlebell swing as the energy fully absorbs into their body.",
+
+  "style": "cinematic, high-contrast, dynamic realism, gritty",
+
+  "camera": "Starts with an extreme close-up on a bead of sweat. Pulls back to a medium shot of the exhausted athlete. Rapid zoom into the shaker bottle as it's shaken, followed by a dynamic 360-degree orbital shot as the energy transforms the athlete. Ends on a powerful, low-angle hero shot.",
+
+  "lighting": "Dramatic, high-contrast gym lighting with deep shadows. The BILAN energy explosion introduces a vibrant, electric blue or orange light that becomes the key light source, tracing the athlete's musculature.",
+
+  "environment": "A modern, industrial-style gym at dawn or dusk. Concrete floors, dark metal racks, high-end barbells, and kettlebells in the background. The air is hazy with chalk dust.",
+
+  "elements": [
+    "A physically defined, exhausted athlete (sweating heavily).",
+    "A sleek, matte-black shaker bottle.",
+    "BILAN powder inside the bottle.",
+    "Visible, crackling streams of electric light representing electrolytes.",
+    "Holographic overlays of muscle fibers igniting and contracting.",
+    "Sweat droplets reversing their fall and turning into light particles.",
+    "A heavy kettlebell lifting off the ground with explosive force.",
+    "Subtle cracks of energy forming on the concrete floor around the athlete's feet."
+  ],
+
+  "motion": "Starts in extreme slow-motion (sweat drip). A single, violent shake of the bottle triggers a hyper-fast, explosive transformation. The energy transfer is rapid and electric. The final athletic movement (kettlebell swing) is captured in dynamic slow-motion to emphasize power.",
+
+  "ending": "The athlete holds the peak of the kettlebell swing in a powerful, frozen moment. Their muscles are defined, and a subtle, electric glow fades from their skin. The BILAN shaker bottle sits in the foreground, looking cool and potent.",
+
+  "text": "none",
+
+  "keywords": [
+    "16:9",
+    "athletic performance",
+    "power",
+    "energy burst",
+    "electrolytes",
+    "cinematic",
+    "high-energy",
+    "muscle activation",
+    "sweat",
+    "gym aesthetic",
+    "dynamic",
+    "no text",
+    "transformation"
+  ]
+}
