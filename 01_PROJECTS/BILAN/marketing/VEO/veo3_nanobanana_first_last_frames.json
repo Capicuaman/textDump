@@ -1,0 +1,154 @@
+{
+  "title": "VEO 3 - BILAN Serve/Mix/Drink - First & Last Frame Prompts",
+  "product": "BILAN Electrolyte Powder",
+  "format": "16:9",
+  "overall_style": "photorealistic, minimalist modern aesthetic, bright natural lighting, clean kitchen environment, white and neutral accent colors",
+
+  "section_1_serve": {
+    "duration": "5-7 seconds",
+    "description": "Opening a fresh BILAN electrolyte pouch and measuring the powder",
+
+    "first_frame": {
+      "frame_description": "A pristine BILAN electrolyte pouch rests on a clean white marble countertop. The pouch is sealed, featuring clean BILAN branding. To the right sits a clear glass sports bottle (empty), and a metallic measuring spoon. Soft morning light streams from the left, creating subtle shadows. The composition is balanced, centered on the pouch. Everything is still and untouched.",
+      "key_elements": [
+        "Sealed BILAN electrolyte pouch (branding visible)",
+        "Empty transparent sports bottle with white cap",
+        "Metallic measuring spoon (3g capacity)",
+        "White marble countertop with subtle gray veining",
+        "Soft natural lighting from window left side",
+        "Minimalist kitchen background (slightly out of focus)",
+        "No motion - completely still frame"
+      ],
+      "camera": "Wide macro shot, slightly elevated angle (30 degrees), centered composition",
+      "lighting": "Bright natural window light from left, soft shadows to the right, no harsh contrasts",
+      "color_palette": "whites, light grays, stainless steel, clean neutral tones"
+    },
+
+    "last_frame": {
+      "frame_description": "The BILAN electrolyte pouch is now open, tilted at 45 degrees, with fine white powder being spooned out. The measuring spoon is mid-scoop inside the pouch, capturing exactly 3g of powder. A small mound of powder is visible on the spoon. The sports bottle remains in the same position but now the cap is removed and placed beside it. The lighting is identical, maintaining continuity.",
+      "key_elements": [
+        "Open BILAN electrolyte pouch tilted 45 degrees",
+        "Measuring spoon inside pouch with mounded powder",
+        "Fine white electrolyte powder texture visible",
+        "Sports bottle cap now removed and placed on counter",
+        "Same marble countertop and background",
+        "Identical lighting and shadows",
+        "Sense of action paused mid-motion"
+      ],
+      "camera": "Same wide macro shot, same angle, same framing - only elements have moved",
+      "lighting": "Identical to first frame - bright natural window light from left",
+      "color_palette": "Same as first frame with bright white powder visible"
+    }
+  },
+
+  "section_2_mix": {
+    "duration": "5-7 seconds",
+    "description": "Adding water and shaking the bottle to create the electrolyte drink",
+
+    "first_frame": {
+      "frame_description": "Close-up macro shot of the clear sports bottle with 3g of white BILAN electrolyte powder settled at the bottom. The bottle is upright and stationary on the white marble counter. A glass pitcher of crystal-clear water is positioned to the left, ready to pour. The powder sits in a small concentrated pile at the bottle's base. Everything is still. The background shows the same minimalist kitchen, slightly blurred.",
+      "key_elements": [
+        "Clear sports bottle with small pile of white powder at bottom",
+        "Powder completely dry and settled",
+        "Glass pitcher filled with clear water (left side)",
+        "White marble counter surface",
+        "Bottle is perfectly upright and still",
+        "Natural bright lighting from window",
+        "No liquid in bottle yet",
+        "Clean, pristine aesthetic"
+      ],
+      "camera": "Tight macro shot, eye-level with bottle, centered on bottle base where powder sits",
+      "lighting": "Bright natural light, slight backlight through water pitcher showing crystal clarity",
+      "color_palette": "crystal clear transparency, white powder, white marble, silver bottle cap"
+    },
+
+    "last_frame": {
+      "frame_description": "The same bottle, now completely filled with clear electrolyte solution, is captured mid-shake in motion blur. The bottle is tilted at approximately 60 degrees, held by a hand (only fingers visible at edge of frame). The liquid inside shows a perfect swirling vortex with tiny bubbles throughout. The solution is crystal clear and translucent. Water droplets glisten on the outside of the bottle. The marble counter is the same, the pitcher has moved back slightly. Sense of dynamic motion.",
+      "key_elements": [
+        "Sports bottle tilted 60 degrees mid-shake",
+        "Fingers visible gripping bottle at frame edge",
+        "Uniform crystal clear electrolyte solution filling bottle",
+        "Swirling vortex pattern inside liquid",
+        "Micro-bubbles throughout the solution",
+        "Water droplets on exterior of bottle",
+        "Slight motion blur on bottle (showing shake action)",
+        "Pitcher moved back, out of focus",
+        "Dynamic energy captured"
+      ],
+      "camera": "Same macro framing but bottle now angled, slight motion blur on moving elements",
+      "lighting": "Same natural bright light, now refracting through the clear liquid creating soft glow",
+      "color_palette": "Crystal clear translucent liquid, white marble, water droplet highlights"
+    }
+  },
+
+  "section_3_drink": {
+    "duration": "5-7 seconds",
+    "description": "Taking a refreshing drink from the prepared electrolyte beverage",
+
+    "first_frame": {
+      "frame_description": "Medium shot of a person's torso and hand reaching toward the BILAN electrolyte bottle on the marble counter. The bottle is filled with the clear electrolyte drink, cap removed, standing upright. The person's hand is extended toward the bottle but not yet touching it. They're wearing a light gray athletic shirt. The kitchen background shows morning light through sheer curtains. Composition shows anticipation of the action.",
+      "key_elements": [
+        "Sports bottle filled with clear BILAN electrolyte drink",
+        "Bottle upright on marble counter, cap off",
+        "Person's hand reaching toward bottle (not touching yet)",
+        "Light gray athletic clothing visible",
+        "Person's face partially visible but out of focus",
+        "Morning light through curtains in background",
+        "Clean, healthy, active lifestyle aesthetic",
+        "Moment of anticipation before drinking"
+      ],
+      "camera": "Medium shot, slightly angled (20 degrees from straight-on), bottle in lower third of frame",
+      "lighting": "Soft bright natural morning light, gentle and inviting",
+      "color_palette": "crystal clear drink, light gray athletic wear, white/cream tones, soft natural colors"
+    },
+
+    "last_frame": {
+      "frame_description": "Close-up shot of the same person mid-drink. The bottle is tilted up at 45 degrees, pressed to their lips, with the clear liquid visible inside as the level has dropped slightly. Their eyes are closed in a moment of refreshment and satisfaction. A subtle smile is visible at the corner of their mouth. Natural light illuminates their face from the side, creating a healthy glow. The background is the same but more blurred, focusing attention on the moment of hydration. Droplets of condensation visible on the bottle exterior.",
+      "key_elements": [
+        "Person drinking from bottle, eyes closed contentedly",
+        "Bottle tilted 45 degrees pressed to lips",
+        "Liquid level visibly lower in bottle",
+        "Subtle smile of satisfaction",
+        "Side-lighting creating healthy glow on face",
+        "Condensation droplets on bottle",
+        "Expression of refreshment and relief",
+        "Background heavily blurred (shallow depth of field)",
+        "Feeling of satisfaction and replenishment"
+      ],
+      "camera": "Closer medium-close shot, slight upward angle emphasizing the refreshment moment",
+      "lighting": "Beautiful natural side-light on face, soft and flattering, evoking health and vitality",
+      "color_palette": "warm skin tones, crystal clear drink, soft grays, natural light highlights"
+    }
+  },
+
+  "technical_notes": [
+    "All frames are 16:9 aspect ratio",
+    "Maintain consistent lighting and environment across all sections for cohesion",
+    "The BILAN electrolyte powder should be pure white - clean and natural",
+    "First frames are all completely still - no motion blur",
+    "Last frames show captured moments of action - slight motion blur acceptable",
+    "Camera position changes between sections but stays consistent within each section",
+    "Same marble counter and kitchen environment throughout for brand consistency",
+    "No text overlays - clean product focus",
+    "VEO 3 will interpolate the motion between first and last frames"
+  ],
+
+  "color_grading_notes": {
+    "overall_tone": "Clean, bright, healthy, natural",
+    "highlights": "Slightly lifted for airy feel",
+    "shadows": "Soft, not crushed",
+    "saturation": "Natural, slightly desaturated for premium feel",
+    "white_tones": "Pure, clean white powder - not artificial looking",
+    "skin_tones": "Warm, healthy, well-hydrated appearance"
+  },
+
+  "continuity_checklist": [
+    "Same marble counter in all sections",
+    "Same kitchen background and window light direction",
+    "Same sports bottle design and size",
+    "Consistent time of day (morning light)",
+    "Same person in drink section as hand in mix section",
+    "Athletic/active lifestyle aesthetic maintained",
+    "BILAN branding visible but not overpowering"
+  ]
+}

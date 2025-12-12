@@ -1,0 +1,32 @@
+{
+  "title": "Simple Bilan Usage - Veo 3 Prompts",
+  "format": "16:9",
+  "style": "photorealistic, minimalist, clean aesthetic, bright natural lighting",
+
+  "scene_1_add_powder": {
+    "duration": "5-7 seconds",
+    "prompt": "A cinematic macro shot of white electrolyte powder being spooned into a clear sports bottle. The powder cascades down in slow motion, showing its fine texture. Minimalist modern kitchen background with bright natural lighting. Clean aesthetic, photorealistic, 16:9 format."
+  },
+
+  "scene_2_mix": {
+    "duration": "5-7 seconds",
+    "prompt": "Crystal clear water is poured into a sports bottle containing white powder, creating a swirling vortex. The bottle is sealed and shaken vigorously in slow motion, showing the liquid mixing and dissolving. Bright natural lighting, minimalist kitchen setting. Dynamic and refreshing, photorealistic, 16:9 format."
+  },
+
+  "scene_3_drink": {
+    "duration": "5-7 seconds",
+    "prompt": "A person takes a refreshing drink from a clear sports bottle filled with electrolyte water. Their face shows satisfaction and refreshment. Bright natural light in a minimalist modern environment. Clean aesthetic, calm and revitalizing mood, photorealistic, 16:9 format."
+  },
+
+  "combined_single_video": {
+    "duration": "20-30 seconds",
+    "prompt": "Three scenes showing electrolyte drink preparation: 1) White powder being spooned into a clear sports bottle in slow motion, 2) Water poured and bottle shaken vigorously creating a swirling vortex, 3) A person drinking from the bottle with a refreshed expression. Minimalist modern kitchen, bright natural lighting, clean aesthetic, photorealistic, 16:9 format."
+  },
+
+  "notes": [
+    "Use the separate scene prompts if you want more control over each shot",
+    "Use the combined prompt for a single continuous video",
+    "Each scene is designed to be simple and easy to generate with Veo 3",
+    "No text overlays in the prompts - add those in post-production if needed"
+  ]
+}
