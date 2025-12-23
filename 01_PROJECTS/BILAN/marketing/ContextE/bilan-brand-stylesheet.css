@@ -1,0 +1,281 @@
+/* ===================================
+   BILAN BRAND STYLESHEET REFERENCE
+   ================================= */
+
+/*
+   Brand Identity: BILAN Electrolytes
+   Design System: Mobile-first, clean, scientific, professional
+   Primary Use: Product marketing and educational content
+*/
+
+/* ===================================
+   COLOR PALETTE
+   ================================= */
+:root {
+    /* Primary Colors */
+    --bilan-primary: #0d6efd;          /* Blue accent (from Bootstrap) */
+    --bilan-text-dark: #111;           /* Almost black for text */
+    --bilan-background: #fff;          /* Clean white background */
+
+    /* Neutral Colors */
+    --bilan-gray-50: #f8f9fa;
+    --bilan-gray-100: #e9ecef;
+    --bilan-gray-200: #dee2e6;
+    --bilan-gray-300: #ced4da;
+    --bilan-gray-600: #6c757d;
+
+    /* Borders & Shadows */
+    --bilan-border: rgba(0,0,0,.06);
+    --bilan-border-light: rgba(0,0,0,.03);
+
+    /* Typography Scale */
+    --base-font-min: 18px;             /* Mobile minimum */
+    --base-font-max: 22px;             /* Desktop maximum */
+    --max-width: 1100px;               /* Content container max width */
+}
+
+/* ===================================
+   TYPOGRAPHY SYSTEM
+   ================================= */
+
+/* Base Font Settings */
+html {
+    font-size: clamp(var(--base-font-min), 4.5vw, var(--base-font-max));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--bilan-text-dark);
+    margin: 0;
+    background-color: var(--bilan-background);
+}
+
+/* Heading Scale (Mobile-First, Fluid) */
+h1 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.6rem, 7vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: clamp(1.15rem, 4vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+    margin-bottom: 0.5rem;
+}
+
+/* Body Text */
+p {
+    margin-bottom: 1rem;
+    font-size: clamp(0.98rem, 3vw, 1.15rem);
+    line-height: 1.6;
+}
+
+/* Lists */
+ul {
+    padding-left: 1.1rem;
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.0rem, 3.2vw, 1.25rem);
+    line-height: 1.5;
+}
+
+/* ===================================
+   LAYOUT SYSTEM
+   ================================= */
+
+/* Main Container */
+.app-container {
+    padding: 1rem 1rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .app-container {
+        padding: 1.5rem 2rem 2.5rem;
+    }
+}
+
+/* ===================================
+   COMPONENT STYLES
+   ================================= */
+
+/* Accordion (BILAN's primary UI pattern) */
+.accordion-item {
+    margin-bottom: 0.6rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--bilan-border);
+    background: var(--bilan-background);
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: clamp(1.05rem, 3.5vw, 1.4rem);
+    line-height: 1.2;
+    touch-action: manipulation;
+    color: var(--bilan-text-dark);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.accordion-body {
+    padding: 1rem;
+}
+
+/* Cards */
+.card {
+    background: var(--bilan-background);
+    border: 1px solid var(--bilan-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--bilan-primary);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0257d5;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+/* ===================================
+   UTILITY CLASSES
+   ================================= */
+
+/* Spacing */
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-muted { color: var(--bilan-gray-600); }
+.text-bold { font-weight: 700; }
+
+/* ===================================
+   ACCESSIBILITY
+   ================================= */
+
+/* Ensure interactive elements have good focus states */
+*:focus {
+    outline: 2px solid var(--bilan-primary);
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid var(--bilan-primary);
+    outline-offset: 2px;
+}
+
+/* High contrast for links */
+a {
+    color: var(--bilan-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================
+   RESPONSIVE BREAKPOINTS
+   ================================= */
+
+/* Mobile: Default (up to 767px) */
+/* Tablet: 768px and up */
+/* Desktop: 1024px and up */
+/* Large: 1200px and up */
+
+@media (min-width: 768px) {
+    h1 { margin-bottom: 1.25rem; }
+    .accordion-body li { margin-bottom: 0.9rem; }
+}
+
+/* ===================================
+   BRAND GUIDELINES
+   ================================= */
+
+/*
+BILAN Brand Principles:
+1. Mobile-First: Optimize for mobile screens first
+2. Readability: Large, legible fonts (18px+ base)
+3. Clean Design: Minimal decoration, focus on content
+4. Scientific: Professional, evidence-based aesthetic
+5. Accessible: High contrast, clear focus states
+6. Responsive: Fluid typography and spacing
+7. Touch-Friendly: Large touch targets (44px+ recommended)
+8. Performance: Lightweight, fast-loading
+
+Color Usage:
+- Use #111 for body text (not pure black)
+- Use #0d6efd for interactive elements
+- Keep backgrounds white or very light gray
+- Avoid bright, saturated colors
+
+Typography:
+- Use Arial/Helvetica for all text
+- Scale font sizes with clamp() for fluidity
+- Line height: 1.5-1.6 for body, 1.2 for headings
+- Letter spacing: Slightly negative for large headings
+
+Spacing:
+- Use consistent padding (1rem mobile, 1.5rem+ tablet)
+- Margins: 0.5rem, 1rem, 1.5rem system
+- Component spacing: 0.6rem - 1rem between elements
+*/

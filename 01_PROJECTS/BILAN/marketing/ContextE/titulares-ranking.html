@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rankings de Titulares de Marketing - BILAN Electrolytes">
+    <title>Top 15 Titulares BILAN | Marketing Headlines</title>
+    <style>
+        /* BILAN Brand Styling - Mobile First */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bilan-primary: #0d6efd;
+            --bilan-text: #111;
+            --bilan-background: #fff;
+            --bilan-gray-light: #f8f9fa;
+            --bilan-border: rgba(0,0,0,.06);
+            --base-font-min: 18px;
+            --base-font-max: 22px;
+        }
+
+        html {
+            font-size: clamp(var(--base-font-min), 4.5vw, var(--base-font-max));
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--bilan-text);
+            background-color: var(--bilan-background);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        header {
+            background: var(--bilan-background);
+            border-bottom: 3px solid var(--bilan-primary);
+            color: var(--bilan-text);
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: clamp(1.6rem, 7vw, 3rem);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            color: var(--bilan-text);
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 1rem 1rem 2rem;
+        }
+
+        .intro {
+            background: var(--bilan-gray-light);
+            border-left: 4px solid var(--bilan-primary);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .intro p {
+            color: var(--bilan-text);
+            font-size: clamp(0.98rem, 3vw, 1.15rem);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .headline-card {
+            background: var(--bilan-background);
+            border: 1px solid var(--bilan-border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 0.6rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .headline-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .rank-badge {
+            display: inline-block;
+            background: var(--bilan-primary);
+            color: white;
+            font-weight: bold;
+            font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.375rem;
+            margin-bottom: 0.75rem;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .rank-badge.top-3 {
+            background: #0257d5;
+        }
+
+        .headline-title {
+            font-size: clamp(1.05rem, 3.5vw, 1.4rem);
+            font-weight: 700;
+            color: var(--bilan-text);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .headline-reason {
+            background: var(--bilan-gray-light);
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            border-left: 3px solid var(--bilan-border);
+            font-size: clamp(0.98rem, 3vw, 1.15rem);
+            color: var(--bilan-text);
+            line-height: 1.5;
+        }
+
+        .reason-label {
+            font-weight: 600;
+            color: var(--bilan-primary);
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: var(--bilan-gray-light);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid var(--bilan-border);
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+            min-width: 90px;
+        }
+
+        .stat-number {
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 700;
+            color: var(--bilan-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            color: var(--bilan-text);
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: var(--bilan-gray-light);
+            border: 1px solid var(--bilan-border);
+            border-radius: 0.375rem;
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            color: var(--bilan-text);
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: Arial, Helvetica, sans-serif;
+            touch-action: manipulation;
+        }
+
+        .filter-btn:hover {
+            background: var(--bilan-primary);
+            color: white;
+            border-color: var(--bilan-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--bilan-primary);
+            color: white;
+            border-color: var(--bilan-primary);
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--bilan-gray-light);
+            border-top: 1px solid var(--bilan-border);
+            color: var(--bilan-text);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: clamp(0.9rem, 2.8vw, 1.05rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            color: var(--bilan-primary);
+            text-decoration: none;
+        }
+
+        .brand:hover {
+            text-decoration: underline;
+        }
+
+        /* Tablet and Desktop */
+        @media (min-width: 768px) {
+            .content {
+                padding: 1.5rem 2rem 2.5rem;
+            }
+
+            .headline-card {
+                padding: 1.5rem;
+            }
+
+            .stats-bar {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Top 15 Titulares de Marketing</h1>
+            <p>BILAN Electrolytes - Rankings por Efectividad</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Estrategia de Titulares:</strong> Estos titulares han sido clasificados según su capacidad para captar atención, abordar puntos de dolor y comunicar beneficios claros de forma instantánea.</p>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Titulares</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Top Ranked</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Sin Azúcar</span>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterAll()">Todos</button>
+                <button class="filter-btn" onclick="filterTop(3)">Top 3</button>
+                <button class="filter-btn" onclick="filterTop(5)">Top 5</button>
+                <button class="filter-btn" onclick="filterTop(10)">Top 10</button>
+            </div>
+
+            <div id="headlines-container">
+                <!-- Headline 1 -->
+                <div class="headline-card" data-rank="1">
+                    <span class="rank-badge top-3">#1</span>
+                    <div class="headline-title">
+                        ¿Cansado de Bebidas Deportivas Azucaradas? Obtén Energía Limpia e Instantánea.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Aborda directamente un punto de dolor importante y ofrece un beneficio claro e inmediato. El formato de pregunta involucra al lector directamente.
+                    </div>
+                </div>
+
+                <!-- Headline 2 -->
+                <div class="headline-card" data-rank="2">
+                    <span class="rank-badge top-3">#2</span>
+                    <div class="headline-title">
+                        Desbloquea el Rendimiento Máximo. El Secreto es la Hidratación de Grado Farmacéutico.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Utiliza palabras poderosas ("Desbloquea", "Secreto") y posiciona el producto como una solución premium y de alta eficacia para un deseo central.
+                    </div>
+                </div>
+
+                <!-- Headline 3 -->
+                <div class="headline-card" data-rank="3">
+                    <span class="rank-badge top-3">#3</span>
+                    <div class="headline-title">
+                        Elimina la Fatiga y la Niebla Mental en Minutos. Garantizado.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Aborda dos puntos de dolor importantes (fatiga, niebla mental) con una promesa de velocidad y una garantía poderosa.
+                    </div>
+                </div>
+
+                <!-- Headline 4 -->
+                <div class="headline-card" data-rank="4">
+                    <span class="rank-badge">#4</span>
+                    <div class="headline-title">
+                        El Secreto de Hidratación de los Atletas de Élite. Sin Azúcar, Puros Resultados.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Aprovecha la prueba social y la aspiración ("Atletas de Élite") al tiempo que establece claramente la propuesta de venta única (sin azúcar).
+                    </div>
+                </div>
+
+                <!-- Headline 5 -->
+                <div class="headline-card" data-rank="5">
+                    <span class="rank-badge">#5</span>
+                    <div class="headline-title">
+                        Deja de Sentirte Lento. Rehidrátate Más Rápido que Solo con Agua.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Una orden directa que habla de un sentimiento común, ofreciendo un beneficio respaldado científicamente que es fácil de entender.
+                    </div>
+                </div>
+
+                <!-- Headline 6 -->
+                <div class="headline-card" data-rank="6">
+                    <span class="rank-badge">#6</span>
+                    <div class="headline-title">
+                        Piensa Más Claro, Trabaja Más Inteligente. La Bebida Definitiva para el Cerebro.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Se centra en los beneficios cognitivos, atrayendo a profesionales y estudiantes al prometer un rendimiento mental mejorado.
+                    </div>
+                </div>
+
+                <!-- Headline 7 -->
+                <div class="headline-card" data-rank="7">
+                    <span class="rank-badge">#7</span>
+                    <div class="headline-title">
+                        Por Qué el Agua No es Suficiente para una Verdadera Hidratación.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Crea curiosidad y posiciona el producto como una mejora necesaria para un hábito universal, educando al consumidor.
+                    </div>
+                </div>
+
+                <!-- Headline 8 -->
+                <div class="headline-card" data-rank="8">
+                    <span class="rank-badge">#8</span>
+                    <div class="headline-title">
+                        Conquista tus Entrenamientos, No tu Dieta. Cero Azúcar, Cero Basura.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Se dirige directamente a la audiencia fitness, conectando el rendimiento atlético con ingredientes saludables y limpios.
+                    </div>
+                </div>
+
+                <!-- Headline 9 -->
+                <div class="headline-card" data-rank="9">
+                    <span class="rank-badge">#9</span>
+                    <div class="headline-title">
+                        La Forma Más Rápida de Recuperarse de un Día Difícil.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Amplía el atractivo más allá de los atletas a cualquiera que experimente agotamiento físico o mental, ofreciendo una solución rápida.
+                    </div>
+                </div>
+
+                <!-- Headline 10 -->
+                <div class="headline-card" data-rank="10">
+                    <span class="rank-badge">#10</span>
+                    <div class="headline-title">
+                        Hidratación de Élite para los Inquebrantables.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Utiliza un lenguaje aspiracional ("Élite", "Inquebrantables") para atraer al consumidor premium y consciente de la salud.
+                    </div>
+                </div>
+
+                <!-- Headline 11 -->
+                <div class="headline-card" data-rank="11">
+                    <span class="rank-badge">#11</span>
+                    <div class="headline-title">
+                        Deshazte de la Basura Artificial. Alimenta tu Cuerpo con lo Mejor.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Habla directamente del punto de dolor del consumidor consciente de la salud con respecto a los aditivos artificiales y posiciona el producto como superior.
+                    </div>
+                </div>
+
+                <!-- Headline 12 -->
+                <div class="headline-card" data-rank="12">
+                    <span class="rank-badge">#12</span>
+                    <div class="headline-title">
+                        Tu Ventaja Injusta Contra la Deshidratación.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Enmarca el producto como una ventaja competitiva, lo cual es un poderoso motivador para individuos orientados al rendimiento.
+                    </div>
+                </div>
+
+                <!-- Headline 13 -->
+                <div class="headline-card" data-rank="13">
+                    <span class="rank-badge">#13</span>
+                    <div class="headline-title">
+                        La Forma Más Limpia de Restaurar tu Energía.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Simple, claro y orientado a los beneficios. "Más limpia" comunica eficazmente la ausencia de azúcar e ingredientes artificiales.
+                    </div>
+                </div>
+
+                <!-- Headline 14 -->
+                <div class="headline-card" data-rank="14">
+                    <span class="rank-badge">#14</span>
+                    <div class="headline-title">
+                        Nunca Más Dejes que la Deshidratación Mate tu Concentración.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Un titular fuerte y enfocado en lo negativo que agita el punto de dolor de perder la claridad mental y ofrece una solución definitiva.
+                    </div>
+                </div>
+
+                <!-- Headline 15 -->
+                <div class="headline-card" data-rank="15">
+                    <span class="rank-badge">#15</span>
+                    <div class="headline-title">
+                        ¡Finalmente! Una Bebida Deportiva Saludable que Realmente Funciona.
+                    </div>
+                    <div class="headline-reason">
+                        <span class="reason-label">Por qué funciona</span>
+                        Transmite una sensación de alivio y descubrimiento, validando la búsqueda del cliente de una alternativa mejor.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong><a href="#" class="brand">BILAN</a></strong> - Hidratación de Grado Farmacéutico</p>
+            <p>Cero Azúcar. Puros Resultados. 100% Científico.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">Marketing Headlines Analysis | 2024</p>
+        </footer>
+    </div>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded, JavaScript active');
+        });
+
+        function filterAll() {
+            console.log('Filter All clicked');
+            const cards = document.querySelectorAll('.headline-card');
+            cards.forEach(function(card) {
+                card.style.display = 'block';
+            });
+            setActiveButton(0);
+        }
+
+        function filterTop(n) {
+            console.log('Filter Top ' + n + ' clicked');
+            const cards = document.querySelectorAll('.headline-card');
+            cards.forEach(function(card, index) {
+                if (index < n) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Determine which button index based on n
+            let buttonIndex;
+            if (n === 3) buttonIndex = 1;
+            else if (n === 5) buttonIndex = 2;
+            else if (n === 10) buttonIndex = 3;
+            else buttonIndex = 0;
+
+            setActiveButton(buttonIndex);
+        }
+
+        function setActiveButton(index) {
+            console.log('Setting active button: ' + index);
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(function(btn, i) {
+                if (i === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -175,14 +175,19 @@
             overflow-x: auto;
             margin: 1rem 0;
             font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
         }
 
-        .code-block .prompt {
+        .code-block .comment {
+            color: #95a5a6;
+        }
+
+        .code-block .key {
+            color: #e74c3c;
+        }
+
+        .code-block .value {
             color: #38ef7d;
-        }
-
-        .code-block .output {
-            color: #3498db;
         }
 
         .quick-ref {
@@ -271,7 +276,7 @@
     <div class="container">
         <header>
             <h1>Claude Code Commands</h1>
-            <p>Master the CLI with Slash Commands</p>
+            <p>Official Built-in Slash Commands & Custom Command Guide</p>
         </header>
 
         <div class="content">
@@ -282,10 +287,14 @@
                 <div class="tip">
                     <strong>Pro Tip:</strong> Type <code>/help</code> at any time to see all available commands in your CLI session.
                 </div>
+
+                <div class="warning">
+                    <strong>Important:</strong> This guide documents ONLY the actual built-in commands that exist in Claude Code. Many commands you might expect (like <code>/commit</code> or <code>/diff</code>) are NOT built-in, but you can create them as custom commands (see the Custom Commands section below).
+                </div>
             </section>
 
             <section>
-                <h2>Essential Commands</h2>
+                <h2>Built-in Session Commands</h2>
 
                 <div class="command-box">
                     <div class="cmd">/help</div>
@@ -298,8 +307,7 @@
 
                     <div class="example">
                         <strong>Example:</strong><br>
-                        <code>/help</code> - Shows complete command list<br>
-                        <code>/help git</code> - Shows help for git-related features
+                        <code>/help</code> - Shows complete command list
                     </div>
                 </div>
 
@@ -316,6 +324,34 @@
                         <strong>Warning:</strong> This removes all conversation history. Make sure you've saved any important information first.
                     </div>
                 </div>
+
+                <div class="command-box">
+                    <div class="cmd">/quit or /exit</div>
+                    <h4>Exit Claude Code</h4>
+                    <p>Cleanly exits the CLI session.</p>
+
+                    <div class="use-case">
+                        <strong>Use Case:</strong> You're done with your coding session and want to close Claude Code properly.
+                    </div>
+                </div>
+
+                <div class="command-box">
+                    <div class="cmd">/status</div>
+                    <h4>Show System Status</h4>
+                    <p>Displays version, model, account information, and connectivity status.</p>
+
+                    <div class="use-case">
+                        <strong>Use Case:</strong> Check which model you're currently using or verify your API connection.
+                    </div>
+
+                    <div class="tip">
+                        <strong>Note:</strong> This shows system/account status, NOT git status. For git status, use natural language ("show git status") or create a custom command.
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Built-in Task Management Commands</h2>
 
                 <div class="command-box">
                     <div class="cmd">/tasks</div>
@@ -350,136 +386,60 @@
                         <code>/model haiku</code> - Fastest and cheapest
                     </div>
                 </div>
-
-                <div class="command-box">
-                    <div class="cmd">/quit or /exit</div>
-                    <h4>Exit Claude Code</h4>
-                    <p>Cleanly exits the CLI session.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> You're done with your coding session and want to close Claude Code properly.
-                    </div>
-                </div>
             </section>
 
             <section>
-                <h2>Workflow Management Commands</h2>
+                <h2>Built-in Code Review Commands</h2>
 
                 <div class="command-box">
-                    <div class="cmd">/undo</div>
-                    <h4>Undo Last File Changes</h4>
-                    <p>Reverts the most recent file modifications made by Claude.</p>
+                    <div class="cmd">/review</div>
+                    <h4>Request Code Review</h4>
+                    <p>Triggers Claude to review your code changes and provide feedback.</p>
 
                     <div class="use-case">
-                        <strong>Use Case:</strong> Claude made changes to a file that broke your tests or weren't what you wanted.
+                        <strong>Use Case:</strong> You've made changes and want a comprehensive code review before committing.
                     </div>
 
                     <div class="tip">
-                        <strong>Tip:</strong> Use version control (git) for more granular control over changes.
+                        <strong>Note:</strong> This may be a custom command in your setup. Check <code>.claude/commands/</code> to see if it's customized for your workflow.
                     </div>
                 </div>
 
                 <div class="command-box">
-                    <div class="cmd">/reset</div>
-                    <h4>Reset Conversation and Context</h4>
-                    <p>Similar to /clear but may also reset additional state like selected files or project context.</p>
+                    <div class="cmd">/security-review</div>
+                    <h4>Security Review of Changes</h4>
+                    <p>Performs a security-focused review of pending changes on the current branch.</p>
 
                     <div class="use-case">
-                        <strong>Use Case:</strong> You want a completely fresh start, clearing both conversation history and any loaded context files.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/save</div>
-                    <h4>Save Current Conversation</h4>
-                    <p>Exports the conversation to a file for future reference or sharing.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> You had a productive debugging session and want to save the conversation as documentation.
+                        <strong>Use Case:</strong> Before merging security-sensitive code, check for common vulnerabilities.
                     </div>
 
                     <div class="example">
-                        <strong>Example:</strong><br>
-                        <code>/save debugging-session.md</code><br>
-                        Saves conversation as markdown file
+                        <strong>Checks For:</strong><br>
+                        - SQL injection<br>
+                        - XSS vulnerabilities<br>
+                        - Authentication/authorization issues<br>
+                        - Exposed secrets
+                    </div>
+                </div>
+
+                <div class="command-box">
+                    <div class="cmd">/pr-comments</div>
+                    <h4>View Pull Request Comments</h4>
+                    <p>Displays comments from a pull request for review and discussion.</p>
+
+                    <div class="use-case">
+                        <strong>Use Case:</strong> Review feedback on your PR without leaving the CLI.
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>Git & Version Control Commands</h2>
-
-                <div class="command-box">
-                    <div class="cmd">/commit</div>
-                    <h4>Create Git Commit</h4>
-                    <p>Triggers Claude to analyze changes and create a git commit with an appropriate message.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case #1:</strong> You've made changes across multiple files and want Claude to create a well-formatted commit message following your repo's conventions.
-                    </div>
-
-                    <div class="use-case">
-                        <strong>Use Case #2:</strong> You want to commit your work but aren't sure how to describe the changes concisely.
-                    </div>
-
-                    <div class="example">
-                        <strong>What Claude Does:</strong><br>
-                        1. Runs git status and git diff<br>
-                        2. Analyzes your recent commit messages for style<br>
-                        3. Creates an appropriate commit message<br>
-                        4. Adds files and commits with attribution
-                    </div>
-
-                    <div class="tip">
-                        <strong>Tip:</strong> You can also say "create a commit" naturally in conversation instead of using the slash command.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/pr or /pull-request</div>
-                    <h4>Create Pull Request</h4>
-                    <p>Guides you through creating a pull request using the gh CLI tool.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> You've completed a feature branch and want to create a PR with a well-written summary and test plan.
-                    </div>
-
-                    <div class="example">
-                        <strong>What Claude Does:</strong><br>
-                        1. Reviews all commits in your branch<br>
-                        2. Generates PR title and description<br>
-                        3. Creates test plan checklist<br>
-                        4. Pushes to remote and creates PR via gh CLI
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/diff</div>
-                    <h4>Show Git Diff</h4>
-                    <p>Displays changes in your working directory or staged files.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Quick way to review what's changed before committing.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/status</div>
-                    <h4>Show Git Status</h4>
-                    <p>Displays current git status including modified, staged, and untracked files.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Check repository state before starting work or making commits.
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Configuration Commands</h2>
+                <h2>Built-in Configuration Commands</h2>
 
                 <div class="command-box">
                     <div class="cmd">/settings</div>
-                    <h4>View or Modify Settings</h4>
+                    <h4>Open Settings</h4>
                     <p>Opens settings interface to configure Claude Code behavior, API keys, model preferences, etc.</p>
 
                     <div class="use-case">
@@ -494,430 +454,672 @@
                         <strong>Use Case #3:</strong> Set up MCP servers for extended functionality.
                     </div>
                 </div>
+            </section>
 
-                <div class="command-box">
-                    <div class="cmd">/config</div>
-                    <h4>Configure Project Settings</h4>
-                    <p>Set project-specific configurations like coding style, test commands, or build processes.</p>
+            <section>
+                <h2>Natural Language Alternative</h2>
 
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Tell Claude to always run <code>npm test</code> before committing in this project.
-                    </div>
+                <div class="tip">
+                    <strong>You Don't Always Need Slash Commands!</strong><br>
+                    Claude understands natural language requests. Instead of looking for a <code>/commit</code> command, just say:
+                    <ul>
+                        <li>"Create a git commit with my changes"</li>
+                        <li>"Show me git status and diff"</li>
+                        <li>"Create a pull request for this branch"</li>
+                        <li>"Run the test suite"</li>
+                        <li>"Add these files to context: src/app.js src/utils.js"</li>
+                    </ul>
+                    Claude will execute the appropriate bash commands or tool calls automatically.
                 </div>
             </section>
 
             <section>
-                <h2>Advanced Commands</h2>
+                <h2>Creating Custom Slash Commands</h2>
 
-                <div class="command-box">
-                    <div class="cmd">/agents</div>
-                    <h4>Manage Specialized Agents</h4>
-                    <p>List, launch, or interact with specialized AI agents (e.g., code-reviewer, test-runner, explore).</p>
+                <p>Since many useful commands (like <code>/commit</code>, <code>/diff</code>, <code>/pr</code>) don't exist as built-ins, you can create your own custom commands. Custom commands are stored in <code>.claude/commands/</code> directory as markdown files.</p>
 
-                    <div class="use-case">
-                        <strong>Use Case #1:</strong> Launch an "explore" agent to thoroughly map out a large codebase.
-                    </div>
+                <h3>Command File Structure</h3>
 
-                    <div class="use-case">
-                        <strong>Use Case #2:</strong> Run a "code-reviewer" agent to analyze your recent changes.
-                    </div>
+                <p>Create a file <code>.claude/commands/[command-name].md</code> with this structure:</p>
 
-                    <div class="example">
-                        <strong>Available Agents:</strong><br>
-                        - <strong>explore:</strong> Fast codebase exploration<br>
-                        - <strong>plan:</strong> Software architecture planning<br>
-                        - <strong>general-purpose:</strong> Complex multi-step tasks
-                    </div>
+                <div class="code-block">---
+<span class="key">allowed-tools:</span> <span class="value">Bash(git:*), Read, Edit</span>
+<span class="key">argument-hint:</span> <span class="value">[optional arguments]</span>
+<span class="key">description:</span> <span class="value">Brief description of what this command does</span>
+---
+
+<span class="comment">## Context</span>
+
+Provide any context needed (can use !`command` to run bash commands):
+- Current status: !`git status`
+- Current diff: !`git diff`
+
+<span class="comment">## Your task</span>
+
+Describe what Claude should do when this command is invoked.
+Use $ARGUMENTS to reference any arguments passed to the command.
                 </div>
 
-                <div class="command-box">
-                    <div class="cmd">/hooks</div>
-                    <h4>Manage Hooks</h4>
-                    <p>View or configure hooks (shell commands that execute on certain events like tool calls).</p>
-
-                    <div class="use-case">
-                        <strong>Use Case #1:</strong> Run linter automatically before any git commit.
-                    </div>
-
-                    <div class="use-case">
-                        <strong>Use Case #2:</strong> Trigger a notification when long-running tasks complete.
-                    </div>
-
-                    <div class="example">
-                        <strong>Hook Types:</strong><br>
-                        - user-prompt-submit-hook<br>
-                        - pre-tool-call-hook<br>
-                        - post-tool-call-hook
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/mcp</div>
-                    <h4>Model Context Protocol Servers</h4>
-                    <p>Manage MCP servers that extend Claude's capabilities (database access, APIs, custom tools).</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Connect Claude to your PostgreSQL database so it can query data directly.
-                    </div>
-
-                    <div class="tip">
-                        <strong>Tip:</strong> MCP servers let Claude interact with external systems beyond the filesystem.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/skills</div>
-                    <h4>Custom Skills Management</h4>
-                    <p>Create, edit, or run custom skills (reusable command sequences or workflows).</p>
-
-                    <div class="use-case">
-                        <strong>Use Case #1:</strong> Create a "/deploy" skill that runs tests, builds, and deploys your app.
-                    </div>
-
-                    <div class="use-case">
-                        <strong>Use Case #2:</strong> Build a "/review-pr [number]" skill that fetches and analyzes a PR.
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Context Management Commands</h2>
-
-                <div class="command-box">
-                    <div class="cmd">/add or /attach</div>
-                    <h4>Add Files to Context</h4>
-                    <p>Explicitly add files or directories to the conversation context.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> You're about to discuss refactoring and want Claude to have specific files loaded.
-                    </div>
-
-                    <div class="example">
-                        <strong>Example:</strong><br>
-                        <code>/add src/components/Button.tsx</code><br>
-                        <code>/add src/styles/*.css</code>
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/remove or /detach</div>
-                    <h4>Remove Files from Context</h4>
-                    <p>Remove previously added files from conversation context to reduce token usage.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> You've finished working on a set of files and want to free up context for new files.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/context</div>
-                    <h4>View Current Context</h4>
-                    <p>Shows what files, directories, or context is currently loaded in the conversation.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Verify what Claude currently has access to before asking a question.
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Debugging & Inspection Commands</h2>
-
-                <div class="command-box">
-                    <div class="cmd">/debug</div>
-                    <h4>Enable Debug Mode</h4>
-                    <p>Shows additional information about Claude's reasoning, tool calls, and internal processes.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Claude isn't behaving as expected and you want to see what's happening under the hood.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/tokens</div>
-                    <h4>View Token Usage</h4>
-                    <p>Displays how many tokens have been used in the current conversation.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Monitor API costs or check if you're approaching context limits.
-                    </div>
-                </div>
-
-                <div class="command-box">
-                    <div class="cmd">/log</div>
-                    <h4>View Session Logs</h4>
-                    <p>Shows detailed logs of the current session including all tool calls and responses.</p>
-
-                    <div class="use-case">
-                        <strong>Use Case:</strong> Debugging why a particular operation failed or reviewing what Claude did.
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Practical Workflow Examples</h2>
-
-                <div class="category">
-                    <h3>Workflow: Feature Development</h3>
-                    <ol>
-                        <li><strong>Start Fresh:</strong> <code>/clear</code> to begin with clean context</li>
-                        <li><strong>Add Context:</strong> <code>/add src/features/auth/*</code></li>
-                        <li><strong>Request:</strong> "Add OAuth login to the auth system"</li>
-                        <li><strong>Review Changes:</strong> <code>/diff</code></li>
-                        <li><strong>Commit:</strong> <code>/commit</code></li>
-                        <li><strong>Create PR:</strong> <code>/pr</code></li>
-                    </ol>
-                </div>
-
-                <div class="category">
-                    <h3>Workflow: Bug Investigation</h3>
-                    <ol>
-                        <li><strong>Check Status:</strong> <code>/status</code></li>
-                        <li><strong>Enable Debug:</strong> <code>/debug</code></li>
-                        <li><strong>Explore Codebase:</strong> "Find where user authentication errors are handled"</li>
-                        <li><strong>Review Findings:</strong> Ask Claude to explain the bug</li>
-                        <li><strong>Fix:</strong> "Fix the authentication error handling"</li>
-                        <li><strong>Test:</strong> "Run the test suite"</li>
-                        <li><strong>Commit Fix:</strong> <code>/commit</code></li>
-                    </ol>
-                </div>
-
-                <div class="category">
-                    <h3>Workflow: Code Review</h3>
-                    <ol>
-                        <li><strong>View Changes:</strong> <code>/diff</code></li>
-                        <li><strong>Launch Agent:</strong> Use explore agent to understand impact</li>
-                        <li><strong>Request Review:</strong> "Review these changes for security issues"</li>
-                        <li><strong>Check Tasks:</strong> <code>/tasks</code> (if using background agents)</li>
-                        <li><strong>Apply Suggestions:</strong> Discuss and implement fixes</li>
-                        <li><strong>Undo if Needed:</strong> <code>/undo</code> if changes are wrong</li>
-                    </ol>
-                </div>
-
-                <div class="category">
-                    <h3>Workflow: Learning New Codebase</h3>
-                    <ol>
-                        <li><strong>Launch Explore Agent:</strong> "Explore the codebase and explain the architecture"</li>
-                        <li><strong>Check Progress:</strong> <code>/tasks</code></li>
-                        <li><strong>Ask Questions:</strong> "How does the routing system work?"</li>
-                        <li><strong>Save Findings:</strong> <code>/save codebase-notes.md</code></li>
-                        <li><strong>Add Key Files:</strong> <code>/add</code> important files for reference</li>
-                    </ol>
-                </div>
-            </section>
-
-            <section>
-                <h2>Command Categories Quick Reference</h2>
+                <h3>Frontmatter Fields Explained</h3>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>Category</th>
-                            <th>Commands</th>
-                            <th>Primary Use</th>
+                            <th>Field</th>
+                            <th>Description</th>
+                            <th>Example</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Session</strong></td>
-                            <td>/help, /clear, /reset, /quit</td>
-                            <td>Manage CLI session</td>
+                            <td><code>allowed-tools</code></td>
+                            <td>Tools Claude can use for this command (optional, restricts access)</td>
+                            <td>Bash(git:*), Read, Grep</td>
                         </tr>
                         <tr>
-                            <td><strong>Git</strong></td>
-                            <td>/commit, /pr, /diff, /status</td>
-                            <td>Version control operations</td>
+                            <td><code>argument-hint</code></td>
+                            <td>Shown to user as hint for arguments</td>
+                            <td>[message], [branch-name]</td>
                         </tr>
                         <tr>
-                            <td><strong>Tasks</strong></td>
-                            <td>/tasks, /agents</td>
-                            <td>Background task management</td>
+                            <td><code>description</code></td>
+                            <td>Short description shown in /help</td>
+                            <td>Create a git commit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Using Dynamic Context with !`command`</h3>
+
+                <p>You can run bash commands in the Context section using <code>!`command`</code> syntax. The output is included when the command runs:</p>
+
+                <div class="code-block"><span class="comment">## Context</span>
+
+- Current git status: !`git status`
+- Staged changes: !`git diff --cached`
+- Last 5 commits: !`git log --oneline -5`
+- Current branch: !`git branch --show-current`
+                </div>
+
+                <h3>Accessing Arguments with $ARGUMENTS</h3>
+
+                <p>When users invoke <code>/command arg1 arg2</code>, use <code>$ARGUMENTS</code> to access those arguments:</p>
+
+                <div class="code-block"><span class="comment">## Your task</span>
+
+Create a git commit with message: $ARGUMENTS
+
+If no message provided in $ARGUMENTS, analyze the changes and create an appropriate commit message.
+                </div>
+            </section>
+
+            <section>
+                <h2>Suggested Custom Commands to Create</h2>
+
+                <div class="category">
+                    <h3>1. /commit - Create Git Commit</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/commit.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*)
+argument-hint: [commit message]
+description: Create a git commit with optional message
+---
+
+## Context
+
+- Current git status: !`git status`
+- Staged changes: !`git diff --cached`
+- Unstaged changes: !`git diff`
+- Recent commit messages: !`git log --oneline -5`
+- Current branch: !`git branch --show-current`
+
+## Your task
+
+1. Review all staged and unstaged changes above
+2. Add relevant files to staging if needed
+3. If $ARGUMENTS is provided, use it as the commit message
+4. If no $ARGUMENTS, analyze the changes and create an appropriate commit message following the repo's style
+5. Create the commit with attribution footer:
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude Sonnet 4.5 &lt;noreply@anthropic.com&gt;
+
+6. Show the final git status after committing
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/commit</code> - Auto-generate commit message<br>
+                        <code>/commit fix: resolve authentication bug</code> - Use custom message
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>2. /pr - Create Pull Request</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/pr.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Bash(git:*), Bash(gh:*)
+argument-hint: [base branch]
+description: Create a pull request using gh CLI
+---
+
+## Context
+
+- Current branch: !`git branch --show-current`
+- Commits in this branch: !`git log main..HEAD --oneline`
+- Changed files: !`git diff main...HEAD --name-only`
+- Full diff from main: !`git diff main...HEAD`
+
+## Your task
+
+1. Review all commits and changes from the base branch to HEAD
+2. Push current branch to remote if not already pushed
+3. Generate PR title and description based on changes:
+   - Title: Concise summary of main changes
+   - Description: Bulleted summary of key changes and test plan
+4. Create PR using gh CLI with format:
+
+## Summary
+- [Key change 1]
+- [Key change 2]
+
+## Test plan
+- [ ] Test item 1
+- [ ] Test item 2
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+5. Return the PR URL
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/pr</code> - Create PR against main<br>
+                        <code>/pr develop</code> - Create PR against develop branch
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>3. /diff - Show Git Diff</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/diff.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Bash(git diff:*)
+argument-hint: [file or commit]
+description: Show git diff for staged, unstaged, or specific files
+---
+
+## Your task
+
+Show git diff with the following logic:
+
+1. If $ARGUMENTS is provided:
+   - If it's a file path: show diff for that file
+   - If it's a commit hash/branch: show diff against that commit
+2. If no $ARGUMENTS:
+   - Show staged changes: `git diff --cached`
+   - Show unstaged changes: `git diff`
+   - Summarize what's changed
+
+Present the diff in a readable format with explanations.
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/diff</code> - Show all changes<br>
+                        <code>/diff src/app.js</code> - Show changes for specific file<br>
+                        <code>/diff main</code> - Show changes vs main branch
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>4. /add-context - Add Files to Context</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/add-context.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Read, Glob
+argument-hint: &lt;file pattern&gt;
+description: Add files to conversation context
+---
+
+## Your task
+
+1. Use the file pattern in $ARGUMENTS to find matching files
+2. If pattern contains wildcards (* or **), use Glob to find files
+3. Read all matching files and summarize what was loaded
+4. List the files now in context with brief descriptions
+
+Example: If user runs `/add-context src/**/*.js`, find all JS files in src/ and load them.
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/add-context src/app.js</code> - Add single file<br>
+                        <code>/add-context src/**/*.js</code> - Add all JS files in src/
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>5. /test - Run Tests</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/test.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Bash(npm:*), Bash(pytest:*), Bash(go test:*), Bash(cargo test:*)
+argument-hint: [test name or path]
+description: Run project tests
+---
+
+## Context
+
+- Project files: !`ls package.json pyproject.toml Cargo.toml go.mod 2>/dev/null || echo "No config found"`
+
+## Your task
+
+1. Detect the project type based on config files found
+2. Run appropriate test command:
+   - Node.js: `npm test` or `npm run test`
+   - Python: `pytest` or `python -m pytest`
+   - Go: `go test ./...`
+   - Rust: `cargo test`
+3. If $ARGUMENTS provided, run only those specific tests
+4. Report results clearly, highlighting failures
+5. If tests fail, offer to help debug
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/test</code> - Run all tests<br>
+                        <code>/test auth.test.js</code> - Run specific test file
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>6. /explain - Explain Code</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/explain.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Read, Glob, Grep, LSP
+argument-hint: &lt;file or symbol&gt;
+description: Explain how code works
+---
+
+## Your task
+
+1. If $ARGUMENTS is a file path, read and explain that file
+2. If $ARGUMENTS is a symbol/function name, find it using Grep and explain
+3. Provide explanation covering:
+   - Purpose and functionality
+   - Key algorithms or logic
+   - Inputs and outputs
+   - Dependencies and relationships
+   - Potential issues or improvements
+4. Use diagrams or examples if helpful
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/explain src/auth.js</code> - Explain entire file<br>
+                        <code>/explain calculateTotal</code> - Explain specific function
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>7. /deploy - Deploy Application</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/deploy.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Bash(npm:*), Bash(git:*), Bash(docker:*), Bash(vercel:*), Bash(netlify:*)
+argument-hint: [environment]
+description: Deploy application to specified environment
+---
+
+## Your task
+
+1. Determine deployment target from $ARGUMENTS (staging, production, etc.)
+2. Run pre-deployment checks:
+   - Ensure tests pass
+   - Check git status (warn if uncommitted changes)
+   - Verify branch is up to date with remote
+3. Build production assets
+4. Deploy using appropriate method for this project
+5. Run post-deployment smoke tests if configured
+6. Report deployment URL and status
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/deploy</code> - Deploy to default environment<br>
+                        <code>/deploy production</code> - Deploy to production
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>8. /refactor - Refactor Code</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/refactor.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Read, Edit, Bash(git:*)
+argument-hint: &lt;file or pattern&gt;
+description: Refactor code for better quality
+---
+
+## Your task
+
+1. Read the file(s) specified in $ARGUMENTS
+2. Analyze for refactoring opportunities:
+   - Code duplication
+   - Complex functions (high cyclomatic complexity)
+   - Poor naming
+   - Missing error handling
+   - Performance issues
+3. Propose refactoring changes with explanations
+4. If user approves, apply changes
+5. Ensure tests still pass after refactoring
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/refactor src/utils.js</code> - Refactor specific file<br>
+                        <code>/refactor src/**/*.js</code> - Refactor multiple files
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>9. /docs - Generate Documentation</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/docs.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Read, Write, Glob
+argument-hint: [target directory]
+description: Generate documentation for code
+---
+
+## Your task
+
+1. If $ARGUMENTS provided, document that directory/file
+2. If no $ARGUMENTS, document the entire project
+3. Generate documentation including:
+   - API reference for public functions/classes
+   - Usage examples
+   - Configuration options
+   - Architecture overview
+4. Write to appropriate location (docs/ or README.md)
+5. Use markdown format with clear structure
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/docs</code> - Document entire project<br>
+                        <code>/docs src/api</code> - Document API module
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>10. /debug - Debug Issue</h3>
+                    <p><strong>File:</strong> <code>.claude/commands/debug.md</code></p>
+
+                    <div class="code-block">---
+allowed-tools: Read, Grep, Bash(*)
+argument-hint: &lt;issue description&gt;
+description: Help debug an issue
+---
+
+## Your task
+
+1. Understand the issue from $ARGUMENTS
+2. Investigate using:
+   - Read relevant files
+   - Search for error messages
+   - Check logs
+   - Review recent changes (git diff)
+3. Hypothesize potential causes
+4. Suggest debugging steps or fixes
+5. If cause is clear, offer to implement fix
+                    </div>
+
+                    <div class="use-case">
+                        <strong>Usage:</strong><br>
+                        <code>/debug authentication not working</code><br>
+                        <code>/debug TypeError in user.js line 42</code>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Advanced Custom Command Patterns</h2>
+
+                <h3>Chaining Multiple Commands</h3>
+                <p>You can create commands that execute multiple operations in sequence:</p>
+
+                <div class="code-block">---
+description: Run tests, build, and deploy
+---
+
+## Your task
+
+Execute the following steps in order:
+1. Run test suite - if tests fail, STOP and report
+2. Build production assets - if build fails, STOP and report
+3. Create git commit with changes
+4. Push to remote
+5. Deploy to staging environment
+6. Report final status and URLs
+                </div>
+
+                <h3>Conditional Logic in Commands</h3>
+                <p>Use conditional instructions for smart behavior:</p>
+
+                <div class="code-block">## Your task
+
+1. Check if $ARGUMENTS is provided
+2. If YES: use $ARGUMENTS as commit message
+3. If NO: analyze git diff and generate message automatically
+4. If staged changes exist: commit staged only
+5. If no staged changes: add all modified files then commit
+                </div>
+
+                <h3>Project-Specific Commands</h3>
+                <p>Create commands tailored to your project's workflow:</p>
+
+                <div class="code-block">---
+description: BILAN marketing content workflow
+---
+
+## Context
+
+- Project: BILAN electrolyte powder business
+- Current marketing campaigns: !`ls 01_PROJECTS/BILAN/MARKETING/campaigns/`
+
+## Your task
+
+1. Create new marketing content in $ARGUMENTS campaign
+2. Update FAQ database if content is FAQ-worthy
+3. Generate VEO video prompts if applicable
+4. Update social media calendar
+5. Commit changes with descriptive message
+                </div>
+            </section>
+
+            <section>
+                <h2>Command Best Practices</h2>
+
+                <div class="tip">
+                    <strong>1. Start with Context</strong><br>
+                    Use <code>!`commands`</code> to gather current state before acting. This gives Claude the information needed to make smart decisions.
+                </div>
+
+                <div class="tip">
+                    <strong>2. Be Explicit About Behavior</strong><br>
+                    Don't assume Claude knows what to do. Clearly describe each step in the "Your task" section.
+                </div>
+
+                <div class="tip">
+                    <strong>3. Handle Edge Cases</strong><br>
+                    Include instructions for what to do if things go wrong (no files found, tests fail, etc.).
+                </div>
+
+                <div class="tip">
+                    <strong>4. Restrict Tools When Needed</strong><br>
+                    Use <code>allowed-tools</code> to limit what Claude can do in sensitive commands. For example, a read-only command shouldn't have Write or Bash access.
+                </div>
+
+                <div class="tip">
+                    <strong>5. Make Commands Composable</strong><br>
+                    Create small, focused commands that do one thing well. You can combine them in workflows rather than creating monolithic commands.
+                </div>
+
+                <div class="tip">
+                    <strong>6. Test Your Commands</strong><br>
+                    After creating a command, test it with different arguments and edge cases to ensure it behaves as expected.
+                </div>
+            </section>
+
+            <section>
+                <h2>Command Directory Structure</h2>
+
+                <p>Organize your custom commands for better maintainability:</p>
+
+                <div class="code-block">.claude/
+├── commands/
+│   ├── git/
+│   │   ├── commit.md
+│   │   ├── pr.md
+│   │   ├── diff.md
+│   │   └── status.md
+│   ├── dev/
+│   │   ├── test.md
+│   │   ├── build.md
+│   │   └── deploy.md
+│   ├── docs/
+│   │   ├── generate.md
+│   │   └── explain.md
+│   └── project-specific/
+│       ├── bilan-marketing.md
+│       └── alicia-curriculum.md
+└── settings.json
+                </div>
+
+                <p>Commands in subdirectories are invoked with their path: <code>/git/commit</code>, <code>/dev/test</code>, etc.</p>
+            </section>
+
+            <section>
+                <h2>Quick Reference Table</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Built-in Command</th>
+                            <th>Purpose</th>
+                            <th>Common Custom Alternative</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/help</code></td>
+                            <td>Show available commands</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td><strong>Context</strong></td>
-                            <td>/add, /remove, /context</td>
-                            <td>File and context management</td>
+                            <td><code>/clear</code></td>
+                            <td>Clear conversation</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td><strong>Config</strong></td>
-                            <td>/settings, /config, /hooks, /mcp</td>
-                            <td>Configuration and setup</td>
+                            <td><code>/tasks</code></td>
+                            <td>Show background tasks</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td><strong>Debug</strong></td>
-                            <td>/debug, /log, /tokens</td>
-                            <td>Debugging and inspection</td>
+                            <td><code>/model</code></td>
+                            <td>Switch AI model</td>
+                            <td>-</td>
                         </tr>
                         <tr>
-                            <td><strong>History</strong></td>
-                            <td>/undo, /save</td>
-                            <td>Manage changes and records</td>
+                            <td><code>/status</code></td>
+                            <td>System status</td>
+                            <td>/git-status (for git)</td>
                         </tr>
                         <tr>
-                            <td><strong>Advanced</strong></td>
-                            <td>/skills, /model</td>
-                            <td>Custom workflows and optimization</td>
+                            <td><code>/settings</code></td>
+                            <td>Open settings</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><code>/review</code></td>
+                            <td>Code review</td>
+                            <td>Custom review workflows</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Create git commit</td>
+                            <td><code>/commit</code> (suggested)</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Show git diff</td>
+                            <td><code>/diff</code> (suggested)</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Create PR</td>
+                            <td><code>/pr</code> (suggested)</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Run tests</td>
+                            <td><code>/test</code> (suggested)</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Add files to context</td>
+                            <td><code>/add-context</code> (suggested)</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
             <section>
-                <h2>Pro Tips for Command Usage</h2>
-
-                <div class="tip">
-                    <strong>1. Natural Language Works Too</strong><br>
-                    You don't always need slash commands. Claude understands natural requests like "commit these changes" or "create a pull request."
-                </div>
-
-                <div class="tip">
-                    <strong>2. Chain Commands in Conversation</strong><br>
-                    You can request multiple actions: "Run the tests, and if they pass, create a commit and push to origin."
-                </div>
-
-                <div class="tip">
-                    <strong>3. Use Agents for Complex Tasks</strong><br>
-                    When exploring large codebases or planning complex features, explicitly request agents rather than doing it all in the main conversation.
-                </div>
-
-                <div class="tip">
-                    <strong>4. Save Frequently</strong><br>
-                    Use <code>/save</code> after productive sessions to build up a knowledge base of solutions and patterns.
-                </div>
-
-                <div class="tip">
-                    <strong>5. Monitor Token Usage</strong><br>
-                    Use <code>/tokens</code> periodically in long sessions to avoid hitting limits or excessive costs.
-                </div>
-
-                <div class="tip">
-                    <strong>6. Customize with Hooks</strong><br>
-                    Set up hooks for repetitive tasks like always running formatters before commits or notifying you when builds complete.
-                </div>
-
-                <div class="tip">
-                    <strong>7. Use /clear Strategically</strong><br>
-                    Don't clear too often - Claude's context understanding improves with conversation history. Clear when switching to completely different projects.
-                </div>
-            </section>
-
-            <section>
-                <h2>Common Patterns</h2>
-
-                <div class="example">
-                    <strong>Pattern: Rapid Prototyping</strong><br>
-                    1. <code>/clear</code> - Fresh start<br>
-                    2. Describe feature naturally<br>
-                    3. <code>/diff</code> - Review changes<br>
-                    4. Iterate with feedback<br>
-                    5. <code>/commit</code> - Save progress
-                </div>
-
-                <div class="example">
-                    <strong>Pattern: Safe Experimentation</strong><br>
-                    1. Create feature branch first (manually)<br>
-                    2. Let Claude make experimental changes<br>
-                    3. <code>/diff</code> - Review thoroughly<br>
-                    4. <code>/undo</code> if needed<br>
-                    5. <code>/commit</code> when satisfied
-                </div>
-
-                <div class="example">
-                    <strong>Pattern: Documentation Generation</strong><br>
-                    1. <code>/add src/**/*.ts</code> - Load codebase<br>
-                    2. "Generate API documentation"<br>
-                    3. Review and refine<br>
-                    4. <code>/save docs/api-reference.md</code>
-                </div>
-
-                <div class="example">
-                    <strong>Pattern: Legacy Code Understanding</strong><br>
-                    1. Launch explore agent for overview<br>
-                    2. <code>/tasks</code> - Monitor progress<br>
-                    3. Ask specific questions about components<br>
-                    4. <code>/add</code> key files for deep dive<br>
-                    5. <code>/save</code> learnings as documentation
-                </div>
-            </section>
-
-            <section>
-                <h2>Command Aliases & Shortcuts</h2>
-
-                <div class="quick-ref">
-                    <h4>Common Aliases</h4>
-                    <ul>
-                        <li><code>/q</code> or <code>/quit</code> - Exit</li>
-                        <li><code>/c</code> or <code>/clear</code> - Clear conversation</li>
-                        <li><code>/h</code> or <code>/help</code> - Help</li>
-                        <li><code>/s</code> or <code>/status</code> - Git status</li>
-                        <li><code>/d</code> or <code>/diff</code> - Git diff</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>When NOT to Use Commands</h2>
+                <h2>Troubleshooting Custom Commands</h2>
 
                 <div class="warning">
-                    <strong>Don't overuse /clear:</strong> You lose valuable context. Only clear when truly switching projects.
+                    <strong>Command Not Found</strong><br>
+                    Ensure your <code>.md</code> file is in <code>.claude/commands/</code> and has proper frontmatter with at least a description field.
                 </div>
 
                 <div class="warning">
-                    <strong>Don't rely solely on /undo:</strong> Use proper version control (git) for important work.
+                    <strong>Permission Errors</strong><br>
+                    If Claude says it can't execute bash commands, check that <code>allowed-tools</code> includes the necessary tools. Consider adding specific command patterns like <code>Bash(git:*)</code>.
                 </div>
 
                 <div class="warning">
-                    <strong>Don't skip /diff before /commit:</strong> Always review changes before committing.
+                    <strong>Context Commands Not Running</strong><br>
+                    The <code>!`command`</code> syntax only works in the Context section. It won't execute in "Your task" - use explicit instructions there instead.
                 </div>
 
                 <div class="warning">
-                    <strong>Don't forget hooks can block commands:</strong> If operations fail unexpectedly, check your hooks configuration.
-                </div>
-            </section>
-
-            <section>
-                <h2>Building Your Own Skills</h2>
-
-                <p>Skills are reusable custom commands you can create for your specific workflows. They're essentially saved sequences of operations or specialized prompts.</p>
-
-                <div class="example">
-                    <strong>Example Skill: /review-security</strong><br>
-                    1. Run security linter<br>
-                    2. Check for common vulnerabilities (SQL injection, XSS)<br>
-                    3. Review authentication and authorization<br>
-                    4. Generate security report
-                </div>
-
-                <div class="example">
-                    <strong>Example Skill: /deploy-staging</strong><br>
-                    1. Run test suite<br>
-                    2. Build production bundle<br>
-                    3. Check for errors<br>
-                    4. Deploy to staging environment<br>
-                    5. Run smoke tests
-                </div>
-
-                <div class="tip">
-                    <strong>Tip:</strong> Create skills for any workflow you repeat more than twice.
+                    <strong>Arguments Not Working</strong><br>
+                    Make sure you're using <code>$ARGUMENTS</code> (uppercase) not <code>$arguments</code>. The variable is case-sensitive.
                 </div>
             </section>
 
             <section>
                 <h2>Further Resources</h2>
                 <ul>
-                    <li><strong>Official Docs:</strong> docs.anthropic.com/claude/code</li>
-                    <li><strong>GitHub:</strong> github.com/anthropics/claude-code</li>
+                    <li><strong>Official Docs:</strong> <a href="https://docs.anthropic.com/claude/docs/custom-commands" target="_blank">docs.anthropic.com/claude/docs/custom-commands</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/anthropics/claude-code" target="_blank">github.com/anthropics/claude-code</a></li>
                     <li><strong>CLI Help:</strong> Type <code>/help</code> in your terminal</li>
-                    <li><strong>Community:</strong> Discord and forums at anthropic.com</li>
-                    <li><strong>Changelog:</strong> Check GitHub releases for new commands</li>
+                    <li><strong>Command Examples:</strong> Check <code>.claude/commands/</code> in this repository</li>
                 </ul>
             </section>
         </div>
 
         <footer>
-            <p><strong>Master the commands, master the workflow.</strong></p>
-            <p>The best way to learn is by doing - start with the essential commands and gradually explore advanced features.</p>
-            <p>&copy; 2024 | Personal Knowledge Base</p>
+            <p><strong>Build Your Own Workflows</strong></p>
+            <p>Custom commands let you automate repetitive tasks and create workflows tailored to your projects.</p>
+            <p>Last Updated: December 2024</p>
         </footer>
     </div>
 </body>
