@@ -1,0 +1,322 @@
+{
+  "title": "BILAN Preparación y Consumo - Veo 3 Prompts",
+  "video_id": "BILAN-001",
+  "format": "9:16",
+  "duration": "30-90 seconds",
+  "target_platforms": ["Instagram Reels", "TikTok", "YouTube Shorts", "Instagram Stories"],
+  "style": "photorealistic, bright and fresh, modern lifestyle aesthetic, natural lighting, clean minimalist composition",
+  "color_palette": "warm whites, vibrant product colors, fresh blues and greens",
+  "mood": "refreshing, easy, satisfying, energetic",
+
+  "scene_1_hook_powder_drop": {
+    "duration": "3 seconds",
+    "shot_type": "Extreme close-up macro",
+    "camera_angle": "Top-down (cenital)",
+    "frame_rate": "120fps slow motion",
+    "prompt": "Extreme macro slow motion shot of BILAN electrolyte powder cascading into crystal clear water in a transparent glass. The white and colored powder particles create a mesmerizing cloud as they sink and disperse through the water, creating swirling patterns. Backlit to make particles glow. Vertical 9:16 format, photorealistic, bright natural lighting, clean minimalist aesthetic."
+  },
+
+  "scene_2_ingredients_setup": {
+    "duration": "4 seconds",
+    "shot_type": "Medium shot establishing",
+    "camera_angle": "45-degree angle",
+    "prompt": "Clean minimalist setup on white marble countertop: a tall transparent glass, a cold water bottle with condensation droplets, and a BILAN electrolyte packet with visible logo. Bright natural window lighting from the side. Background softly blurred showing a modern kitchen. Everything perfectly arranged. Vertical 9:16 format, photorealistic, fresh and inviting aesthetic."
+  },
+
+  "scene_3_pour_water": {
+    "duration": "3 seconds",
+    "shot_type": "Close-up",
+    "camera_angle": "Side profile",
+    "frame_rate": "Normal speed or 1.2x",
+    "prompt": "Side view of crystal clear cold water being poured into a tall transparent glass, filling it two-thirds full. Water sparkles as it flows. Visible condensation on the glass surface. Bright natural backlight makes the water shimmer. Vertical 9:16 format, photorealistic, refreshing aesthetic, clean composition."
+  },
+
+  "scene_4_open_packet": {
+    "duration": "2 seconds",
+    "shot_type": "Close-up on hands",
+    "camera_angle": "Slight overhead angle",
+    "prompt": "Close-up of hands confidently tearing open a BILAN electrolyte powder packet. The BILAN logo is clearly visible on the packaging. Clean manicured hands, natural skin tone. Bright diffused natural lighting. Modern minimalist background. Vertical 9:16 format, photorealistic."
+  },
+
+  "scene_5_add_powder_hero_shot": {
+    "duration": "8 seconds",
+    "shot_type": "Macro close-up (HERO SHOT)",
+    "camera_angle": "Side profile and top-down combination",
+    "frame_rate": "120fps slow motion",
+    "prompt": "Cinematic slow motion macro shot of BILAN electrolyte powder being poured from packet into glass of water. The powder creates a beautiful cloud as it sinks through the crystal clear water, dispersing and changing the water's color from transparent to a vibrant hue. Backlight and side light create depth and illuminate the particles. The powder swirls and dissolves creating mesmerizing patterns. Vertical 9:16 format, photorealistic, dramatic yet clean aesthetic, bright natural lighting."
+  },
+
+  "scene_6_stir_mix": {
+    "duration": "4 seconds",
+    "shot_type": "Close-up",
+    "camera_angle": "Slight low angle looking up",
+    "prompt": "Glass of BILAN electrolyte drink being stirred with a long spoon. Smooth circular motions create a gentle vortex in the colored liquid. The powder dissolves completely, becoming a uniform, vibrant, refreshing drink. Bright natural lighting, clean background. Vertical 9:16 format, photorealistic, satisfying and smooth motion."
+  },
+
+  "scene_7_finished_product_beauty": {
+    "duration": "3 seconds",
+    "shot_type": "Product beauty shot",
+    "camera_angle": "45-degree angle, slight low angle",
+    "prompt": "Perfectly prepared glass of BILAN electrolyte drink, filled with vibrant colored liquid. The glass has beautiful condensation on the outside showing it's cold and refreshing. Optional ice cubes visible. A slice of fresh lemon or lime on the rim. Pristine white marble surface. Soft natural window lighting creating a beautiful glow. Vertical 9:16 format, photorealistic, magazine-quality product photography aesthetic."
+  },
+
+  "scene_8_person_holds_drink": {
+    "duration": "3 seconds",
+    "shot_type": "Medium close-up torso and hands",
+    "camera_angle": "Eye level",
+    "prompt": "A fit person in athletic wear holds the prepared glass of BILAN electrolyte drink with both hands, looking at it with anticipation. Visible fitness context in soft-focus background (gym equipment, yoga mat, or workout space). Bright natural lighting, clean modern environment. Person exudes health and energy. Vertical 9:16 format, photorealistic, aspirational lifestyle aesthetic."
+  },
+
+  "scene_9_first_sip_satisfaction": {
+    "duration": "5 seconds",
+    "shot_type": "Close-up on face and drink",
+    "camera_angle": "Slightly low angle",
+    "frame_rate": "60fps for subtle slow motion",
+    "prompt": "Close-up of person taking the first refreshing sip of BILAN electrolyte drink. Their eyes close briefly showing genuine satisfaction and relief. Expression of pleasure and refreshment. Natural skin tone, authentic emotion. Bright soft natural lighting illuminates their face beautifully. Background shows modern lifestyle context (kitchen, gym, or outdoors). Vertical 9:16 format, photorealistic, genuine and relatable aesthetic."
+  },
+
+  "scene_10_energized_moment": {
+    "duration": "4 seconds",
+    "shot_type": "Medium wide shot",
+    "camera_angle": "Eye level or slightly low angle",
+    "prompt": "Person holding BILAN drink shows renewed energy: they smile, take a deep satisfied breath, or make a subtle thumbs-up gesture. They're ready to continue their activity (workout, work, adventure). Athletic or casual comfortable clothing. Bright natural environment - modern kitchen, home gym, or outdoor setting. Vertical 9:16 format, photorealistic, positive and motivating aesthetic."
+  },
+
+  "scene_11_action_continuation": {
+    "duration": "4 seconds",
+    "shot_type": "Medium shot with motion",
+    "camera_angle": "Dynamic angle following action",
+    "prompt": "Person with renewed vigor continues their activity: picking up dumbbells for another set, returning to their laptop with focus, or heading out for a run. They hold or place down the BILAN glass confidently. Dynamic movement showing energy and purpose. Bright natural lighting, authentic lifestyle setting. Vertical 9:16 format, photorealistic, energetic and inspiring aesthetic."
+  },
+
+  "scene_12_product_packshot_cta": {
+    "duration": "5 seconds",
+    "shot_type": "Product showcase",
+    "camera_angle": "Top-down or 45-degree angle",
+    "prompt": "Clean product showcase: BILAN electrolyte packets (multiple flavors visible) arranged artfully on pristine white marble surface next to the prepared drink in glass. BILAN logo clearly visible and prominent. Bright even lighting, no harsh shadows. Space for text overlay. Vertical 9:16 format, photorealistic, premium product photography aesthetic, commercial quality."
+  },
+
+  "scene_13_logo_closer": {
+    "duration": "3 seconds",
+    "shot_type": "Brand closer",
+    "camera_angle": "Straight on",
+    "prompt": "Clean minimalist shot: BILAN logo and product package on white or branded background color. Simple, elegant, professional. Soft even lighting. Space for tagline text and social media handles. Vertical 9:16 format, photorealistic, premium brand aesthetic."
+  },
+
+  "alternative_scenes": {
+
+    "scene_5b_add_powder_topdown": {
+      "duration": "8 seconds",
+      "shot_type": "Macro close-up top-down",
+      "note": "Alternative angle for hero shot",
+      "prompt": "Top-down cinematic slow motion macro view of BILAN electrolyte powder falling from packet into glass of water. Camera looks straight down at the water surface. Powder creates a mushroom cloud explosion effect as it hits the water, spreading outward in beautiful patterns. Particles illuminate from backlight. Water gradually changes color. Vertical 9:16 format, 120fps slow motion, photorealistic, mesmerizing and hypnotic aesthetic."
+    },
+
+    "scene_8b_person_post_workout": {
+      "duration": "3 seconds",
+      "note": "Alternative context: post-workout setting",
+      "prompt": "A person in workout clothes with visible light perspiration holds BILAN drink after exercise. Gym towel over shoulder, workout equipment softly visible in background. Expression of relief and need for hydration. Authentic post-workout moment. Bright natural or gym lighting. Vertical 9:16 format, photorealistic, relatable fitness lifestyle aesthetic."
+    },
+
+    "scene_8c_person_morning_kitchen": {
+      "duration": "3 seconds",
+      "note": "Alternative context: morning routine",
+      "prompt": "A person in comfortable morning attire holds BILAN drink in a bright modern kitchen at sunrise. Soft golden morning light through windows. Coffee maker or breakfast items softly visible in background. Peaceful morning energy. Vertical 9:16 format, photorealistic, calm and refreshing morning aesthetic."
+    },
+
+    "scene_8d_person_outdoor_active": {
+      "duration": "3 seconds",
+      "note": "Alternative context: outdoor adventure",
+      "prompt": "A person in outdoor athletic gear holds BILAN drink in beautiful natural setting - beach, mountain trail, or park. Natural sunlight, blue sky visible. Expression of refreshment and adventure. Authentic outdoor moment. Vertical 9:16 format, photorealistic, adventurous and energetic aesthetic."
+    }
+  },
+
+  "combined_video_options": {
+
+    "option_1_full_sequence_60sec": {
+      "duration": "60 seconds",
+      "scenes_included": "All scenes 1-13",
+      "prompt": "Complete BILAN electrolyte drink preparation and consumption sequence: 1) Extreme slow motion macro of powder cascading into water creating mesmerizing clouds, 2) Clean setup of glass, water bottle, and BILAN packet on marble countertop, 3) Pouring crystal clear water into glass, 4) Hands opening BILAN packet, 5) Cinematic slow motion of powder dissolving in water creating vibrant swirling patterns, 6) Stirring the drink smoothly until fully mixed, 7) Beautiful product shot of finished drink with condensation, 8) Fit person holding the drink with anticipation, 9) Close-up of person taking first satisfying sip with eyes closing in relief, 10) Person showing renewed energy and satisfaction, 11) Continuing their activity with vigor, 12) Product showcase of BILAN packets with prepared drink, 13) BILAN logo closer. Modern minimalist aesthetic, bright natural lighting throughout, clean composition. Vertical 9:16 format, photorealistic, lifestyle commercial quality, fresh and energetic mood."
+    },
+
+    "option_2_quick_version_30sec": {
+      "duration": "30 seconds",
+      "scenes_included": "Scenes 1, 3, 5, 6, 7, 9, 12",
+      "prompt": "Quick BILAN electrolyte drink preparation: 1) Slow motion macro of powder falling into water creating beautiful dissolving clouds, 2) Pouring water into glass, 3) Cinematic slow motion of vibrant powder mixing and swirling, 4) Stirring until perfectly dissolved, 5) Stunning product shot of finished cold drink with condensation, 6) Person taking first refreshing sip with satisfied expression, 7) Clean product showcase of BILAN packets and logo. Bright natural lighting, modern minimalist aesthetic, vertical 9:16 format, photorealistic, fresh and dynamic pacing, commercial quality."
+    },
+
+    "option_3_story_version_45sec": {
+      "duration": "45 seconds",
+      "scenes_included": "Scenes 1, 2, 4, 5, 6, 7, 8, 9, 10, 12",
+      "prompt": "BILAN electrolyte drink lifestyle story: 1) Attention-grabbing slow motion macro of powder creating mesmerizing clouds in water, 2) Setup of ingredients on clean marble surface, 3) Opening BILAN packet, 4) Cinematic slow motion of powder dissolving and transforming water into vibrant drink, 5) Smooth stirring motion, 6) Product beauty shot of cold finished drink, 7) Athletic person holding drink with anticipation, 8) Close-up of refreshing first sip and satisfied expression, 9) Renewed energy and positive vibe, 10) Product showcase finale with BILAN branding. Modern lifestyle aesthetic, bright natural lighting, vertical 9:16 format, photorealistic, engaging narrative flow, commercial quality."
+    }
+  },
+
+  "technical_specifications": {
+    "resolution": "1080x1920 pixels (9:16 vertical)",
+    "aspect_ratio": "9:16",
+    "frame_rates": {
+      "normal_speed": "24fps or 30fps",
+      "slow_motion": "60fps or 120fps (scenes 1, 5, 9)"
+    },
+    "lighting": "Bright natural lighting, soft diffused, avoid harsh shadows",
+    "color_temperature": "5000K-5500K (daylight balanced)",
+    "focus": "Shallow depth of field for hero shots, medium depth for context shots"
+  },
+
+  "text_overlay_suggestions": {
+    "note": "Add these in post-production, not in Veo generation",
+    "hook_text": "¿Lista para hidratarte? 💧",
+    "step_callouts": [
+      "Agua fría",
+      "Una medida de BILAN",
+      "Mezcla 30 segundos",
+      "¡Listo!"
+    ],
+    "benefit_badges": [
+      "✓ Hidratación óptima",
+      "✓ Electrolitos balanceados",
+      "✓ Sin azúcar añadido",
+      "✓ Ingredientes naturales"
+    ],
+    "cta_final": [
+      "BILAN - Electrolitos Naturales",
+      "Disponible ahora",
+      "www.bilanco.com",
+      "Link en bio 👆"
+    ]
+  },
+
+  "music_recommendations": {
+    "genre": "Upbeat indie pop instrumental or energetic electronic chill",
+    "bpm": "100-130",
+    "mood": "Positive, fresh, motivational",
+    "volume_levels": {
+      "intro_hook": "-12db (let SFX shine)",
+      "preparation": "-15db (background, let visuals lead)",
+      "consumption": "-8db (more present, builds energy)",
+      "cta": "-18db (subordinate to message)"
+    }
+  },
+
+  "sound_effects_to_add": {
+    "note": "Add these in post-production for ASMR effect",
+    "effects": [
+      "Powder falling into water (satisfying plop)",
+      "Water pouring (crisp and clear)",
+      "Packet tearing (subtle crinkle)",
+      "Spoon stirring in glass (gentle clink)",
+      "Person drinking (very subtle, not exaggerated)"
+    ]
+  },
+
+  "production_notes": [
+    "Scene 5 (powder dissolving) is the HERO SHOT - allocate 30% of generation attempts to perfecting this",
+    "Use separate scene prompts for maximum control over each shot",
+    "Use combined prompts for faster generation if you need a complete video quickly",
+    "Consider generating multiple versions of Scene 5 with different angles (side profile vs top-down)",
+    "Generate alternative context scenes (8b, 8c, 8d) to create multiple video versions for different audiences",
+    "Vertical 9:16 format is optimized for TikTok, Instagram Reels, YouTube Shorts, and Stories",
+    "No text overlays in the Veo prompts - add all text, logos, and CTAs in post-production editing",
+    "Ensure BILAN branding (logo, packet design) is clearly visible in scenes 2, 4, 12, and 13",
+    "For authentic look, mention 'photorealistic' and 'natural lighting' in every prompt",
+    "Slow motion scenes (1, 5, 9) should specify '120fps slow motion' for smooth dramatic effect"
+  ],
+
+  "veo_generation_tips": [
+    "Start with individual scenes for better quality control",
+    "Generate Scene 5 (hero shot) first - if this looks good, proceed with others",
+    "If a scene doesn't generate well, try the alternative version or adjust the prompt slightly",
+    "Veo 3 excels at slow motion fluid dynamics - maximize this for powder and water scenes",
+    "For person scenes (8-11), you may need to generate multiple times to get authentic expressions",
+    "Keep prompts under 500 characters for best results",
+    "Mention 'vertical 9:16 format' in every prompt to ensure proper framing",
+    "Use 'photorealistic' consistently for brand consistency across all generated scenes"
+  ],
+
+  "editing_assembly_guide": {
+    "total_duration_target": "45-60 seconds optimal for social media",
+    "scene_order": [
+      "Scene 1 (Hook - 3s)",
+      "Scene 2 (Setup - 4s)",
+      "Scene 3 (Pour water - 3s)",
+      "Scene 4 (Open packet - 2s)",
+      "Scene 5 (Hero powder drop - 8s)",
+      "Scene 6 (Stir - 4s)",
+      "Scene 7 (Beauty shot - 3s)",
+      "Scene 8 (Person holds - 3s)",
+      "Scene 9 (First sip - 5s)",
+      "Scene 10 (Energized - 4s)",
+      "Scene 11 (Action - 4s) - OPTIONAL, can cut for shorter video",
+      "Scene 12 (Packshot CTA - 5s)",
+      "Scene 13 (Logo - 3s)"
+    ],
+    "transitions": "Mostly hard cuts, occasional subtle crossfade (0.3s) for scene changes",
+    "pacing": "Dynamic and engaging - no shot longer than 8 seconds except hero shot"
+  },
+
+  "platform_optimization": {
+    "tiktok": {
+      "ideal_duration": "30-45 seconds",
+      "keep_scenes": [1, 3, 5, 6, 7, 9, 12],
+      "hook_critical": "First 3 seconds (Scene 1) must be EXTREMELY captivating",
+      "note": "Fast-paced, trend-friendly, use popular audio if possible"
+    },
+    "instagram_reels": {
+      "ideal_duration": "45-60 seconds",
+      "keep_scenes": [1, 2, 4, 5, 6, 7, 8, 9, 10, 12],
+      "note": "Slightly slower pace than TikTok, aesthetic quality very important"
+    },
+    "youtube_shorts": {
+      "ideal_duration": "60 seconds maximum",
+      "keep_scenes": "All scenes 1-13",
+      "note": "Can be most comprehensive version, viewers watch longer"
+    },
+    "instagram_stories": {
+      "ideal_duration": "15 seconds per story card",
+      "strategy": "Break into 3-4 story cards",
+      "card_1": "Scenes 1, 2 (Hook + Setup)",
+      "card_2": "Scenes 5, 6 (Hero prep)",
+      "card_3": "Scenes 7, 9 (Beauty shot + Consumption)",
+      "card_4": "Scene 12, 13 (CTA + Logo)"
+    }
+  },
+
+  "flavors_variants": {
+    "note": "Generate separate versions for each BILAN flavor",
+    "variations": {
+      "limon_natural": "Yellow/pale citrus colored liquid",
+      "frambuesa": "Pink/magenta colored liquid",
+      "naranja_sanguina": "Deep orange/red colored liquid",
+      "coco": "Pale/white translucent liquid"
+    },
+    "prompt_adjustment": "In scenes 5, 6, 7, specify the exact color of the liquid based on flavor"
+  },
+
+  "success_metrics": {
+    "view_rate": ">50% (vertical video typically performs better)",
+    "average_watch_time": ">75% completion",
+    "engagement_rate": ">4% for Reels/TikTok",
+    "cta_click_rate": ">2.5%",
+    "share_rate": ">0.8% (higher for vertical format)"
+  },
+
+  "next_steps": [
+    "1. Generate Scene 5 (hero shot) first using Veo 3 to validate visual style",
+    "2. Generate scenes 1, 7, and 9 next (other key visual moments)",
+    "3. Generate remaining scenes to complete the sequence",
+    "4. Import all scenes into editing software (CapCut, Premiere, Final Cut)",
+    "5. Add text overlays, music, and sound effects per specifications above",
+    "6. Color grade to ensure consistency across all generated scenes",
+    "7. Export in 1080x1920 format for social media platforms",
+    "8. Create platform-specific edits (30s for TikTok, 60s for Reels, etc.)",
+    "9. Test on target audience and measure success metrics",
+    "10. Generate flavor variants using the same structure"
+  ],
+
+  "version": "1.0",
+  "created_date": "2025-12-23",
+  "created_for": "BILAN Electrolitos Naturales",
+  "video_type": "Product Preparation and Consumption - Vertical Format",
+  "target_audience": "Health-conscious consumers, fitness enthusiasts, active lifestyle individuals (25-45 years old)"
+}

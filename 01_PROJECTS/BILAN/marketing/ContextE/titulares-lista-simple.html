@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de Titulares de Marketing BILAN - Referencia Rápida para Equipo de Ventas">
+    <title>Titulares BILAN | Referencia Rápida</title>
+    <style>
+        /* BILAN Simple List - Mobile First, Print Friendly */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bilan-primary: #0d6efd;
+            --bilan-text: #111;
+            --bilan-background: #fff;
+            --bilan-gray: #f8f9fa;
+            --bilan-border: #e0e0e0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--bilan-text);
+            background-color: var(--bilan-background);
+            padding: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid var(--bilan-primary);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--bilan-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .intro-box {
+            background: var(--bilan-gray);
+            border-left: 4px solid var(--bilan-primary);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .intro-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            background: var(--bilan-primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #0257d5;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--bilan-gray);
+            color: var(--bilan-text);
+            border: 1px solid var(--bilan-border);
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .headlines-list {
+            list-style: none;
+            counter-reset: headline-counter;
+        }
+
+        .headline-item {
+            counter-increment: headline-counter;
+            position: relative;
+            padding: 1rem 1rem 1rem 3.5rem;
+            margin-bottom: 0.75rem;
+            background: white;
+            border: 1px solid var(--bilan-border);
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .headline-item:hover {
+            border-color: var(--bilan-primary);
+            box-shadow: 0 2px 8px rgba(13, 110, 253, 0.1);
+        }
+
+        .headline-item::before {
+            content: counter(headline-counter);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bilan-primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .headline-item.top-3::before {
+            background: #0257d5;
+            font-size: 1rem;
+        }
+
+        .headline-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .headline-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--bilan-text);
+            line-height: 1.4;
+            outline: none;
+            padding: 0.25rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+            word-wrap: break-word;
+        }
+
+        .headline-text:hover {
+            background: #f8f9fa;
+        }
+
+        .headline-text:focus {
+            background: #fff3cd;
+            border: 1px dashed var(--bilan-primary);
+        }
+
+        .headline-text[contenteditable="true"] {
+            cursor: text;
+        }
+
+        .reorder-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .reorder-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--bilan-border);
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--bilan-primary);
+            transition: all 0.2s;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .reorder-btn:active {
+            background: var(--bilan-primary);
+            color: white;
+            transform: scale(0.95);
+        }
+
+        .reorder-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .reorder-btn:disabled:active {
+            background: white;
+            color: var(--bilan-primary);
+            transform: none;
+        }
+
+        .edit-hint {
+            font-size: 0.75rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bilan-border);
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        footer strong {
+            color: var(--bilan-primary);
+        }
+
+        .legend {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: var(--bilan-gray);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-badge {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bilan-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .legend-badge.top-3 {
+            background: #0257d5;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            .action-buttons,
+            .btn,
+            .reorder-controls,
+            .edit-hint,
+            .legend {
+                display: none !important;
+            }
+
+            .intro-box {
+                border-left: 2px solid #000;
+            }
+
+            .headline-item {
+                page-break-inside: avoid;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                padding: 0.75rem 0.5rem 0.75rem 3rem;
+            }
+
+            .headline-item:hover {
+                border-color: #ccc;
+            }
+
+            .headline-text {
+                background: none !important;
+            }
+
+            header {
+                border-bottom: 2px solid #000;
+            }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .headline-item {
+                padding: 0.75rem 0.5rem 0.75rem 2.75rem;
+            }
+
+            .headline-item::before {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+                left: 0.5rem;
+            }
+
+            .headline-text {
+                font-size: 0.9rem;
+            }
+
+            .edit-hint {
+                font-size: 0.7rem;
+            }
+
+            .reorder-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 1.1rem;
+            }
+
+            .action-buttons {
+                justify-content: center;
+            }
+
+            .btn {
+                flex: 1 1 auto;
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 0.5rem 0.6rem;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            body {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .headline-item {
+                padding: 1.25rem 1rem 1.25rem 4rem;
+            }
+
+            .headline-item::before {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+                left: 1rem;
+            }
+
+            .headline-text {
+                font-size: 1.1rem;
+            }
+
+            .reorder-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titulares bilan</h1>
+        <p class="subtitle">Referencia Rápida</p>
+    </header>
+
+    <div class="intro-box">
+        <p><strong>15 Titulares de Alto Impacto</strong> - Personaliza esta lista: usa las <strong>flechas ▲▼</strong> para reordenar, <strong>toca el texto</strong> para editar, y luego <strong>copia/comparte</strong> tu versión personalizada.</p>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-badge top-3">★</span>
+            <span>Top 3 - Máxima Conversión</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-badge">•</span>
+            <span>Alto Rendimiento</span>
+        </div>
+        <div class="legend-item">
+            <span style="color: #666;">✎</span>
+            <span>Toca el texto para editar</span>
+        </div>
+        <div class="legend-item">
+            <span style="color: var(--bilan-primary); font-size: 1.2rem;">▲▼</span>
+            <span>Usa flechas para reordenar</span>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="btn" onclick="copyCustomList()">📋 Copiar Lista Personalizada</button>
+        <button class="btn" onclick="sendCustomList()">📤 Enviar/Compartir</button>
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ Imprimir</button>
+        <button class="btn btn-secondary" onclick="resetToOriginal()">↺ Restaurar Original</button>
+    </div>
+
+    <ol class="headlines-list" id="headlinesList">
+        <li class="headline-item top-3">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">¿Cansado de Bebidas Deportivas Azucaradas? Obtén Energía Limpia e Instantánea.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item top-3">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Desbloquea el Rendimiento Máximo. El Secreto es la Hidratación de Grado Farmacéutico.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item top-3">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Elimina la Fatiga y la Niebla Mental en Minutos. Garantizado.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">El Secreto de Hidratación de los Atletas de Élite. Sin Azúcar, Puros Resultados.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Deja de Sentirte Lento. Rehidrátate Más Rápido que Solo con Agua.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Piensa Más Claro, Trabaja Más Inteligente. La Bebida Definitiva para el Cerebro.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Por Qué el Agua No es Suficiente para una Verdadera Hidratación.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Conquista tus Entrenamientos, No tu Dieta. Cero Azúcar, Cero Basura.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">La Forma Más Rápida de Recuperarse de un Día Difícil.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Hidratación de Élite para los Inquebrantables.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Deshazte de la Basura Artificial. Alimenta tu Cuerpo con lo Mejor.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Tu Ventaja Injusta Contra la Deshidratación.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">La Forma Más Limpia de Restaurar tu Energía.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">Nunca Más Dejes que la Deshidratación Mate tu Concentración.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+
+        <li class="headline-item">
+            <div class="headline-content">
+                <span class="headline-text" contenteditable="true">¡Finalmente! Una Bebida Deportiva Saludable que Realmente Funciona.</span>
+                <span class="edit-hint">Toca para editar</span>
+            </div>
+            <div class="reorder-controls">
+                <button class="reorder-btn" onclick="moveUp(this)" aria-label="Subir">▲</button>
+                <button class="reorder-btn" onclick="moveDown(this)" aria-label="Bajar">▼</button>
+            </div>
+        </li>
+    </ol>
+
+    <footer>
+        <p><strong>BILAN</strong> - Hidratación de Grado Farmacéutico</p>
+        <p>Cero Azúcar. Puros Resultados. 100% Científico.</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">Referencia Rápida | Equipo de Ventas | 2024</p>
+    </footer>
+
+    <script>
+        // Store original headlines for reset
+        const originalHeadlines = [
+            "¿Cansado de Bebidas Deportivas Azucaradas? Obtén Energía Limpia e Instantánea.",
+            "Desbloquea el Rendimiento Máximo. El Secreto es la Hidratación de Grado Farmacéutico.",
+            "Elimina la Fatiga y la Niebla Mental en Minutos. Garantizado.",
+            "El Secreto de Hidratación de los Atletas de Élite. Sin Azúcar, Puros Resultados.",
+            "Deja de Sentirte Lento. Rehidrátate Más Rápido que Solo con Agua.",
+            "Piensa Más Claro, Trabaja Más Inteligente. La Bebida Definitiva para el Cerebro.",
+            "Por Qué el Agua No es Suficiente para una Verdadera Hidratación.",
+            "Conquista tus Entrenamientos, No tu Dieta. Cero Azúcar, Cero Basura.",
+            "La Forma Más Rápida de Recuperarse de un Día Difícil.",
+            "Hidratación de Élite para los Inquebrantables.",
+            "Deshazte de la Basura Artificial. Alimenta tu Cuerpo con lo Mejor.",
+            "Tu Ventaja Injusta Contra la Deshidratación.",
+            "La Forma Más Limpia de Restaurar tu Energía.",
+            "Nunca Más Dejes que la Deshidratación Mate tu Concentración.",
+            "¡Finalmente! Una Bebida Deportiva Saludable que Realmente Funciona."
+        ];
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateButtonStates();
+
+            // Hide edit hints when editing
+            document.querySelectorAll('.headline-text').forEach(text => {
+                text.addEventListener('focus', function() {
+                    const hint = this.parentElement.querySelector('.edit-hint');
+                    if (hint) hint.style.display = 'none';
+                });
+
+                text.addEventListener('blur', function() {
+                    const hint = this.parentElement.querySelector('.edit-hint');
+                    if (hint) hint.style.display = 'block';
+                });
+            });
+        });
+
+        // Move item up
+        function moveUp(button) {
+            const item = button.closest('.headline-item');
+            const prev = item.previousElementSibling;
+
+            if (prev) {
+                item.parentNode.insertBefore(item, prev);
+                updateButtonStates();
+
+                // Smooth scroll into view
+                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Move item down
+        function moveDown(button) {
+            const item = button.closest('.headline-item');
+            const next = item.nextElementSibling;
+
+            if (next) {
+                item.parentNode.insertBefore(next, item);
+                updateButtonStates();
+
+                // Smooth scroll into view
+                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Update button states (disable first up, last down)
+        function updateButtonStates() {
+            const items = document.querySelectorAll('.headline-item');
+
+            items.forEach((item, index) => {
+                const upBtn = item.querySelector('.reorder-btn:first-child');
+                const downBtn = item.querySelector('.reorder-btn:last-child');
+
+                // Disable up button for first item
+                upBtn.disabled = (index === 0);
+
+                // Disable down button for last item
+                downBtn.disabled = (index === items.length - 1);
+            });
+        }
+
+        // Copy customized list
+        function copyCustomList() {
+            const headlines = getCurrentHeadlines();
+            const text = "TITULARES BILAN - LISTA PERSONALIZADA\n\n" + headlines.map((h, i) => `${i + 1}. ${h}`).join("\n\n") + "\n\n---\nBILAN - Hidratación de Grado Farmacéutico\nCero Azúcar. Puros Resultados.";
+
+            navigator.clipboard.writeText(text).then(function() {
+                showSuccess(event.target, '✅ ¡Lista Copiada!');
+            }).catch(function(err) {
+                alert('No se pudo copiar automáticamente. Por favor, selecciona manualmente el texto y usa Ctrl+C.');
+                console.error('Error al copiar:', err);
+            });
+        }
+
+        // Send/Share customized list
+        function sendCustomList() {
+            const headlines = getCurrentHeadlines();
+            const text = "TITULARES BILAN - LISTA PERSONALIZADA\n\n" + headlines.map((h, i) => `${i + 1}. ${h}`).join("\n\n") + "\n\n---\nBILAN - Hidratación de Grado Farmacéutico";
+
+            // Check if Web Share API is available (mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Titulares BILAN - Lista Personalizada',
+                    text: text
+                }).then(() => {
+                    console.log('Compartido exitosamente');
+                }).catch((err) => {
+                    console.log('Error al compartir:', err);
+                    fallbackShare(text);
+                });
+            } else {
+                // Fallback: Copy to clipboard
+                fallbackShare(text);
+            }
+        }
+
+        function fallbackShare(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('✅ ¡Lista copiada al portapapeles!\n\nAhora puedes pegarla en:\n• WhatsApp\n• Email\n• Slack\n• Cualquier aplicación');
+            }).catch(function() {
+                // Show modal with text for manual copy
+                const userText = prompt('Copia este texto (Ctrl+C):', text);
+            });
+        }
+
+        // Reset to original
+        function resetToOriginal() {
+            if (!confirm('¿Restaurar la lista original? Se perderán todos los cambios.')) {
+                return;
+            }
+
+            const items = document.querySelectorAll('.headline-item');
+            items.forEach((item, index) => {
+                const textSpan = item.querySelector('.headline-text');
+                textSpan.textContent = originalHeadlines[index];
+            });
+
+            // Reorder to original
+            const list = document.getElementById('headlinesList');
+            const itemsArray = Array.from(items);
+            itemsArray.sort((a, b) => {
+                const aText = a.querySelector('.headline-text').textContent;
+                const bText = b.querySelector('.headline-text').textContent;
+                return originalHeadlines.indexOf(aText) - originalHeadlines.indexOf(bText);
+            });
+
+            itemsArray.forEach(item => {
+                list.appendChild(item);
+            });
+
+            updateButtonStates();
+            showSuccess(event.target, '✅ Restaurado');
+        }
+
+        // Get current headlines in order
+        function getCurrentHeadlines() {
+            const items = document.querySelectorAll('.headline-item');
+            const headlines = [];
+            items.forEach(item => {
+                const text = item.querySelector('.headline-text').textContent.trim();
+                headlines.push(text);
+            });
+            return headlines;
+        }
+
+        // Show success message on button
+        function showSuccess(btn, message) {
+            const originalText = btn.innerHTML;
+            const originalBg = btn.style.background;
+
+            btn.innerHTML = message;
+            btn.style.background = '#28a745';
+
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.style.background = originalBg;
+            }, 2000);
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + P for print
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+
+            // Ctrl/Cmd + Shift + C to copy customized list
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+                e.preventDefault();
+                copyCustomList();
+            }
+
+            // Ctrl/Cmd + Shift + R to reset
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'R') {
+                e.preventDefault();
+                resetToOriginal();
+            }
+
+            // Prevent Enter key from creating new lines in contenteditable
+            if (e.target.classList.contains('headline-text') && e.key === 'Enter') {
+                e.preventDefault();
+                e.target.blur(); // Exit editing mode
+            }
+        });
+    </script>
+</body>
+</html>
