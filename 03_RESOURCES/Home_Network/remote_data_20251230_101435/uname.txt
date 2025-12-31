@@ -1,0 +1,1 @@
+Linux raspberrypi3 6.12.41-1-MANJARO-RPI4 #1 SMP PREEMPT Fri Aug  1 11:32:52 UTC 2025 aarch64 GNU/Linux

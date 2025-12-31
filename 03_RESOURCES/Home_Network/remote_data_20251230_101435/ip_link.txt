@@ -1,0 +1,24 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enu1u1u1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether b8:27:eb:d0:9b:d2 brd ff:ff:ff:ff:ff:ff
+    altname enxb827ebd09bd2
+3: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DORMANT group default qlen 1000
+    link/ether 26:b6:37:03:71:36 brd ff:ff:ff:ff:ff:ff permaddr b8:27:eb:85:ce:87
+    altname wlxb827eb85ce87
+4: tailscale0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1280 qdisc fq_codel state UNKNOWN mode DEFAULT group default qlen 500
+    link/none 
+5: br-7415c36fc5a0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether e2:45:ce:2f:22:d3 brd ff:ff:ff:ff:ff:ff
+7: br-f727e171419a: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether f6:15:29:a9:76:e8 brd ff:ff:ff:ff:ff:ff
+8: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 8e:63:b2:66:7d:96 brd ff:ff:ff:ff:ff:ff
+9: vethf0010c0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 3a:37:4a:23:bd:60 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+10: veth78f8b39@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-f727e171419a state UP mode DEFAULT group default 
+    link/ether da:88:8a:37:2e:be brd ff:ff:ff:ff:ff:ff link-netnsid 1
+11: vethbfba228@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether e6:34:26:b7:b2:ec brd ff:ff:ff:ff:ff:ff link-netnsid 2
+12: veth2a1117f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-7415c36fc5a0 state UP mode DEFAULT group default 
+    link/ether da:64:a8:63:7c:fb brd ff:ff:ff:ff:ff:ff link-netnsid 3

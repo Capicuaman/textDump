@@ -1,0 +1,5 @@
+LSB Version:	n/a
+Distributor ID:	Manjaro-ARM
+Description:	Manjaro ARM Linux
+Release:	24.04
+Codename:	n/a

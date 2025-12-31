@@ -1,0 +1,18 @@
+100.68.220.78   raspberrypi3         ofo.rivera@  linux   -
+100.121.107.124 alienware            ofo.rivera@  linux   offline
+100.97.37.110   carranza             ofo.rivera@  iOS     offline
+100.100.2.4     debian12             ofo.rivera@  linux   offline
+100.97.119.116  desktop-alienware    ofo.rivera@  windows offline
+100.108.178.107 desktop-kgo0ni7-1    ofo.rivera@  linux   offline
+100.96.16.134   desktop-kgo0ni7      ofo.rivera@  windows offline
+100.119.163.51  ds220                ofo.rivera@  linux   idle; offers exit node; offline
+100.100.189.31  iphone-xr            ofo.rivera@  iOS     offline
+100.111.204.145 nextcloudpi          ofo.rivera@  linux   offline
+100.121.67.17   nixos                ofo.rivera@  linux   offline
+100.126.167.137 odyssey4             ofo.rivera@  windows offline
+100.73.202.2    pi-zero0             ofo.rivera@  linux   offline
+100.90.42.105   ponciano             ofo.rivera@  linux   offline
+100.120.215.14  raspberrypi          ofo.rivera@  linux   offline
+100.97.21.145   samsung-sm-t575      ofo.rivera@  android offline
+100.101.219.61  zapata-1             analorenzo14@ macOS   offline
+100.110.53.154  zapata               ofo.rivera@  macOS   active; direct 187.246.19.34:41641, tx 85052 rx 84556

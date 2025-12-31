@@ -1,0 +1,138 @@
+{
+  "title": "BILAN - [STATE_NAME] Natural Hydration",
+  "state": "[STATE_NAME_SPANISH]",
+  "video_id": "BILAN-MX-[STATE_NUMBER]",
+  "format": "9:16",
+  "duration": "5-8 seconds",
+  "target_platforms": ["Instagram Reels", "TikTok", "YouTube Shorts", "Instagram Stories"],
+
+  "description": "[FULL_NARRATIVE: 150-300 words describing: Opening scene with BILAN kraft paper bag and crystal-clear glass on natural surface in foreground. State-specific landmark in mid/background. Describe subtle animation (water flowing/wind blowing/mist drifting). Detail lighting, environment mood, and final frame state. Example: 'A serene medium shot of a BILAN kraft paper bag (beige with blue accent band, logo clearly visible) and a crystal-clear glass filled with [FLAVOR_COLOR] electrolyte drink resting on a [SURFACE_TYPE] in the foreground. Behind them, the iconic [LANDMARK] stretches across the background in soft focus. [ANIMATION_DESCRIPTION] unfolds throughout the 8-second shot. The BILAN product remains perfectly sharp and static, while the [LANDMARK] [MOTION] creates a meditative, naturally dynamic backdrop. Natural [TIME_OF_DAY] light at [COLOR_TEMP]K illuminates the scene with a [LIGHTING_QUALITY] glow. The final frame holds this balance: product crisp and inviting in the foreground, [STATE] natural beauty alive but softly present in the background.']",
+
+  "style": "photorealistic, clean aesthetic, natural, [MOOD: refreshing/energetic/serene/adventurous]",
+
+  "camera": "[SHOT_TYPE: Medium shot/Close-up] of BILAN kraft paper bag and prepared glass resting on [SURFACE_TYPE: mossy rock/driftwood/smooth desert stone/volcanic rock]. Camera [MOVEMENT: remains static OR performs subtle slow push-in over 8 seconds]. Shallow depth of field (f/2.8) keeps the product sharp and prominent, while the [LANDMARK] in the background is softly blurred but recognizable. Vertical 9:16 framing with the product occupying 20-30% of the lower-middle frame, and 30-35% clean negative space reserved at the top for text overlays in post-production.",
+
+  "lighting": "Natural [TIME_OF_DAY: golden hour/morning/midday] sunlight at [COLOR_TEMP: 5000K-5500K] color temperature. [DIRECTION: Side-lit from the left/Backlit/Diffused overhead lighting]. Soft, flattering light creates a healthy, inviting glow on the BILAN product and glass. [STATE_SPECIFIC_NOTE: e.g., 'Dappled forest light filters through jungle canopy' OR 'Bright coastal reflection from turquoise water' OR 'Warm desert light with slight heat distortion'].",
+
+  "environment": "[DETAILED_ENVIRONMENT: Comprehensive description of state landmark and setting. Examples: 'A turquoise cenote pool in Quintana Roo, surrounded by limestone walls and lush jungle foliage. Sunlight filters through the canopy, creating dappled light patterns on the water surface' OR 'The layered rock formations of Copper Canyon in Chihuahua stretch across the background, with pine forests visible on distant ridges and morning mist drifting through the canyon layers' OR 'Pacific Ocean waves crash against the distinctive rock arch of Los Cabos, Baja California Sur, with Sea of Cortez waters in vibrant blues and pelicans gliding overhead']",
+
+  "elements": [
+    "BILAN kraft paper bag (1000g size, beige/tan with blue accent band, logo clearly visible and legible)",
+    "Crystal-clear glass filled with [FLAVOR_COLOR: pale citrus yellow/pink magenta/deep orange-red/translucent white] BILAN electrolyte drink",
+    "Fine white BILAN electrolyte powder visible (small amount on surface or in glass)",
+    "Natural surface appropriate to state: [SURFACE: mossy rock/weathered driftwood/smooth desert stone/volcanic rock/limestone ledge]",
+    "Condensation droplets on glass exterior showing the drink is cold and refreshing",
+    "[LANDMARK_ELEMENT_1: e.g., 'Turquoise cenote water in soft focus background']",
+    "[LANDMARK_ELEMENT_2: e.g., 'Jungle foliage framing the edges of the scene']",
+    "[LANDMARK_ELEMENT_3: e.g., 'Limestone rock formations visible through crystal-clear water']",
+    "[OPTIONAL_ELEMENT: Additional state-specific detail if relevant]"
+  ],
+
+  "motion": "[MOTION_DESCRIPTION: Detailed 5-8 second animation description]. The BILAN kraft paper bag and glass remain perfectly sharp, static, and prominently featured in the foreground throughout the entire shot. The background [LANDMARK] features [SPECIFIC_MOTION: gentle water ripples expanding concentrically across the cenote surface / canyon mist slowly drifting and weaving through layered rock formations / palm fronds swaying rhythmically in a tropical breeze / ocean waves softly crashing against rock formations with foam spreading / heat shimmer creating subtle distortion over sand dunes / volcanic steam wisps rising slowly from crater / snow particles swirling gently over mountain peak / waterfall mist drifting through jungle air / river current flowing smoothly over rocks]. [ADDITIONAL_MOTION if applicable: 'Sunlight shifts subtly as clouds pass overhead' OR 'Shadows of leaves dance gently on the surface']. The motion is slow, meditative, and natural - enhancing the scene's authenticity without distracting from the product. Shot at [FRAME_RATE: 120fps for slow motion effect OR 24fps for subtle real-time movement].",
+
+  "ending": "Final frame: The BILAN kraft paper bag and crystal-clear glass of [FLAVOR_COLOR] electrolyte drink remain perfectly still, sharp, and inviting in the foreground. The [LANDMARK] in soft-focus background continues its [SUBTLE_MOTION: gentle rippling/drifting/swaying/flowing]. The scene feels [MOOD: serene and refreshing/energetic and inviting/adventurous and revitalizing/peaceful and natural]. The BILAN logo on the kraft paper bag is clearly legible. The composition is balanced and inviting, with strong negative space at the top perfectly positioned for text overlays to be added in post-production. The viewer's eye is drawn to the product while feeling the authentic connection to [STATE]'s natural beauty.",
+
+  "text": "none (text overlays added in post-production)",
+
+  "keywords": [
+    "9:16",
+    "vertical video",
+    "[STATE_NAME_SPANISH]",
+    "Mexico",
+    "natural hydration",
+    "electrolytes",
+    "BILAN",
+    "[LANDMARK_KEYWORD: cenote/canyon/volcano/beach/desert/jungle]",
+    "[LANDSCAPE_TYPE: coastal/desert/tropical/mountain/volcanic/water feature]",
+    "photorealistic",
+    "clean aesthetic",
+    "refreshing",
+    "[MOTION_KEYWORD: flowing water/gentle breeze/ocean waves/mist/heat shimmer/snow swirl]",
+    "social media optimized",
+    "regional targeting",
+    "no text overlay"
+  ],
+
+  "regional_targeting": {
+    "primary_market": "[STATE_NAME_SPANISH]",
+    "secondary_markets": ["[NEIGHBORING_STATE_1]", "[NEIGHBORING_STATE_2]"],
+    "cultural_notes": "[CULTURAL_RESONANCE: Brief explanation of why this landmark resonates with state identity. Example: 'Quintana Roo residents deeply identify with cenote culture, which has been central to Mayan heritage and modern tourism. The Caribbean coastline represents pride in the state's natural resources and beach lifestyle' OR 'Copper Canyon is a source of immense regional pride for Chihuahua, representing the rugged beauty and adventure spirit of northern Mexico. The canyon's scale rivals the Grand Canyon and is central to state identity.']"
+  },
+
+  "production_notes": [
+    "Ensure BILAN logo on kraft paper bag is clearly visible and legible throughout the shot",
+    "Maintain consistent product positioning (20-30% of lower frame) across all 32 state videos",
+    "Background landmark should be recognizable to state residents but not overpower the product focus",
+    "Subtle animation should be 'felt' rather than 'watched' - viewer focus stays on BILAN product",
+    "Shoot at [SPECIFIC_FRAME_RATE] to achieve the desired motion effect for this state's environment",
+    "Natural color temperature ([COLOR_TEMP]K) should feel authentic to state's climate and time of day",
+    "Vertical 9:16 format is critical - do NOT crop from horizontal footage",
+    "Reserve top 30-35% of frame for post-production text overlays (state name, tagline, CTA)",
+    "Glass condensation is important visual cue for refreshment and cold drink appeal",
+    "Natural surface selection should be environmentally appropriate to state (coastal=driftwood, desert=stone, jungle=mossy rock, etc.)"
+  ],
+
+  "post_production_overlay_suggestions": {
+    "text_overlays_spanish": [
+      "[STATE_NAME_SPANISH] - Top of frame, elegant sans-serif font, white or cream color",
+      "BILAN Electrolitos Naturales - Below state name, smaller size",
+      "Hidratación Natural de México - Optional tagline",
+      "www.bilanco.com - Bottom corner with social media handles (@bilanco)"
+    ],
+    "cta_options_spanish": [
+      "Descubre BILAN en [STATE_NAME_SPANISH]",
+      "Hidratación Natural para [STATE_NAME_SPANISH]",
+      "BILAN - El Sabor de [STATE_NAME_SPANISH]",
+      "Disponible en [STATE_NAME_SPANISH] - Link en bio"
+    ],
+    "hashtag_suggestions": [
+      "#BILAN[STATE_NAME]",
+      "#HidrataciónNatural",
+      "#ElectrolitosNaturales",
+      "#[STATE_NAME]Natural",
+      "#BILANMexico"
+    ]
+  },
+
+  "customization_variables": {
+    "STATE_NAME": "Full state name in English",
+    "STATE_NAME_SPANISH": "Full state name in Spanish",
+    "STATE_NUMBER": "Two-digit number 01-32",
+    "LANDMARK": "Primary iconic landmark or natural feature",
+    "LANDMARK_KEYWORD": "Short keyword for landmark type",
+    "LANDSCAPE_TYPE": "General landscape category",
+    "SURFACE_TYPE": "Natural surface appropriate to state environment",
+    "FLAVOR_COLOR": "Electrolyte drink color based on flavor variant",
+    "TIME_OF_DAY": "Appropriate time of day for state's climate/lifestyle",
+    "COLOR_TEMP": "Light color temperature in Kelvin",
+    "LIGHTING_QUALITY": "Descriptive quality of light",
+    "MOOD": "Overall emotional tone of the video",
+    "SHOT_TYPE": "Camera framing type",
+    "MOVEMENT": "Camera movement (if any)",
+    "ANIMATION_DESCRIPTION": "Full narrative of background motion",
+    "SPECIFIC_MOTION": "Precise description of landmark animation",
+    "MOTION_KEYWORD": "Short keyword for motion type",
+    "FRAME_RATE": "120fps for slow motion OR 24fps for real-time",
+    "NEIGHBORING_STATE_1": "First neighboring state",
+    "NEIGHBORING_STATE_2": "Second neighboring state",
+    "CULTURAL_RESONANCE": "Why landmark matters to state identity"
+  },
+
+  "template_usage_instructions": {
+    "step_1": "Replace all [PLACEHOLDER] variables with state-specific information",
+    "step_2": "Ensure description is 150-300 words and tells complete story",
+    "step_3": "Verify all elements list includes 7-9 specific items",
+    "step_4": "Confirm motion description is detailed and state-appropriate",
+    "step_5": "Double-check keywords include state name and landmark type",
+    "step_6": "Validate that lighting and environment match state's actual climate",
+    "step_7": "Review cultural_notes for accuracy and local relevance",
+    "step_8": "Ensure file is saved as [number]_[state_name_lowercase].json in /prompts/ directory"
+  },
+
+  "version": "1.0",
+  "created_date": "2025-12-29",
+  "created_for": "BILAN Mexican States Regional Campaign",
+  "campaign_id": "mexican_states_2025",
+  "total_videos": 32,
+  "video_format": "Subtly Animated Product Placement with State Landmarks - Vertical 9:16"
+}

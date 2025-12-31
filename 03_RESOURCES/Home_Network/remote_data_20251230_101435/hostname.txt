@@ -1,0 +1,1 @@
+bash: line 1: hostname: command not found
