@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -576,
+        768
+      ],
+      "id": "d5b453c3-2b1e-4ba4-8cbe-c7b8bb62ddb7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "x-api-key",
+              "value": "{{$credentials.anthropicApi.apiKey}}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-5\",\n  \"max_tokens\": 500,\n  \"temperature\": 0.95,\n  \"system\": \"Each execution MUST produce meaningfully different messaging. Avoid reusing sentence structures, metaphors, or phrasing from previous outputs. Vary tone, opening hooks, and calls-to-action aggressively. You are a social media content creator for BILAN electrolyte brand. Your voice is authoritative yet accessible, scientific but empowering. Always maintain these brand principles:\\n\\n1. Euhidratación y Equilibrio - Superior hydration concept\\n2. La Batería Humana - Body as battery analogy\\n3. Pureza y Calidad Científica - Scientific purity and evidence\\n4. La Alternativa Pura - Clean alternative to sugary drinks\\n\\nContent Guidelines:\\n- Be educational and evidence-based\\n- Focus on benefits, not just features\\n- Use empowering language\\n- Include relevant hashtags\\n- Keep Twitter posts under 280 characters\\n- Aim for 150-200 characters for Instagram\\n- Create engagement through questions or calls-to-action\\nNever mention competitors directly. Always position BILAN as the superior choice.\\n\\nOUTPUT RULES (MANDATORY):\\n- Respond with ONLY a valid JSON object\\n- No markdown, no explanations, no comments\\n- No character counts\\n- No nested objects\\n- Values must be plain strings only\\n- If you break JSON, the response is unusable\\n\\nReturn this exact JSON structure:\\n{\\n  \\\"twitter\\\": \\\"text only\\\",\\n  \\\"instagram\\\": \\\"text only\\\",\\n  \\\"linkedin\\\": \\\"text only\\\",\\n  \\\"whatsapp\\\": \\\"text only\\\"\\n}\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{{ $('random selector complex').item.json.prompt_context }} Crean UN post fuerte por plataforma de publicaciones para redes sociales:\\n1. Publicación para Twitter/X (menos de 280 caracteres)\\n2. Publicación para Instagram (150-200 caracteres)\\n3. Publicación para LinkedIn (tono profesional, 200-300 caracteres)\\n4. Publicación para WhatsApp (menos de 100 caracteres)\\n\\nIncluye hashtags relevantes para cada plataforma. Da el resultado en formato JSON con las claves de plataforma: twitter, instagram, linkedin, whatsapp.\"\n        }\n      ]\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -128,
+        768
+      ],
+      "id": "6377181c-9acc-4463-9a1b-310e7f1cc643",
+      "name": "claude post generation",
+      "credentials": {
+        "anthropicApi": {
+          "id": "LIFbKYuxDd6c6Cpb",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "https://docs.google.com/document/d/1wLx68Q--2zwOxxOzQCQQgwuJLFoK9a_t-Iqnj1pS-Ko/edit?tab=t.0",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "=\nBILAN Social Media Content\nTheme: {{ $('random selector complex').item.json.theme.theme }}\nCategory: {{ $('random selector complex').item.json.theme.category }}\nGenerated: {{ $('random selector complex').item.json.theme.selected_at }}\nContent ID: \n\n────────────────────────\nTWITTER / X\n────────────────────────\n{{ $json.twitter }}\n\n────────────────────────\nINSTAGRAM\n────────────────────────\n{{ $json.instagram }}\n\n────────────────────────\nLINKEDIN\n────────────────────────\n{{ $json.linkedin }}\n\n────────────────────────\nWHATSAPP\n────────────────────────\n{{ $json.whatsapp }}\n\n────────────────────────\nSYSTEM\n────────────────────────\nApproval Status: {{ $json.approval_status }}\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        320,
+        768
+      ],
+      "id": "8e0c563c-d2a0-43a5-a574-f10eda27db85",
+      "name": "Update a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "YdgxwUqNziQ6ONXX",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-json-parser.jsonParser",
+      "typeVersion": 1,
+      "position": [
+        96,
+        768
+      ],
+      "id": "7e21b5a5-202c-42a3-b5f3-ac9e90bd2f55",
+      "name": "JSON Parser"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// BILAN Random Theme Selector Function\nconst bilanThemeSelector = {\n  // Educational content themes\n  educational: [\n    {\n      theme: \"¿Qué son los electrolitos?\",\n      focus: \"Educación básica sobre electrolitos\",\n      keywords: [\"electrolitos\", \"hidratación\", \"minerales\", \"función corporal\"],\n      content_angle: \"Publicación de base educativa\",\n      call_to_action: \"Conoce más sobre el equilibrio de electrolitos\"\n    },\n    {\n      theme: \"El papel de los electrolitos en la hidratación\",\n      focus: \"Ciencia de la hidratación\",\n      keywords: [\"hidratación\", \"equilibrio de agua\", \"retención de líquidos\", \"hidratación celular\"],\n      content_angle: \"Explicación basada en ciencia\",\n      call_to_action: \"Descubre estrategias de hidratación óptima\"\n    },\n    {\n      theme: \"Electrolitos para rendimiento y recuperación\",\n      focus: \"Rendimiento deportivo\",\n      keywords: [\"rendimiento\", \"recuperación\", \"deporte\", \"resistencia\", \"función muscular\"],\n      content_angle: \"Enfoque en rendimiento deportivo\",\n      call_to_action: \"Eleva tu rendimiento con electrolitos adecuados\"\n    },\n    {\n      theme: \"Sodio: el electrolito incomprendido\",\n      focus: \"Educación sobre sodio\",\n      keywords: [\"sodio\", \"sal\", \"presión arterial\", \"mineral esencial\"],\n      content_angle: \"Contenido para derribar mitos\",\n      call_to_action: \"Comprende el papel del sodio en la salud\"\n    },\n    {\n      theme: \"Potasio: el mineral del corazón\",\n      focus: \"Beneficios del potasio\",\n      keywords: [\"potasio\", \"salud del corazón\", \"calambres musculares\", \"sistema nervioso\"],\n      content_angle: \"Énfasis en salud cardiovascular\",\n      call_to_action: \"Apoya tu corazón con potasio\"\n    },\n    {\n      theme: \"Magnesio: el mineral de la relajación\",\n      focus: \"Beneficios del magnesio\",\n      keywords: [\"magnesio\", \"relajación\", \"sueño\", \"recuperación muscular\", \"estrés\"],\n      content_angle: \"Enfoque en bienestar y recuperación\",\n      call_to_action: \"Encuentra calma con el magnesio adecuado\"\n    }\n  ],\n\n  // Brand pillar themes\n  brand_pillars: [\n    {\n      theme: \"Euhidratación y equilibrio\",\n      focus: \"Concepto de hidratación superior\",\n      keywords: [\"euhidratación\", \"equilibrio\", \"hidratación óptima\", \"equilibrio de electrolitos\"],\n      content_angle: \"Posicionamiento premium\",\n      call_to_action: \"Vive una hidratación superior con BILAN\"\n    },\n    {\n      theme: \"La batería humana\",\n      focus: \"Analogía del cuerpo como batería\",\n      keywords: [\"batería\", \"energía\", \"energía celular\", \"potencia\", \"vitalidad\"],\n      content_angle: \"Metáfora de energía y potencia\",\n      call_to_action: \"Impulsa tu batería humana con BILAN\"\n    },\n    {\n      theme: \"Pureza y calidad científica\",\n      focus: \"Pureza científica\",\n      keywords: [\"pureza\", \"calidad\", \"científico\", \"libre de aditivos\", \"evidencia\"],\n      content_angle: \"Credibilidad científica\",\n      call_to_action: \"Confía en la ciencia detrás de BILAN\"\n    },\n    {\n      theme: \"La alternativa pura\",\n      focus: \"Alternativa limpia a las bebidas azucaradas\",\n      keywords: [\"alternativa\", \"sin azúcar\", \"limpio\", \"natural\", \"saludable\"],\n      content_angle: \"Comparación limpia\",\n      call_to_action: \"Elige la alternativa pura: BILAN\"\n    }\n  ],\n\n  // Seasonal content themes\n  seasonal: [\n    {\n      theme: \"Esenciales de hidratación en verano\",\n      focus: \"Hidratación en clima caluroso\",\n      keywords: [\"verano\", \"calor\", \"deshidratación\", \"clima cálido\", \"sol\"],\n      content_angle: \"Relevancia de temporada\",\n      call_to_action: \"Mantente hidratado todo el verano con BILAN\"\n    },\n    {\n      theme: \"Hidratación en interiores en invierno\",\n      focus: \"Hidratación en clima frío\",\n      keywords: [\"invierno\", \"calefacción\", \"clima seco\", \"interior\", \"humedad\"],\n      content_angle: \"Necesidad durante todo el año\",\n      call_to_action: \"No olvides la hidratación en invierno con BILAN\"\n    },\n    {\n      theme: \"Salud e hidratación en fiestas\",\n      focus: \"Bienestar en temporada festiva\",\n      keywords: [\"fiestas\", \"salud\", \"celebración\", \"equilibrio\", \"moderación\"],\n      content_angle: \"Bienestar en las fiestas\",\n      call_to_action: \"Mantén el equilibrio durante las fiestas con BILAN\"\n    }\n  ],\n\n  // Product-focused themes\n  product_focus: [\n    {\n      theme: \"BILAN vs bebidas deportivas\",\n      focus: \"Comparación de productos\",\n      keywords: [\"comparación\", \"bebidas deportivas\", \"azúcar\", \"aditivos\", \"limpio\"],\n      content_angle: \"Diferenciación competitiva\",\n      call_to_action: \"Descubre por qué BILAN supera a las bebidas deportivas\"\n    },\n    {\n      theme: \"La ciencia detrás de BILAN\",\n      focus: \"Formulación del producto\",\n      keywords: [\"ciencia\", \"formulación\", \"ingredientes\", \"investigación\", \"eficacia\"],\n      content_angle: \"Validación científica\",\n      call_to_action: \"Conoce la ciencia en cada porción de BILAN\"\n    },\n    {\n      theme: \"Cómo usar BILAN a diario\",\n      focus: \"Instrucciones de uso\",\n      keywords: [\"cómo usar\", \"dosificación\", \"diario\", \"rutina\", \"mejor momento\"],\n      content_angle: \"Guía práctica\",\n      call_to_action: \"Optimiza tu rutina diaria con BILAN\"\n    }\n  ],\n\n  // Health and wellness themes\n  health_wellness: [\n    {\n      theme: \"Electrolitos y enfoque mental\",\n      focus: \"Beneficios cognitivos\",\n      keywords: [\"concentración\", \"enfoque\", \"cerebro\", \"función cognitiva\", \"claridad mental\"],\n      content_angle: \"Rendimiento mental\",\n      call_to_action: \"Mejora tu enfoque con BILAN\"\n    },\n    {\n      theme: \"Hidratación para la salud de la piel\",\n      focus: \"Beneficios de belleza\",\n      keywords: [\"piel\", \"belleza\", \"hidratación\", \"salud cutánea\", \"anti envejecimiento\"],\n      content_angle: \"Belleza y bienestar\",\n      call_to_action: \"Nutre tu piel desde dentro con BILAN\"\n    },\n    {\n      theme: \"Electrolitos para un mejor sueño\",\n      focus: \"Calidad del sueño\",\n      keywords: [\"sueño\", \"descanso\", \"calidad del sueño\", \"recuperación nocturna\", \"relajación\"],\n      content_angle: \"Optimización del sueño\",\n      call_to_action: \"Mejora tu descanso con BILAN\"\n    }\n  ],\n\n  // Lifestyle themes\n  lifestyle: [\n    {\n      theme: \"Hábitos de hidratación en la oficina\",\n      focus: \"Bienestar en el trabajo\",\n      keywords: [\"oficina\", \"trabajo\", \"productividad\", \"enfoque laboral\", \"rutina diaria\"],\n      content_angle: \"Productividad profesional\",\n      call_to_action: \"Impulsa tu desempeño en el trabajo con BILAN\"\n    },\n    {\n      theme: \"Consejos de hidratación en viajes\",\n      focus: \"Bienestar en viajes\",\n      keywords: [\"viaje\", \"avión\", \"deshidratación\", \"jet lag\", \"energía\"],\n      content_angle: \"Preparación para viajar\",\n      call_to_action: \"Viaja mejor con la hidratación de BILAN\"\n    },\n    {\n      theme: \"Recuperación del guerrero de fin de semana\",\n      focus: \"Actividad física recreativa\",\n      keywords: [\"fin de semana\", \"guerrero\", \"recuperación\", \"actividad\", \"energía\"],\n      content_angle: \"Apoyo para la actividad de fin de semana\",\n      call_to_action: \"Domina tus fines de semana con BILAN\"\n    }\n  ]\n};\n\n// Random selection function\nfunction selectRandomTheme() {\n  // Category weights\n  const categoryWeights = {\n    educational: 30,\n    brand_pillars: 20,\n    seasonal: 15,\n    product_focus: 15,\n    health_wellness: 15,\n    lifestyle: 5\n  };\n\n  // Calculate weighted random selection\n  const totalWeight = Object.values(categoryWeights).reduce((a, b) => a + b, 0);\n  let random = Math.random() * totalWeight;\n  \n  let selectedCategory = null;\n  for (const [category, weight] of Object.entries(categoryWeights)) {\n    random -= weight;\n    if (random <= 0) {\n      selectedCategory = category;\n      break;\n    }\n  }\n\n  // Fallback to random category if weighted selection fails\n  if (!selectedCategory) {\n    const categories = Object.keys(bilanThemeSelector);\n    selectedCategory = categories[Math.floor(Math.random() * categories.length)];\n  }\n\n  // Select random theme from chosen category\n  const themesInCategory = bilanThemeSelector[selectedCategory];\n  const selectedTheme = themesInCategory[Math.floor(Math.random() * themesInCategory.length)];\n  \n  // Generate metadata\n  const timestamp = new Date().toISOString();\n  const contentId = `bilan_${Date.now()}`;\n  \n  return {\n    ...selectedTheme,\n    category: selectedCategory,\n    content_id: contentId,\n    selected_at: timestamp,\n    prompt_context: `Crea contenido para redes sociales sobre: ${selectedTheme.theme}. Enfoque: ${selectedTheme.focus}. Ángulo de contenido: ${selectedTheme.content_angle}. Llamado a la acción: ${selectedTheme.call_to_action}. Incluye las palabras clave: ${selectedTheme.keywords.join(', ')}. Categoría: ${selectedCategory}.`\n  };\n}\n\n// Execute selection and return directly (not in an array)\nconst selectedTheme = selectRandomTheme();\n\n// Return object directly - not wrapped in array\nreturn {\n  json: {\n    theme: {\n      content_id: selectedTheme.content_id,\n      theme: selectedTheme.theme,\n      category: selectedTheme.category,\n      focus: selectedTheme.focus,\n      keywords: selectedTheme.keywords,\n      content_angle: selectedTheme.content_angle,\n      call_to_action: selectedTheme.call_to_action,\n      selected_at: selectedTheme.selected_at\n    },\n    prompt_context: selectedTheme.prompt_context\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -352,
+        768
+      ],
+      "id": "a5252a7f-bfd3-4e24-85fe-8946c1f3f0e4",
+      "name": "random selector complex"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "random selector complex",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "claude post generation": {
+      "main": [
+        [
+          {
+            "node": "JSON Parser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Parser": {
+      "main": [
+        [
+          {
+            "node": "Update a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "random selector complex": {
+      "main": [
+        [
+          {
+            "node": "claude post generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad53c305521a99e2a1f61b63167d98b903989e99bbac96d554104ff2b031c5ba"
+  }
+}
