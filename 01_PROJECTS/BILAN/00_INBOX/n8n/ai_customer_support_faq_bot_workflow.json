@@ -1,0 +1,179 @@
+{
+  "name": "AI Customer Support FAQ Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "customer-support",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Customer Question Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Question Classifier Function\n// Analyzes incoming questions and categorizes them for optimal FAQ matching\n\nconst question = $input.first().json.question || $input.first().json.message || '';\nconst customerEmail = $input.first().json.email || '';\nconst customerName = $input.first().json.name || 'Customer';\n\n// Normalize question for analysis\nconst normalizedQuestion = question.toLowerCase().trim();\n\n// Category keywords for classification\nconst categoryKeywords = {\n  'Fluid Balance & Hydration Basics': ['water', 'hydration', 'fluid', 'drink', 'thirst', 'urine', 'daily'],\n  'Electrolytes': ['electrolyte', 'mineral', 'sodium', 'potassium', 'magnesium', 'calcium'],\n  'Hypernatremia (High Sodium)': ['high sodium', 'hypernatremia', 'too much sodium', 'excess sodium'],\n  'Hyponatremia (Low Sodium)': ['low sodium', 'hyponatremia', 'not enough sodium', 'diluted'],\n  'Dehydration': ['dehydrated', 'dehydration', 'dry mouth', 'dark urine', 'fatigue', 'dizziness'],\n  'Hydration Strategies': ['how to', 'strategy', 'plan', 'schedule', 'exercise', 'workout'],\n  'Special Situations & Prevention': ['risk', 'prevention', 'elderly', 'children', 'medical help'],\n  'Other Electrolyte Imbalances': ['hypokalemia', 'hyperkalemia', 'hypocalcemia', 'hypercalcemia'],\n  'Medical Conditions & Electrolytes': ['kidney', 'heart', 'diabetes', 'thyroid', 'medical condition'],\n  'Age-Specific Considerations': ['children', 'kids', 'elderly', 'pregnancy', 'breastfeeding'],\n  'Exercise & Athletic Performance': ['exercise', 'workout', 'athlete', 'performance', 'endurance'],\n  'Dietary & Lifestyle Factors': ['diet', 'keto', 'vegan', 'alcohol', 'caffeine', 'travel'],\n  'Medications & Supplements': ['medication', 'supplement', 'diuretic', 'blood pressure', 'laxative'],\n  'Diagnostic & Monitoring': ['test', 'monitor', 'check', 'diagnosis', 'blood test'],\n  'Emergency Situations': ['emergency', 'heat stroke', 'severe', 'urgent', 'first aid'],\n  'Myths & Misconceptions': ['myth', 'misconception', 'is it true', 'really necessary'],\n  'Practical Daily Management': ['daily', 'routine', 'track', 'app', 'workplace', 'cost'],\n  'BILAN Electrolyte Product': ['bilan', 'product', 'buy', 'price', 'ingredients', 'use', 'dosage']\n};\n\n// Classify question based on keywords\nlet detectedCategory = 'General';\nlet confidenceScore = 0;\n\nfor (const [category, keywords] of Object.entries(categoryKeywords)) {\n  const matchCount = keywords.filter(keyword => normalizedQuestion.includes(keyword)).length;\n  if (matchCount > confidenceScore) {\n    confidenceScore = matchCount;\n    detectedCategory = category;\n  }\n}\n\n// Extract key terms for better FAQ matching\nconst keyTerms = [];\nif (normalizedQuestion.includes('sodium')) keyTerms.push('sodium');\nif (normalizedQuestion.includes('potassium')) keyTerms.push('potassium');\nif (normalizedQuestion.includes('magnesium')) keyTerms.push('magnesium');\nif (normalizedQuestion.includes('calcium')) keyTerms.push('calcium');\nif (normalizedQuestion.includes('dehydration')) keyTerms.push('dehydration');\nif (normalizedQuestion.includes('exercise')) keyTerms.push('exercise');\nif (normalizedQuestion.includes('bilan')) keyTerms.push('bilan');\n\n// Determine urgency level\nconst urgencyKeywords = ['emergency', 'urgent', 'severe', 'help', 'immediate', 'critical'];\nconst urgencyLevel = urgencyKeywords.some(keyword => normalizedQuestion.includes(keyword)) ? 'high' : 'normal';\n\n// Prepare structured output for next nodes\nreturn {\n  classifiedQuestion: {\n    originalQuestion: question,\n    normalizedQuestion: normalizedQuestion,\n    detectedCategory: detectedCategory,\n    confidenceScore: confidenceScore,\n    keyTerms: keyTerms,\n    urgencyLevel: urgencyLevel,\n    customerInfo: {\n      email: customerEmail,\n      name: customerName\n    },\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "question-classifier",
+      "name": "Question Classifier",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// RAG Search Function\n// Searches FAQ database for relevant answers using classified question data\n\nconst classifiedData = $input.first().json.classifiedQuestion;\nconst question = classifiedData.originalQuestion;\nconst category = classifiedData.detectedCategory;\nconst keyTerms = classifiedData.keyTerms;\n\n// Load FAQ database (in production, this would be fetched from a file or database)\nconst faqDatabase = {\n  \"faqs\": [\n    {\n      \"category\": \"BILAN Electrolyte Product\",\n      \"questions\": [\n        {\n          \"question\": \"What is BILAN?\",\n          \"answer\": \"BILAN is a science-based electrolyte powder formulated with pharmaceutical-grade salts that provides optimal hydration. It contains 1000mg sodium, 200mg potassium, and 80mg magnesium with zero sugar, zero calories, and no artificial additives.\"\n        },\n        {\n          \"question\": \"How do I use BILAN electrolyte powder?\",\n          \"answer\": \"Mix 1 teaspoon (3g) of BILAN powder in a minimum of 350ml (12oz) of water. Stir or shake until fully dissolved. Use before, during, or after exercise, in hot weather, or whenever you need optimal hydration.\"\n        },\n        {\n          \"question\": \"Is BILAN safe for daily use?\",\n          \"answer\": \"Yes, BILAN is safe for daily use for healthy individuals. The electrolyte levels are designed to replace what's lost through normal activity and sweating. However, people with kidney disease, heart conditions, high blood pressure, or those on sodium-restricted diets should consult their healthcare provider before use.\"\n        }\n      ]\n    },\n    {\n      \"category\": \"Electrolytes\",\n      \"questions\": [\n        {\n          \"question\": \"What are electrolytes and what do they do?\",\n          \"answer\": \"Electrolytes are minerals like sodium, potassium, calcium, and magnesium that carry electrical charges. They regulate nerve function, muscle contractions, fluid balance, and pH levels.\"\n        },\n        {\n          \"question\": \"When should I use electrolyte supplements?\",\n          \"answer\": \"During intense exercise lasting over an hour, in hot weather, when sweating heavily, during illness with vomiting/diarrhea, or when recovering from dehydration.\"\n        }\n      ]\n    },\n    {\n      \"category\": \"Dehydration\",\n      \"questions\": [\n        {\n          \"question\": \"What are the warning signs of dehydration?\",\n          \"answer\": \"Dark yellow urine, dry mouth, fatigue, dizziness, headache, decreased urine output, and in severe cases, rapid heartbeat and confusion.\"\n        },\n        {\n          \"question\": \"What is dehydration?\",\n          \"answer\": \"Dehydration occurs when your body loses more fluid than it takes in, disrupting normal bodily functions.\"\n        }\n      ]\n    }\n  ]\n};\n\n// Search for relevant FAQs\nconst relevantFAQs = [];\nconst searchTerms = [question.toLowerCase(), ...keyTerms];\n\n// Search through all categories and questions\nfor (const categoryData of faqDatabase.faqs) {\n  // Prioritize the detected category\n  const categoryBoost = categoryData.category === category ? 2 : 1;\n  \n  for (const faq of categoryData.questions) {\n    let relevanceScore = 0;\n    \n    // Calculate relevance based on term matching\n    for (const term of searchTerms) {\n      if (faq.question.toLowerCase().includes(term)) {\n        relevanceScore += 3 * categoryBoost;\n      }\n      if (faq.answer.toLowerCase().includes(term)) {\n        relevanceScore += 1 * categoryBoost;\n      }\n    }\n    \n    // Add to relevant FAQs if score is significant\n    if (relevanceScore > 0) {\n      relevantFAQs.push({\n        category: categoryData.category,\n        question: faq.question,\n        answer: faq.answer,\n        relevanceScore: relevanceScore\n      });\n    }\n  }\n}\n\n// Sort by relevance score\nrelevantFAQs.sort((a, b) => b.relevanceScore - a.relevanceScore);\n\n// Take top 3 most relevant FAQs\nconst topFAQs = relevantFAQs.slice(0, 3);\n\n// If no relevant FAQs found, provide general information\nif (topFAQs.length === 0) {\n  topFAQs.push({\n    category: \"General\",\n    question: \"How can I get help with my question?\",\n    answer: \"I don't have specific information about your question in my database. For personalized medical advice, please consult a healthcare professional. For product questions about BILAN, please provide more details or contact our support team.\",\n    relevanceScore: 0\n  });\n}\n\nreturn {\n  ragResults: {\n    originalQuestion: question,\n    detectedCategory: category,\n    relevantFAQs: topFAQs,\n    searchTerms: keyTerms,\n    totalMatches: relevantFAQs.length,\n    customerInfo: classifiedData.customerInfo,\n    urgencyLevel: classifiedData.urgencyLevel,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "rag-search",
+      "name": "RAG FAQ Search",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Claude API Message Preparation\n// Prepares messages for Claude API using RAG results\n\nconst ragData = $input.first().json.ragResults;\nconst originalQuestion = ragData.originalQuestion;\nconst relevantFAQs = ragData.relevantFAQs;\nconst customerInfo = ragData.customerInfo;\n\n// Build context from relevant FAQs\nconst faqContext = relevantFAQs.map((faq, index) => \n  `FAQ ${index + 1}:\\nCategory: ${faq.category}\\nQuestion: ${faq.question}\\nAnswer: ${faq.answer}`\n).join('\\n\\n');\n\n// Create user message with context\nconst userMessage = `Customer Question: \"${originalQuestion}\"\n\nCustomer Info:\n- Name: ${customerInfo.name}\n- Email: ${customerInfo.email}\n- Urgency Level: ${ragData.urgencyLevel}\n\nRelevant FAQ Information:\\n${faqContext}\n\nPlease provide a helpful, accurate response to the customer's question using the FAQ information above. If the FAQs don't fully answer their question, acknowledge this and suggest they contact healthcare professionals for medical advice or our support team for product-specific questions.\n\nBe professional, empathetic, and concise. Prioritize customer safety.`;\n\nreturn {\n  claudeMessages: [\n    {\n      role: 'user',\n      content: userMessage\n    }\n  ],\n  ragData: ragData\n};"
+      },
+      "id": "claude-message-prep",
+      "name": "Claude Message Prep",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "claude-3-haiku-20240307"
+            },
+            {
+              "name": "max_tokens",
+              "value": 1000
+            },
+            {
+              "name": "messages",
+              "value": "={{$json.claudeMessages}}"
+            },
+            {
+              "name": "system",
+              "value": "You are a helpful customer support assistant for BILAN electrolytes. Use the provided FAQ information to answer customer questions accurately and professionally. Always prioritize customer safety and recommend consulting healthcare professionals for medical concerns. Be concise but thorough in your responses."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "claude-api",
+      "name": "Claude API Response Generator",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Response Formatter Function\n// Formats Claude's response and prepares it for multi-channel delivery\n\nconst ragData = $input.first().json.ragResults;\nconst claudeResponse = $input.first().json.claudeResponse;\nconst customerInfo = ragData.customerInfo;\nconst urgencyLevel = ragData.urgencyLevel;\n\n// Extract Claude's response content\nconst aiResponse = claudeResponse.content[0].text || claudeResponse.content || '';\n\n// Format response for different channels\nconst emailResponse = {\n  to: customerInfo.email,\n  subject: urgencyLevel === 'high' ? 'Urgent Response to Your BILAN Support Question' : 'Answer to Your BILAN Support Question',\n  body: `\nDear ${customerInfo.name},\n\nThank you for contacting BILAN customer support. Here's the answer to your question:\n\n**Your Question:** ${ragData.originalQuestion}\n\n**Our Answer:**\n${aiResponse}\n\n---\n\n**Additional Information:**\n${ragData.relevantFAQs.map(faq => `**Q:** ${faq.question}\\n**A:** ${faq.answer}`).join('\\n\\n')}\n\n---\n\n**Important Note:** This information is for educational purposes only. Always consult healthcare professionals for medical advice and treatment.\n\nIf you need further assistance, please don't hesitate to contact us again.\n\nBest regards,\nBILAN Customer Support Team\n\n${urgencyLevel === 'high' ? '\\n⚠️  This has been flagged as urgent. If you need immediate medical assistance, please contact emergency services.' : ''}\n  `.trim(),\n  timestamp: new Date().toISOString()\n};\n\nconst smsResponse = {\n  to: customerInfo.phone || '',\n  message: `BILAN Support: ${aiResponse.substring(0, 160)}... For full details, check your email or visit our FAQ section.`\n};\n\nconst slackResponse = {\n  channel: '#customer-support',\n  message: {\n    text: `New customer support inquiry from ${customerInfo.name} (${customerInfo.email})`,\n    blocks: [\n      {\n        type: 'section',\n        text: {\n          type: 'mrkdwn',\n          text: `*Customer:* ${customerInfo.name} (${customerInfo.email})\\n*Question:* ${ragData.originalQuestion}\\n*Category:* ${ragData.detectedCategory}\\n*Urgency:* ${urgencyLevel}`\n        }\n      },\n      {\n        type: 'section',\n        text: {\n          type: 'mrkdwn',\n          text: `*AI Response:*\\n${aiResponse}`\n        }\n      },\n      {\n        type: 'context',\n        elements: [\n          {\n            type: 'mrkdwn',\n            text: `Processed at ${new Date().toISOString()} | Confidence: ${ragData.relevantFAQs.length > 0 ? 'High' : 'Low'}`\n          }\n        ]\n      }\n    ]\n  }\n};\n\nreturn {\n  formattedResponses: {\n    email: emailResponse,\n    sms: smsResponse,\n    slack: slackResponse,\n    originalQuestion: ragData.originalQuestion,\n    aiResponse: aiResponse,\n    customerInfo: customerInfo,\n    urgencyLevel: urgencyLevel,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "response-formatter",
+      "name": "Response Formatter",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Multi-Channel Output Router\n// Routes formatted responses to appropriate channels based on customer preferences and urgency\n\nconst formattedData = $input.first().json.formattedResponses;\nconst urgencyLevel = formattedData.urgencyLevel;\nconst customerInfo = formattedData.customerInfo;\n\n// Determine which channels to use\nconst channels = [];\n\n// Always use email\nif (customerInfo.email) {\n  channels.push({\n    type: 'email',\n    data: formattedData.email,\n    priority: 'normal'\n  });\n}\n\n// Use SMS for urgent inquiries or if customer has phone number\nif ((urgencyLevel === 'high' || customerInfo.phone) && customerInfo.phone) {\n  channels.push({\n    type: 'sms',\n    data: formattedData.sms,\n    priority: urgencyLevel === 'high' ? 'high' : 'normal'\n  });\n}\n\n// Always log to Slack for internal tracking\nchannels.push({\n  type: 'slack',\n  data: formattedData.slack,\n  priority: 'normal'\n});\n\n// Add webhook response for immediate API feedback\nchannels.push({\n  type: 'webhook_response',\n  data: {\n    status: 'success',\n    message: 'Your question has been processed and a response has been sent to your email.',\n    question: formattedData.originalQuestion,\n    responsePreview: formattedData.aiResponse.substring(0, 200) + '...',\n    channels: channels.map(c => c.type).filter(c => c !== 'webhook_response'),\n    timestamp: formattedData.timestamp\n  },\n  priority: 'normal'\n});\n\nreturn {\n  outputChannels: channels,\n  customerInfo: customerInfo,\n  urgencyLevel: urgencyLevel,\n  processedAt: new Date().toISOString()\n};"
+      },
+      "id": "channel-router",
+      "name": "Multi-Channel Router",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    }
+  ],
+  "connections": {
+    "Customer Question Webhook": {
+      "main": [
+        [
+          {
+            "node": "Question Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Question Classifier": {
+      "main": [
+        [
+          {
+            "node": "RAG FAQ Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAG FAQ Search": {
+      "main": [
+        [
+          {
+            "node": "Claude Message Prep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Message Prep": {
+      "main": [
+        [
+          {
+            "node": "Claude API Response Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude API Response Generator": {
+      "main": [
+        [
+          {
+            "node": "Response Formatter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Response Formatter": {
+      "main": [
+        [
+          {
+            "node": "Multi-Channel Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

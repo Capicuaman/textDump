@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BILAN FAQ Bot Test</title>
+</head>
+<body>
+    <h2>Test Customer Support Bot</h2>
+    <form id="testForm">
+        <input type="text" id="question" placeholder="Your question..." style="width:300px"><br><br>
+        <input type="email" id="email" placeholder="your@email.com" style="width:300px"><br><br>
+        <input type="text" id="name" placeholder="Your name" style="width:300px"><br><br>
+        <button type="button" onclick="testBot()">Submit Question</button>
+    </form>
+    <div id="response"></div>
+    <script>
+    function testBot() {
+        const data = {
+            question: document.getElementById('question').value,
+            email: document.getElementById('email').value,
+            name: document.getElementById('name').value
+        };
+        
+        fetch('http://localhost:5678/webhook/customer-support', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('response').innerHTML = 
+                '<h3>Response:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        });
+    }
+    </script>
+</body>
+</html>

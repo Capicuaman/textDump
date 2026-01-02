@@ -20,6 +20,7 @@ textDump/
 │   ├── BILAN/            # Electrolyte powder business (comprehensive docs)
 │   ├── CAR/              # Personal car-related project
 │   ├── COOKING/          # Cooking project materials
+│   ├── MUSIC/            # Music creation and live coding (Strudel, Moises, Koala)
 │   └── NARANJOS/         # Project with inbox structure
 ├── 02_AREAS/             # Ongoing areas of responsibility (no end date)
 │   ├── HOME-LAB/         # Home automation and lab projects
@@ -95,6 +96,30 @@ Educational project focused on phonics, bilingual learning, and child education.
 
 **Key File:**
 - `monsterPhonicsSchedule.md` - Detailed educational schedule
+
+### MUSIC (01_PROJECTS/MUSIC/)
+
+Music creation and live coding project focused on browser-based algorithmic composition and music production tools.
+
+**Tools & Platforms:**
+- `strudel/` - Strudel live coding environment documentation
+- `moises.md` - Moises.ai music separation and practice tool
+- `koalaSampler.md` - Koala Sampler iOS/Android app
+
+**Strudel Resources:**
+- `strudel/README.md` - Learning path and project overview
+- `strudel/01_strudel_usage_primer.md` - Basic usage and fundamentals
+- `strudel/02_strudel_live_performance_guide.md` - Live performance techniques
+- `strudel/03_strudel_quick_reference.md` - Quick reference and cheat sheet
+
+**About Strudel:**
+Strudel is a browser-based live coding environment for music creation (JavaScript port of TidalCycles). No installation required - runs entirely in browser at [strudel.cc](https://strudel.cc/). Used for algorithmic composition, live performances, and Algorave events.
+
+**Project Focus:**
+- Live coding music performances
+- Pattern-based composition
+- Real-time algorithmic music generation
+- Music production and practice tools
 
 ## Key Learning Resources
 
@@ -260,6 +285,7 @@ This is the ONLY software dependency in the root directory. Most content is stat
 - Learning roadmaps: `02_AREAS/Software_Development/*Roadmap.md`
 - AI tool documentation: `03_RESOURCES/AI/[tool-name]/`
 - BILAN marketing: `01_PROJECTS/BILAN/MARKETING/`
+- MUSIC resources: `01_PROJECTS/MUSIC/strudel/`
 - Scripts and code: Python files in root or project directories
 - Configuration: `.vscode/`, `.claude/`, dotfiles in `03_RESOURCES/Terminal_And_Shell/dotfiles/`
 

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BILAN FAQ Bot Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background: #f5f5f5; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .header { 
+            text-align: center; 
+            color: #007cba; 
+            margin-bottom: 30px; 
+        }
+        input { 
+            margin: 10px 0; 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+        button { 
+            padding: 12px 24px; 
+            background: #007cba; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            width: 100%; 
+        }
+        button:hover { 
+            background: #005a87; 
+        }
+        #response { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background: #e8f5e8; 
+            border-radius: 5px; 
+            display: none; 
+        }
+        #responseText { 
+            white-space: pre-wrap; 
+            word-break: break-word; 
+        }
+        .loading { 
+            text-align: center; 
+            color: #666; 
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 BILAN Customer Support Bot</h1>
+            <p>Test the AI-powered FAQ response system</p>
+        </div>
+        
+        <div>
+            <label><strong>💬 Your Question:</strong></label>
+            <input type="text" id="question" placeholder="What would you like to know about BILAN?"><br><br>
+            
+            <label><strong>📧 Email:</strong></label>
+            <input type="email" id="email" placeholder="your.email@company.com"><br><br>
+            
+            <label><strong>👤 Name:</strong></label>
+            <input type="text" id="name" placeholder="Your Full Name"><br><br>
+            
+            <label><strong>📱 Phone (optional):</strong></label>
+            <input type="tel" id="phone" placeholder="+1234567890"><br><br>
+            
+            <button onclick="testBot()">🚀 Test FAQ Bot</button>
+        </div>
+        
+        <div id="response">
+            <h3>🤖 Bot Response:</h3>
+            <div id="loading" class="loading" style="display: none;">
+                Processing your request... ⏳
+            </div>
+            <pre id="responseText"></pre>
+        </div>
+    </div>
+    <script>
+ function testBot() {
+            const question = document.getElementById('question').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            // Debug: Log what we're sending
+            console.log('=== DEBUG: Form Data ===');
+            console.log('Question:', question);
+            console.log('Email:', email);
+            console.log('Name:', name);
+            console.log('Phone:', phone);
+            
+            // Validation
+            if (!question || !email || !name) {
+                alert('⚠️ Please fill in Question, Email, and Name fields');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('⚠️ Please enter a valid email address');
+                return;
+            }
+            
+            // Show loading state
+            document.getElementById('response').style.display = 'block';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('responseText').innerHTML = '';
+            
+            // Prepare request data
+            const requestData = { question, email, name };
+            if (phone) requestData.phone = phone;
+            
+            // Debug: Log what we're sending to API
+            console.log('=== DEBUG: API Request Data ===');
+            console.log('Request Data:', JSON.stringify(requestData, null, 2));
+            
+            // Make API call to your n8n webhook
+            fetch('http://localhost:5678/webhook/customer-support', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => {
+                // Debug: Log response status
+                console.log('=== DEBUG: Response Status ===');
+                console.log('Status:', response.status);
+                console.log('OK:', response.ok);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Debug: Log full response
+                console.log('=== DEBUG: Full API Response ===');
+                console.log('Response Data:', data);
+                console.log('Response Type:', typeof data);
+                console.log('Keys:', Object.keys(data));
+                
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+                
+                // Format response for better readability
+                const formattedResponse = formatResponse(data);
+                document.getElementById('responseText').innerHTML = formattedResponse;
+                
+                // Add success visual feedback
+                document.getElementById('response').style.background = '#d4edda';
+                
+                // Scroll to Response
+                document.getElementById('response').scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                // Debug: Log error
+                console.log('=== DEBUG: Error ===');
+                console.log('Error:', error);
+                
+                // Hide loading, show error
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('responseText').innerHTML = `<div style="color: red;">❌ Error: ${error.message}</div>`;
+                
+                // Add error visual feedback
+                document.getElementById('response').style.background = '#f8d7da';
+            });
+        }
+        
+        function formatResponse(data) {
+            // Debug: Log what we're formatting
+            console.log('=== DEBUG: Formatting Response ===');
+            console.log('Data received:', data);
+            
+            if (data.outputChannels) {
+                console.log('Using multi-channel response formatter');
+                return formatMultiChannelResponse(data);
+            } else if (data.formattedResponses) {
+                console.log('Using old response formatter');
+                return formatOldResponse(data);
+            } else if (data.message) {
+                console.log('Using simple message formatter');
+                return `<div style="color: #666;">📝 Simple Response: ${data.message}</div>`;
+            } else {
+                console.log('Using raw response formatter');
+                return `<div style="color: #666;">📝 Raw Response: <pre>${JSON.stringify(data, null, 2)}</pre></div>`;
+            }
+        }
+
+    </script>
+</body>
+</html>
