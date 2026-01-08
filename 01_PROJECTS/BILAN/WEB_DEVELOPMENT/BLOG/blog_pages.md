@@ -217,202 +217,117 @@ People don’t wake up searching for your brand — they search for hydration pr
 
 1️⃣ MONEY PAGES (Highest Priority)
 1. Homepage (Conversion-first)
-
 URL: /
-
 Goal: Sell in <5 seconds.
-
 Must communicate:
-
 What it is: Electrolyte mix for rehydration
-
 Who it’s for
-
 Key differentiators (no sugar / clean / performance / medical-grade, etc.)
-
 Sections:
-
 Hero: “Hidratación real cuando tu cuerpo lo necesita”
-
 3 benefits (rápido, limpio, efectivo)
-
 Social proof
-
 Product preview
-
 CTA
-
 CTA:
 👉 Comprar ahora / Ver producto
 
 2. Product Page (CRITICAL)
-
 URL: /producto/bilan-electrolitos
-
 This page does 80% of revenue.
-
 Structure:
-
 What problem it solves (deshidratación real)
-
 Ingredients + why each matters
-
 How it compares to:
-
 Suero oral
-
 Bebidas deportivas
-
 Who it’s for / not for
-
 How to use
-
 FAQs
-
 Reviews
-
 Subscription option
-
 CTA:
 👉 Agregar al carrito
 
 3. Bundle / Subscription Page (LTV)
-
 URL: /suscripcion or /paquetes
-
 Examples:
-
 Monthly hydration pack
-
 Family pack
-
 Athlete pack
-
 Why: Electrolytes are repeat-use.
-
 
 2️⃣ SEO CONTENT (Traffic Engine)
 4. Educational Content Hub
-
 URL: /blog or /aprende
-
 Cluster 1: Dehydration Problems (High Intent)
-
 /sintomas-deshidratacion
-
 /como-rehidratarse-correctamente
-
 /deshidratacion-en-ninos-y-adultos
-
 /deshidratacion-por-calor
-
 CTA inside:
 👉 Prueba una hidratación balanceada
-
 Cluster 2: Electrolytes Education
-
 /que-son-los-electrolitos
-
 /para-que-sirven-los-electrolitos
-
 /electrolitos-vs-bebidas-deportivas
-
 /electrolitos-sin-azucar
-
 These pages pre-sell your product.
-
 Cluster 3: Use-Case Pages (VERY strong)
-
 /electrolitos-para-ejercicio
-
 /electrolitos-para-diarrea
-
 /electrolitos-para-resaca
-
 /electrolitos-para-calor-extremo
-
 /electrolitos-para-ninos (careful with claims)
 
 3️⃣ COMPARISON & DECISION PAGES (Buyer Intent)
 5. Comparison Pages
-
 URLs:
-
 /bilan-vs-suero-oral
-
 /bilan-vs-gatorade
-
 /mejores-electrolitos-sin-azucar
-
 These rank for ready-to-buy users.
 
 4️⃣ TRUST PAGES (CRUCIAL FOR HEALTH PRODUCTS)
 6. Ingredients & Science
-
 URL: /ingredientes
-
 Include:
-
 What’s inside
-
 Why no sugar / no colorants
-
 Backed by science (without medical claims)
 
 7. FAQs / Safety
-
 URL: /preguntas-frecuentes
-
 Cover:
-
 Kids?
-
 Daily use?
-
 Diabetics?
-
 Pregnancy?
-
 How often?
 
 8. About / Mission
-
 URL: /nosotros
-
 Tell:
-
 Why Bilan exists
-
 The hydration philosophy
-
 Quality standards
 
 5️⃣ LEAD CAPTURE (Non-ecommerce)
 9. Email Capture / Quiz (HIGH CONVERSION)
-
 Examples:
-
 /test-hidratacion
-
 /calculadora-hidratacion-diaria
-
 Flow:
-
 “¿Estás bien hidratado?”
 
 Email → Results → Product recommendation
 
 6️⃣ POST-PURCHASE & RETENTION
 10. How-to & Support
-
 URLs:
-
 /como-usar-bilan
-
 /cuando-tomar-electrolitos
-
 Reduces refunds + builds loyalty.
-
 Ideal Funnel for Bilan.mx
 Google search:
 “síntomas deshidratación”
