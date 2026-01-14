@@ -50,4 +50,5 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
   -e N8N_GIT_NODE_DISABLE_BARE_REPOS=true \
   n8nio/n8n:1.115.3
 
-    
+
+ 
