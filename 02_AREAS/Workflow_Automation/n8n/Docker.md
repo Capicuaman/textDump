@@ -36,4 +36,18 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
     -v ~/.n8n:/home/node/.n8n \
     --name n8n \
     n8n/n8n
+
+
+    docker run -it --rm \
+  --name n8n \
+  -p 5678:5678 \
+  -v ~/.n8n:/home/node/.n8n \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true \
+  -e WEBHOOK_URL=https://ideaopedia.ngrok-free.app \
+  -e DB_SQLITE_POOL_SIZE=5 \
+  -e N8N_RUNNERS_ENABLED=true \
+  -e N8N_BLOCK_ENV_ACCESS_IN_NODE=false \
+  -e N8N_GIT_NODE_DISABLE_BARE_REPOS=true \
+  n8nio/n8n:1.115.3
+
     
