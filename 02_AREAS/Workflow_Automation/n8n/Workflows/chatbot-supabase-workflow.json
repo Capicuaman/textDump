@@ -1,0 +1,363 @@
+{
+  "name": "AI Chatbot with Supabase",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chatbot",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Chat Message Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "={{ $json.body.message || 'Hello' }}"
+            },
+            {
+              "name": "userId",
+              "value": "={{ $json.body.userId || 'anonymous-' + $now.format('x') }}"
+            },
+            {
+              "name": "sessionId",
+              "value": "={{ $json.body.sessionId || 'session-' + $now.format('x') }}"
+            }
+          ]
+        }
+      },
+      "id": "set-1",
+      "name": "Extract Chat Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "chat_history",
+        "where": {
+          "conditions": [
+            {
+              "column": "user_id",
+              "condition": "equal",
+              "value": "={{ $json.userId }}"
+            },
+            {
+              "column": "session_id",
+              "condition": "equal",
+              "value": "={{ $json.sessionId }}"
+            }
+          ],
+          "combinator": "and"
+        },
+        "orderBy": [
+          {
+            "column": "created_at",
+            "direction": "DESC"
+          }
+        ],
+        "limit": 10
+      },
+      "id": "supabase-1",
+      "name": "Get Chat History",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "user_preferences",
+        "where": {
+          "conditions": [
+            {
+              "column": "user_id",
+              "condition": "equal",
+              "value": "={{ $json.userId }}"
+            }
+          ]
+        }
+      },
+      "id": "supabase-2",
+      "name": "Get User Preferences",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "chatHistory",
+              "value": "={{ $json.chatHistory || [] }}"
+            },
+            {
+              "name": "userPreferences",
+              "value": "={{ $json.userPreferences || {} }}"
+            },
+            {
+              "name": "currentMessage",
+              "value": "={{ $json.message }}"
+            },
+            {
+              "name": "systemPrompt",
+              "value": "You are a helpful AI assistant. User preferences: {{ $json.userPreferences.preferences || 'Default friendly tone' }}. Context: {{ $json.userPreferences.context || 'General conversation' }}"
+            }
+          ]
+        }
+      },
+      "id": "set-2",
+      "name": "Build Context",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 1000
+        },
+        "messages": [
+          {
+            "role": "system",
+            "content": "={{ $json.systemPrompt }}"
+          },
+          {
+            "role": "user",
+            "content": "={{ $json.currentMessage }}"
+          }
+        ],
+        "binary": []
+      },
+      "id": "openai-1",
+      "name": "Generate AI Response",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "chat_history",
+        "columns": {
+          "user_id": "={{ $json.userId }}",
+          "session_id": "={{ $json.sessionId }}",
+          "message": "={{ $json.currentMessage }}",
+          "response": "={{ $json.choices[0].message.content }}",
+          "created_at": "={{ new Date().toISOString() }}"
+        }
+      },
+      "id": "supabase-3",
+      "name": "Save Chat Message",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": "user_preferences",
+        "where": {
+          "conditions": [
+            {
+              "column": "user_id",
+              "condition": "equal",
+              "value": "={{ $json.userId }}"
+            }
+          ]
+        },
+        "columns": {
+          "last_active": "={{ new Date().toISOString() }}",
+          "message_count": "={{ ($json.userPreferences.message_count || 0) + 1 }}"
+        }
+      },
+      "id": "supabase-4",
+      "name": "Update User Activity",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 400]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "response",
+              "value": "={{ $json.choices[0].message.content }}"
+            },
+            {
+              "name": "messageId",
+              "value": "={{ $json.id || 'msg-' + $now.format('x') }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            },
+            {
+              "name": "sessionId",
+              "value": "={{ $json.sessionId }}"
+            }
+          ]
+        }
+      },
+      "id": "set-3",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "webhook-response-1",
+      "name": "Return Chat Response",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [1780, 300]
+    }
+  ],
+  "connections": {
+    "Chat Message Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Chat Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Chat Data": {
+      "main": [
+        [
+          {
+            "node": "Get Chat History",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get User Preferences",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Chat History": {
+      "main": [
+        [
+          {
+            "node": "Build Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get User Preferences": {
+      "main": [
+        [
+          {
+            "node": "Build Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Context": {
+      "main": [
+        [
+          {
+            "node": "Generate AI Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate AI Response": {
+      "main": [
+        [
+          {
+            "node": "Save Chat Message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update User Activity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Chat Message": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update User Activity": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Return Chat Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-01-14T10:30:00.000Z",
+  "updatedAt": "2026-01-14T10:30:00.000Z",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "createdAt": "2026-01-14T10:30:00.000Z",
+      "updatedAt": "2026-01-14T10:30:00.000Z",
+      "id": "2",
+      "name": "chatbot"
+    }
+  ]
+}

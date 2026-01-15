@@ -1,0 +1,603 @@
+{
+  "name": "Job Search and Application Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "job-search",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Job Search Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "keywords",
+              "value": "={{ $json.body.keywords || 'software engineer' }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json.body.location || 'remote' }}"
+            },
+            {
+              "name": "jobType",
+              "value": "={{ $json.body.jobType || 'full-time' }}"
+            },
+            {
+              "name": "experience",
+              "value": "={{ $json.body.experience || 'mid-level' }}"
+            },
+            {
+              "name": "salary",
+              "value": "={{ $json.body.salary || '80000-120000' }}"
+            },
+            {
+              "name": "userId",
+              "value": "={{ $json.body.userId || 'user-' + $now.format('x') }}"
+            }
+          ]
+        }
+      },
+      "id": "set-1",
+      "name": "Extract Search Criteria",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.adzuna.com/v1/api/jobs/us/search/1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "app_id",
+              "value": "={{ $credentials.adzunaApi.appId }}"
+            },
+            {
+              "name": "app_key",
+              "value": "={{ $credentials.adzunaApi.appKey }}"
+            },
+            {
+              "name": "results_per_page",
+              "value": "20"
+            },
+            {
+              "name": "what",
+              "value": "={{ $json.keywords }}"
+            },
+            {
+              "name": "where",
+              "value": "={{ $json.location }}"
+            },
+            {
+              "name": "salary_min",
+              "value": "={{ $json.salary.split('-')[0] }}"
+            },
+            {
+              "name": "salary_max",
+              "value": "={{ $json.salary.split('-')[1] }}"
+            },
+            {
+              "name": "full_time",
+              "value": "={{ $json.jobType === 'full-time' ? '1' : '0' }}"
+            },
+            {
+              "name": "part_time",
+              "value": "={{ $json.jobType === 'part-time' ? '1' : '0' }}"
+            },
+            {
+              "name": "contract",
+              "value": "={{ $json.jobType === 'contract' ? '1' : '0' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-1",
+      "name": "Search Adzuna Jobs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://jobs.github.com/positions.json",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "description",
+              "value": "={{ $json.keywords }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json.location }}"
+            },
+            {
+              "name": "full_time",
+              "value": "={{ $json.jobType === 'full-time' ? 'true' : 'false' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-2",
+      "name": "Search GitHub Jobs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "url": "https://api.indeed.com/ads/apisearch",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "publisher",
+              "value": "={{ $credentials.indeedApi.publisherId }}"
+            },
+            {
+              "name": "v",
+              "value": "2"
+            },
+            {
+              "name": "format",
+              "value": "json"
+            },
+            {
+              "name": "q",
+              "value": "={{ $json.keywords }}"
+            },
+            {
+              "name": "l",
+              "value": "={{ $json.location }}"
+            },
+            {
+              "name": "jt",
+              "value": "={{ $json.jobType }}"
+            },
+            {
+              "name": "limit",
+              "value": "25"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "http-3",
+      "name": "Search Indeed Jobs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [680, 600]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "adzunaJobs",
+              "value": "={{ $json.results || [] }}"
+            },
+            {
+              "name": "githubJobs",
+              "value": "={{ $json || [] }}"
+            },
+            {
+              "name": "indeedJobs",
+              "value": "={{ $json.results || [] }}"
+            },
+            {
+              "name": "searchCriteria",
+              "value": "={{ $json }}"
+            }
+          ]
+        }
+      },
+      "id": "set-2",
+      "name": "Combine Results",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine and deduplicate job listings\nconst adzunaJobs = $input.first().json.adzunaJobs || [];\nconst githubJobs = $input.first().json.githubJobs || [];\nconst indeedJobs = $input.first().json.indeedJobs || [];\n\n// Normalize job data\nconst normalizeJob = (job, source) => {\n  return {\n    id: job.id || `${source}-${Math.random().toString(36).substr(2, 9)}`,\n    title: job.title || job.position || 'Unknown Title',\n    company: job.company?.display_name || job.company || 'Unknown Company',\n    location: job.location?.display_name || job.location || 'Remote',\n    description: job.description || job.text || '',\n    salary: job.salary_max || job.salary || 'Not specified',\n    type: job.contract_time || job.type || 'Not specified',\n    url: job.redirect_url || job.url || job.absolute_url || '',\n    posted: job.created || job.posted || new Date().toISOString(),\n    source: source,\n    keywords: $input.first().json.searchCriteria.keywords,\n    matchScore: calculateMatchScore(job, $input.first().json.searchCriteria)\n  };\n};\n\n// Calculate match score based on criteria\nconst calculateMatchScore = (job, criteria) => {\n  let score = 0;\n  const title = (job.title || job.position || '').toLowerCase();\n  const description = (job.description || job.text || '').toLowerCase();\n  const keywords = criteria.keywords.toLowerCase().split(' ');\n  \n  // Keyword matching\n  keywords.forEach(keyword => {\n    if (title.includes(keyword)) score += 30;\n    if (description.includes(keyword)) score += 10;\n  });\n  \n  // Location matching\n  if (job.location?.display_name?.toLowerCase().includes(criteria.location.toLowerCase()) ||\n      job.location?.toLowerCase().includes(criteria.location.toLowerCase())) {\n    score += 20;\n  }\n  \n  // Salary matching\n  if (job.salary_max) {\n    const salaryRange = criteria.salary.split('-').map(s => parseInt(s));\n    if (job.salary_max >= salaryRange[0] && job.salary_max <= salaryRange[1]) {\n      score += 20;\n    }\n  }\n  \n  // Recency bonus\n  const postedDate = new Date(job.created || job.posted);\n  const daysSincePosted = (Date.now() - postedDate) / (1000 * 60 * 60 * 24);\n  if (daysSincePosted < 7) score += 10;\n  \n  return Math.min(score, 100);\n};\n\n// Process all jobs\nconst allJobs = [\n  ...adzunaJobs.map(job => normalizeJob(job, 'adzuna')),\n  ...githubJobs.map(job => normalizeJob(job, 'github')),\n  ...indeedJobs.map(job => normalizeJob(job, 'indeed'))\n];\n\n// Remove duplicates based on title + company\nconst uniqueJobs = allJobs.filter((job, index, self) => \n  index === self.findIndex(j => \n    j.title.toLowerCase() === job.title.toLowerCase() && \n    j.company.toLowerCase() === job.company.toLowerCase()\n  )\n);\n\n// Sort by match score\nconst sortedJobs = uniqueJobs.sort((a, b) => b.matchScore - a.matchScore);\n\n// Return top 20 jobs\nreturn {\n  jobs: sortedJobs.slice(0, 20),\n  totalResults: sortedJobs.length,\n  searchCriteria: $input.first().json.searchCriteria,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "id": "code-1",
+      "name": "Process & Rank Jobs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "job_searches",
+        "columns": {
+          "user_id": "={{ $json.searchCriteria.userId }}",
+          "keywords": "={{ $json.searchCriteria.keywords }}",
+          "location": "={{ $json.searchCriteria.location }}",
+          "job_type": "={{ $json.searchCriteria.jobType }}",
+          "results_count": "={{ $json.totalResults }}",
+          "search_date": "={{ $json.timestamp }}"
+        }
+      },
+      "id": "supabase-1",
+      "name": "Log Search",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "jobs",
+              "value": "={{ $json.jobs }}"
+            },
+            {
+              "name": "totalResults",
+              "value": "={{ $json.totalResults }}"
+            },
+            {
+              "name": "searchCriteria",
+              "value": "={{ $json.searchCriteria }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $json.timestamp }}"
+            }
+          ]
+        }
+      },
+      "id": "set-3",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "webhook-response-1",
+      "name": "Return Job Results",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "job-application",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-2",
+      "name": "Application Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 600]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "jobId",
+              "value": "={{ $json.body.jobId }}"
+            },
+            {
+              "name": "userId",
+              "value": "={{ $json.body.userId }}"
+            },
+            {
+              "name": "resumeText",
+              "value": "={{ $json.body.resumeText }}"
+            },
+            {
+              "name": "coverLetter",
+              "value": "={{ $json.body.coverLetter || '' }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $json.body.phone }}"
+            }
+          ]
+        }
+      },
+      "id": "set-4",
+      "name": "Extract Application Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [460, 600]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "options": {
+          "temperature": 0.3,
+          "maxTokens": 1500
+        },
+        "prompt": "=Generate a personalized cover letter for this job application:\n\nJob Details: {{ $json.jobDetails }}\n\nResume: {{ $json.resumeText }}\n\nUser Notes: {{ $json.coverLetter }}\n\nRequirements:\n- Professional tone\n- Highlight relevant experience\n- Address job requirements\n- Include contact information\n- Keep under 400 words",
+        "binary": []
+      },
+      "id": "openai-1",
+      "name": "Generate Cover Letter",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [680, 600]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "job_applications",
+        "columns": {
+          "user_id": "={{ $json.userId }}",
+          "job_id": "={{ $json.jobId }}",
+          "job_title": "={{ $json.jobDetails.title }}",
+          "company": "={{ $json.jobDetails.company }}",
+          "resume_text": "={{ $json.resumeText }}",
+          "cover_letter": "={{ $json.choices[0].message.content }}",
+          "email": "={{ $json.email }}",
+          "phone": "={{ $json.phone }}",
+          "status": "generated",
+          "application_date": "={{ new Date().toISOString() }}"
+        }
+      },
+      "id": "supabase-2",
+      "name": "Save Application",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [900, 600]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "applicationId",
+              "value": "={{ $json.id || 'app-' + $now.format('x') }}"
+            },
+            {
+              "name": "coverLetter",
+              "value": "={{ $json.choices[0].message.content }}"
+            },
+            {
+              "name": "status",
+              "value": "generated"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        }
+      },
+      "id": "set-5",
+      "name": "Format Application Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1120, 600]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "webhook-response-2",
+      "name": "Return Application",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [1340, 600]
+    }
+  ],
+  "connections": {
+    "Job Search Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Search Criteria",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Search Criteria": {
+      "main": [
+        [
+          {
+            "node": "Search Adzuna Jobs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Search GitHub Jobs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Search Indeed Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Adzuna Jobs": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search GitHub Jobs": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Indeed Jobs": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Results": {
+      "main": [
+        [
+          {
+            "node": "Process & Rank Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process & Rank Jobs": {
+      "main": [
+        [
+          {
+            "node": "Log Search",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Search": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Return Job Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Application Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Application Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Application Data": {
+      "main": [
+        [
+          {
+            "node": "Generate Cover Letter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Cover Letter": {
+      "main": [
+        [
+          {
+            "node": "Save Application",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Application": {
+      "main": [
+        [
+          {
+            "node": "Format Application Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Application Response": {
+      "main": [
+        [
+          {
+            "node": "Return Application",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-01-14T11:00:00.000Z",
+  "updatedAt": "2026-01-14T11:00:00.000Z",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "createdAt": "2026-01-14T11:00:00.000Z",
+      "updatedAt": "2026-01-14T11:00:00.000Z",
+      "id": "3",
+      "name": "job-search"
+    }
+  ]
+}
