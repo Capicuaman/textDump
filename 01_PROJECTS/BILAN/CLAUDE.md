@@ -26,13 +26,22 @@ BILAN/
 ### Technical/Content Systems
 
 ```
-├── BLOG/              # Jekyll static site (Carte Noire theme)
+├── BLOG/              # Jekyll static site and actual blog content
+├── WEB_DEVELOPMENT/   # Website strategy and planning
+│   └── BLOG/          # Blog strategy and content planning documents
 ├── WEB/               # Website materials and SEO strategies
 ├── website/           # Static HTML sites (index.html, harumi.html, ventas.html)
+├── n8n/               # Customer support automation (FAQ bot, AI workflows)
 ├── RAG/               # FAQ database for Retrieval-Augmented Generation
 ├── METAPROMPTS/       # AI agent instructions and content generation prompts
 └── PACKAGING/         # Product label designs (JSON format)
 ```
+
+**Note on folder distinctions:**
+- **`/BLOG/`** - Actual blog articles and Jekyll site
+- **`/WEB_DEVELOPMENT/BLOG/`** - Blog strategy and planning documents
+- **`/n8n/`** - Customer support automation (FAQ chatbots)
+- **`/MARKETING/n8n/`** - Social media content automation
 
 ### Key Data Structures
 
