@@ -1,0 +1,285 @@
+{
+  "name": "Content Creation Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "content-creation",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Content Request Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "topic",
+              "value": "={{ $json.body.topic || 'AI and automation' }}"
+            },
+            {
+              "name": "contentType",
+              "value": "={{ $json.body.contentType || 'blog-post' }}"
+            },
+            {
+              "name": "tone",
+              "value": "={{ $json.body.tone || 'professional' }}"
+            },
+            {
+              "name": "wordCount",
+              "value": "={{ $json.body.wordCount || 1000 }}"
+            }
+          ]
+        }
+      },
+      "id": "set-1",
+      "name": "Extract Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 2000
+        },
+        "prompt": "=Create a {{ $json.contentType }} about {{ $json.topic }} with a {{ $json.tone }} tone. Target word count: {{ $json.wordCount }} words.\n\nRequirements:\n- Include engaging title\n- Add relevant hashtags for social media\n- Structure with clear headings\n- Include call-to-action\n- Optimize for SEO",
+        "binary": []
+      },
+      "id": "openai-1",
+      "name": "Generate Content",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "title",
+              "value": "={{ $json.text.split('\\n')[0].replace('#', '').trim() }}"
+            },
+            {
+              "name": "content",
+              "value": "={{ $json.text }}"
+            },
+            {
+              "name": "hashtags",
+              "value": "={{ $json.text.match(/#[\\w]+/g).join(' ') || '#AI #automation' }}"
+            },
+            {
+              "name": "wordCount",
+              "value": "={{ $json.text.split(' ').length }}"
+            },
+            {
+              "name": "createdAt",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        }
+      },
+      "id": "set-2",
+      "name": "Process Content",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "fileId": "content-calendar",
+        "sheetName": "Generated Content",
+        "range": "A:E",
+        "values": "={{ [[$json.title, $json.content, $json.hashtags, $json.wordCount, $json.createdAt]] }}",
+        "options": {
+          "valueInputMode": "USER_ENTERED"
+        }
+      },
+      "id": "google-sheets-1",
+      "name": "Save to Content Calendar",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "json",
+        "body": {
+          "sender": {
+            "name": "Content Creator",
+            "email": "content@example.com"
+          },
+          "to": [
+            {
+              "email": "={{ $json.body.recipient || 'admin@example.com' }}"
+            }
+          ],
+          "subject": "New Content Generated: {{ $json.title }}",
+          "htmlContent": "<h2>{{ $json.title }}</h2><p>{{ $json.content.substring(0, 500) }}...</p><p><strong>Word Count:</strong> {{ $json.wordCount }}</p><p><strong>Hashtags:</strong> {{ $json.hashtags }}</p><p><strong>Created:</strong> {{ $json.createdAt }}</p>"
+        },
+        "options": {}
+      },
+      "id": "http-1",
+      "name": "Send Email Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1120, 400]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "success"
+            },
+            {
+              "name": "message",
+              "value": "Content generated and saved successfully"
+            },
+            {
+              "name": "title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "wordCount",
+              "value": "={{ $json.wordCount }}"
+            }
+          ]
+        }
+      },
+      "id": "set-3",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "webhook-response-1",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [1560, 300]
+    }
+  ],
+  "connections": {
+    "Content Request Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Parameters": {
+      "main": [
+        [
+          {
+            "node": "Generate Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Content": {
+      "main": [
+        [
+          {
+            "node": "Process Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Content": {
+      "main": [
+        [
+          {
+            "node": "Save to Content Calendar",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Email Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Content Calendar": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email Notification": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-01-14T10:00:00.000Z",
+  "updatedAt": "2026-01-14T10:00:00.000Z",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "createdAt": "2026-01-14T10:00:00.000Z",
+      "updatedAt": "2026-01-14T10:00:00.000Z",
+      "id": "1",
+      "name": "content-creation"
+    }
+  ]
+}
