@@ -1,0 +1,9 @@
+version: "2"
+authtoken: YOUR_NGROK_AUTHTOKEN_HERE
+
+tunnels:
+  n8n:
+    proto: http
+    addr: n8n:5678
+    bind_tls: true
+    inspect: true
