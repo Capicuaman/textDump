@@ -223,6 +223,16 @@ Strudel is a browser-based live coding environment for music creation (JavaScrip
 - Modified files: Various documentation updates
 - Untracked files: New metaprompts, social media guides, agent recommendations
 
+**Startup Protocol:**
+- At the start of each conversation, check GitHub sync status by running `git fetch origin && git status`
+- Inform the user if the repository is behind, ahead, or out of sync with the remote
+- If behind remote: offer to pull changes
+- If ahead of remote: inform user they have unpushed commits
+- If diverged: inform user and ask how to proceed
+- Check for new Claude Code features and updates (search for latest releases and changelogs)
+- If new features are found: inform the user and document them in `03_RESOURCES/AI/CLAUDE/` as a dated markdown file (e.g., `claude_code_[version]_features.md`)
+- Update or create feature documentation with comprehensive details including use cases, configuration, and examples
+
 ## Dependencies
 
 **Node.js (package.json):**
