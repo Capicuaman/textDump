@@ -56,7 +56,7 @@ A comprehensive business repository for an electrolyte powder brand. This is **N
 - `SALES/` - 12-part sales playbook, e-commerce guides
 - `MARKETING/` - Campaigns, social media strategy, RAG systems, VEO video prompts
 - `PRODUCT/` - Electrolyte science, ingredient documentation
-- `BLOG/` - Jekyll static site (Carte Noire theme)
+- `BLOG/` - Astro static site
 - `WEB/` - Website materials and SEO strategies
 - `METAPROMPTS/` - AI agent instructions
 - `PACKAGING/` - Product label designs (JSON format)
@@ -69,13 +69,13 @@ A comprehensive business repository for an electrolyte powder brand. This is **N
 - `MARKETING/RAG/faq.json` - FAQ database for AI systems
 - `SALES/consolidated_sales_manual.md` - Complete sales playbook
 
-**Important Note:** BILAN has NO build system, package managers, or test frameworks. Primary formats are Markdown (70+ files), JSON (data), and HTML/CSS (static sites).
+**Important Note:** BILAN content is primarily Markdown (70+ files), JSON (data), and HTML/CSS.
 
-**Jekyll Blog:**
-- Located at: `BLOG/jekyll/carte-noire-gh-pages/`
-- Markdown: kramdown with GitHub Flavored Markdown
-- Syntax highlighting: Rouge
-- No Gemfile present - dependencies not configured
+**Astro Blog:**
+- Located at: `BLOG/`
+- Static site generator built with Astro
+- Markdown-based content with component support
+- Modern, fast static site generation
 
 **AI Integration Points:**
 - RAG system for customer support (`MARKETING/RAG/`)
