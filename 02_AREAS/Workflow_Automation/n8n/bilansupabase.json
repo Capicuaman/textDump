@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [100, 300],
+      "parameters": {
+        "updates": ["message"]
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "vjx9LKbzSlhklVsC",
+          "name": "testingONE"
+        }
+      }
+    },
+    {
+      "id": "switch",
+      "name": "Switch (Text / Voice)",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [300, 300],
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "outputKey": "Text",
+              "renameOutput": true,
+              "conditions": {
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message?.text !== undefined }}",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "isTrue"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "outputKey": "Voice",
+              "renameOutput": true,
+              "conditions": {
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message?.voice?.file_id !== undefined }}",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "isTrue"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "set-text",
+      "name": "Set Text Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [550, 200],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "text",
+              "type": "string",
+              "value": "={{ $json.message.text }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "telegram-get-file",
+      "name": "Get Voice File",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [550, 400],
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}"
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "vjx9LKbzSlhklVsC",
+          "name": "testingONE"
+        }
+      }
+    },
+    {
+      "id": "transcribe",
+      "name": "Transcribe Audio",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [750, 400],
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "gOoA9yujMbrIkAJQ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "id": "set-transcript",
+      "name": "Set Transcribed Text",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [950, 400],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "text",
+              "type": "string",
+              "value": "={{ $json.text }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ai-agent",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1200, 300],
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}"
+      }
+    },
+    {
+      "id": "telegram-reply",
+      "name": "Send Telegram Reply",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1450, 300],
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "={{ $json.output.substring(0, 4000) }}"
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "vjx9LKbzSlhklVsC",
+          "name": "testingONE"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [[{ "node": "Switch (Text / Voice)", "type": "main" }]]
+    },
+    "Switch (Text / Voice)": {
+      "main": [
+        [{ "node": "Set Text Input", "type": "main" }],
+        [{ "node": "Get Voice File", "type": "main" }]
+      ]
+    },
+    "Set Text Input": {
+      "main": [[{ "node": "AI Agent", "type": "main" }]]
+    },
+    "Get Voice File": {
+      "main": [[{ "node": "Transcribe Audio", "type": "main" }]]
+    },
+    "Transcribe Audio": {
+      "main": [[{ "node": "Set Transcribed Text", "type": "main" }]]
+    },
+    "Set Transcribed Text": {
+      "main": [[{ "node": "AI Agent", "type": "main" }]]
+    },
+    "AI Agent": {
+      "main": [[{ "node": "Send Telegram Reply", "type": "main" }]]
+    }
+  }
+}
