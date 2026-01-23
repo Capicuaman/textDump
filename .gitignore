@@ -1,0 +1,10 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# macOS Finder attributes
+.AppleDouble
+.LSOverride
+
+# macOS thumbnails
+._*
