@@ -3,6 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 ## main directives
 * Break everything into small, manageable tasks.
+* Explain the "why" of each step
 * Ask for your approval before proceeding with each step.
 * Log all actions in a dedicated folder for easy review.
 

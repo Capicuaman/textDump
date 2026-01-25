@@ -3,7 +3,21 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(node:*)",
+      "Bash(npm --version)",
+      "Bash(test:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(npm install)",
+      "Bash(CSV_FILE=src/data/videos-mx-2026-01-23.csv VIDEO_ID=7 npm run render)",
+      "Bash(awk:*)",
+      "Bash(for i in {1..11})",
+      "Bash(done)",
+      "Bash(python3:*)",
+      "Bash(jobs:*)",
+      "Bash(CSV_FILE=src/data/videos-mx-2026-01-23.csv npm run render)",
+      "Bash(lsmod:*)",
+      "Bash(pacman -Q:*)"
     ]
   }
 }

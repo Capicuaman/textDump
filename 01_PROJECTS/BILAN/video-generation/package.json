@@ -1,0 +1,33 @@
+{
+  "name": "bilan-video-generation",
+  "version": "1.0.0",
+  "description": "Automated video generation for BILAN using Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion render",
+    "render": "node src/batch-render.js",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/lambda": "^4.0.0",
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "csv-parse": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "remotion",
+    "video",
+    "tiktok",
+    "automation",
+    "batch-generation"
+  ],
+  "author": "BILAN",
+  "license": "MIT"
+}

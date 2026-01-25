@@ -1,0 +1,363 @@
+# Multi-Platform Content Adaptation System
+
+## PROMPT FOR CLAUDE CODE
+
+I have anchor content ready in my inventory. Please transform the selected pieces into platform-optimized content for LinkedIn, Instagram, TikTok, and WhatsApp targeting the Mexican market.
+
+### CONTENT SELECTION
+I want to adapt: [SPECIFY CONTENT NUMBER OR TITLE FROM INVENTORY]
+
+Example: "Adapt #15 - Spanish Electrolyte Facts" or "Adapt #1 - FDA's War on Salt"
+
+---
+
+### PLATFORM SPECIFICATIONS
+
+#### 1. LINKEDIN (Professional Authority)
+**Format:**
+- Length: 1,200-1,500 characters (NOT words)
+- First line: Compelling hook (under 120 characters - visible before "see more")
+- Body: 3-4 short paragraphs
+- End with: Clear CTA and 3-5 relevant hashtags
+- Tone: Professional but conversational
+- Include: Data/statistics to build credibility
+
+**Bilingual Strategy for Mexican Market:**
+- Primary language: Spanish (if targeting Mexican professionals)
+- Can be bilingual (Spanish main text + English summary)
+- Use Mexican Spanish, not Spain Spanish
+
+**Output Format:**
+```
+=== LINKEDIN POST ===
+
+[HOOK - First line that appears before "see more"]
+
+[Paragraph 1]
+
+[Paragraph 2]
+
+[Paragraph 3]
+
+[CTA]
+
+[Hashtags]
+
+Character count: [X/1500]
+```
+
+---
+
+#### 2. INSTAGRAM (Visual + Engagement)
+**Carousel Post (Preferred):**
+- 8-10 slides maximum
+- Slide 1: Eye-catching title/hook
+- Slides 2-8: One key point per slide
+- Slide 9-10: CTA + brand info
+- Caption: 125-150 words, broken into 1-2 line paragraphs
+- 15-20 hashtags (mix popular + niche)
+- Include emoji naturally
+
+**Reels Alternative:**
+- 15-60 second video script
+- Hook in first 3 seconds
+- 3-5 talking points
+- On-screen text suggestions
+- Trending audio recommendations
+
+**Caption Tone:**
+- Casual, friendly, conversational
+- Spanish primary for Mexican market
+- Use line breaks for readability
+- Emoji to break up text
+
+**Output Format:**
+```
+=== INSTAGRAM CAROUSEL ===
+
+SLIDE 1 (TITLE):
+[Main hook/title - large text]
+
+SLIDE 2:
+[Key point 1 - concise]
+
+SLIDE 3:
+[Key point 2 - concise]
+
+[Continue for all slides...]
+
+CAPTION:
+[Hook first line]
+
+[Main content - short paragraphs]
+
+[CTA]
+
+[Emoji + spacing]
+
+HASHTAGS:
+#[15-20 relevant hashtags]
+
+VISUAL NOTES:
+[Color scheme, design suggestions, image recommendations]
+```
+
+---
+
+#### 3. TIKTOK (Quick Education + Entertainment)
+**Video Script:**
+- Duration: 15-60 seconds (optimize for 30-45 sec)
+- Hook: First 3 seconds must grab attention
+- Format: Problem → Solution or Myth → Reality
+- Include: Text overlays for key points
+- End: Strong CTA to follow
+
+**Script Structure:**
+- HOOK (0-3 sec): Controversial or surprising statement
+- BODY (3-45 sec): 3-4 quick points
+- CTA (45-60 sec): Follow for more + product mention
+
+**Mexican Market:**
+- Spanish language
+- Use Mexican slang appropriately
+- Reference Mexican culture/lifestyle
+- Trending Mexican sounds when possible
+
+**Output Format:**
+```
+=== TIKTOK SCRIPT ===
+
+HOOK (0-3 seconds):
+[Attention-grabbing opening]
+
+SCENE 1 (3-15 seconds):
+Visual: [What's on screen]
+Audio: [What you're saying]
+Text Overlay: [On-screen text]
+
+SCENE 2 (15-30 seconds):
+Visual: [What's on screen]
+Audio: [What you're saying]
+Text Overlay: [On-screen text]
+
+SCENE 3 (30-45 seconds):
+Visual: [What's on screen]
+Audio: [What you're saying]
+Text Overlay: [On-screen text]
+
+CTA (45-60 seconds):
+[Final message + follow CTA]
+
+SUGGESTED AUDIO:
+[Trending sound or music type]
+
+HASHTAGS:
+#[5-10 TikTok hashtags]
+
+VISUAL STYLE:
+[Filming suggestions, transitions, effects]
+```
+
+---
+
+#### 4. WHATSAPP STATUS (Primary Channel for Mexico)
+**3-Slide Status Series:**
+- Slide 1: Hook/question
+- Slide 2: Key insight/answer
+- Slide 3: CTA/product mention
+
+**Design Specs:**
+- Vertical 9:16 format
+- Large, readable text
+- Eye-catching colors
+- Simple graphics
+- 15-second view time per slide
+
+**Timing for Mexican Market:**
+- Morning: 7:00-8:00 AM (hydration reminder)
+- Lunch: 1:00-2:00 PM (educational)
+- Evening: 7:00-9:00 PM (inspiration/community)
+
+**Output Format:**
+```
+=== WHATSAPP STATUS SERIES ===
+
+STATUS 1 (HOOK):
+Visual: [Background color/image]
+Text: [Large, bold question or statement]
+Duration: 15 seconds
+
+STATUS 2 (INSIGHT):
+Visual: [Background color/image]
+Text: [Key fact or answer]
+Icon/Graphic: [Simple visual element]
+Duration: 15 seconds
+
+STATUS 3 (CTA):
+Visual: [Brand colors]
+Text: [Call to action]
+Product mention: [BILAN reference]
+Link: [If applicable]
+Duration: 15 seconds
+
+COPY FOR DIRECT MESSAGE VERSION:
+[2-3 sentence conversational message for broadcasting]
+
+BEST POSTING TIME:
+[Recommend time based on content type]
+```
+
+---
+
+### BRAND VOICE GUIDELINES
+
+**BILAN Brand Personality:**
+- Scientific but accessible
+- Authoritative but friendly
+- Educational not preachy
+- Transparent and honest
+- Health-focused with empathy
+
+**Spanish Language (Mexican Market):**
+- Use "tú" (informal) not "usted" for social media
+- Mexican terminology and expressions
+- Avoid Spain Spanish ("zumo" → "jugo", "ordenador" → "computadora")
+- Cultural references Mexicans understand
+
+**Prohibited Language:**
+- No medical claims BILAN can't back up
+- No cure/treatment promises
+- No fear-mongering (educate, don't scare)
+- No disparaging competitors by name
+- No unrealistic results ("lose 10kg in a week")
+
+---
+
+### CONTENT TRANSFORMATION CHECKLIST
+
+For each piece of anchor content, ensure:
+
+✅ **COPYRIGHT COMPLIANCE:**
+- No quotes over 15 words from source material
+- Fully paraphrased in your own words
+- Attribute properly if citing studies
+
+✅ **PLATFORM OPTIMIZATION:**
+- Character limits respected
+- Format appropriate for platform
+- Visual elements specified
+- Hashtag strategy included
+
+✅ **MEXICAN MARKET:**
+- Spanish translation accurate (Mexican Spanish)
+- Cultural relevance checked
+- Timing recommendations for MX timezone
+- WhatsApp prioritized
+
+✅ **BRAND ALIGNMENT:**
+- BILAN values reflected
+- Product mention natural, not forced
+- Educational value primary, sales secondary
+- Call-to-action clear
+
+✅ **ENGAGEMENT TACTICS:**
+- Hook strong enough to stop scroll
+- Value proposition clear in first 3 seconds/lines
+- CTA specific and actionable
+- Share-worthy content
+
+---
+
+### OUTPUT ORGANIZATION
+
+Please create separate files for each platform:
+
+**File naming convention:**
+`[content-number]-[content-title]-[platform]-[date].md`
+
+Example:
+- `15-spanish-electrolyte-facts-linkedin-2026-01-20.md`
+- `15-spanish-electrolyte-facts-instagram-2026-01-20.md`
+- `15-spanish-electrolyte-facts-tiktok-2026-01-20.md`
+- `15-spanish-electrolyte-facts-whatsapp-2026-01-20.md`
+
+**Also create:**
+`[content-number]-posting-schedule.md` - Calendar showing when to post each version
+
+---
+
+### POSTING SCHEDULE TEMPLATE
+
+For each adapted content set, include:
+
+```markdown
+# Posting Schedule: [Content Title]
+
+## Week of: [Date]
+
+### Monday
+- **LinkedIn:** [Time MX] - Post #[number]
+- **Setup:** Schedule in LinkedIn native scheduler
+
+### Wednesday  
+- **Instagram:** [Time MX] - Carousel post
+- **WhatsApp:** [Time MX] - Status series (3 slides)
+- **Setup:** Instagram scheduled, WhatsApp manual posting
+
+### Friday
+- **TikTok:** [Time MX] - Video post
+- **Setup:** Film on Thursday, post Friday morning
+
+### Daily (All Week)
+- **WhatsApp Status:** Morning (7am), Lunch (2pm), Evening (8pm)
+- **Instagram Stories:** Repurpose TikTok content
+
+## Cross-Promotion Strategy:
+- LinkedIn → Drive to blog/website
+- Instagram → Engagement + community building
+- TikTok → Brand awareness + follows
+- WhatsApp → Direct sales + customer relationship
+
+## Success Metrics to Track:
+- LinkedIn: Impressions, engagement rate, profile visits
+- Instagram: Reach, saves, shares, carousel swipe-through rate
+- TikTok: Views, completion rate, follows
+- WhatsApp: Views, replies, click-throughs
+```
+
+---
+
+## EXAMPLE REQUEST
+
+"Please adapt **#15 - Spanish Electrolyte Facts** for all 4 platforms. This will be our launch content for the Mexican market. Prioritize WhatsApp as primary channel, with Instagram as secondary. Use the 40 social media-ready facts from the JSON file. Create a 2-week content calendar posting one fact per day across platforms with staggered timing."
+
+---
+
+## ADDITIONAL REQUESTS
+
+After generating platform content, you can also ask for:
+
+1. **Visual design briefs** for each platform
+2. **Hashtag research** for Mexican market
+3. **Influencer collaboration scripts** 
+4. **A/B testing variations** for high-priority posts
+5. **Crisis communication** versions if needed
+6. **Seasonal adaptations** (holidays, events)
+7. **Paid ad versions** for Facebook/Instagram Ads
+
+---
+
+## START HERE
+
+I'm ready to transform anchor content. Please specify which piece(s) you'd like me to adapt:
+
+**Options from your inventory:**
+- #1-13: Original English content (can translate to Spanish)
+- #14-20: Mexican market Spanish content (RAG folder)
+
+**Recommended starting point for Mexican market:**
+- #15: Spanish Electrolyte Facts (40 ready-made social posts)
+- #16: Spanish Hydration Facts (32 ready-made posts)  
+- #17: Hyponatremia Safety Content (life-saving viral potential)
+
+Which would you like me to adapt first?
