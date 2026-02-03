@@ -1,5 +1,7 @@
 # Quick Start - BILAN Video Generation
 
+> **NOTE:** The actual Remotion code has been moved to a separate project. This documentation is kept for reference only.
+
 Get started generating videos in 5 minutes.
 
 ## 1. Install (One Time)

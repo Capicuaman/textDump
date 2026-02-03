@@ -1,5 +1,7 @@
 # BILAN Video Generation - Usage Guide
 
+> **NOTE:** The actual Remotion code has been moved to a separate project. This documentation is kept for reference only.
+
 Detailed instructions for using the Remotion-based video generation system.
 
 ## Table of Contents
