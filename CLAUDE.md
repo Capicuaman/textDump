@@ -11,6 +11,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 6. Make every task and code change you do as simple as possible. We want to avoid making any massive or complex changes. Every change should impact as little code as possible. Everything is about simplicity.
 7. Finally, add a review section to the todo.md file with a summary of the changes you made and any other relevant information.
 
+If you are writing code, please explain the functionality and code you just built out in detail. Walk me through what you changed and how it works. Act like you’re a senior engineer teaching me code
+
+
+When I am coding or creating content with AI there are long breaks into between me giving me commands to the AI. Typically I spend that time doom scrolling which distracts me and pu†s me in a bad mental state. I'd like to use that time now to chat with you and generate new ideas, and also reflect on my other ideas and businesses and content. I'm not sure how I'd like to use this chat or what role I'd like you to play, but I think it could be much more useful than me doom scrolling. What do you think? What could be the best way for us to use this chat?
 
 ## Repository Overview
 
