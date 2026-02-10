@@ -18,7 +18,8 @@
       "Bash(CSV_FILE=src/data/videos-mx-2026-01-23.csv npm run render)",
       "Bash(lsmod:*)",
       "Bash(pacman -Q:*)",
-      "Bash(tailscale status:*)"
+      "Bash(tailscale status:*)",
+      "Read(//home/capicuaman/Documents/bilan-video/data/**)"
     ]
   }
 }
