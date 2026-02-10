@@ -1,5 +1,7 @@
 # BILAN Video Generation with Remotion
 
+> **NOTE:** The actual Remotion code and source files have been moved to a separate project repository. This directory now contains documentation only for reference purposes. If you need the working code, please refer to the external video generation project.
+
 Automated batch video generation system for creating TikTok, Instagram Reels, and YouTube Shorts at scale.
 
 ## Overview

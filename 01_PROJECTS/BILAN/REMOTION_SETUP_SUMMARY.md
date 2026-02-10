@@ -1,8 +1,10 @@
 # Remotion Video Generation Setup - Complete ✅
 
+> **NOTE:** The actual Remotion code has been moved to a separate project repository. This documentation is kept for reference only.
+
 **Date:** January 23, 2026
 **Project:** BILAN Video Generation for Mexican Market
-**Status:** Ready to use
+**Status:** Code moved to separate project (documentation only)
 
 ## What Was Created
 

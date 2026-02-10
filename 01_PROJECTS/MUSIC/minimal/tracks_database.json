@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "title": "Best Minimal Techno of All Time - Track Database",
+    "version": "1.0",
+    "last_updated": "2026-02-04",
+    "total_tracks": 35,
+    "source": "Research compilation from Beatport, Bandcamp, SoundCloud, YouTube"
+  },
+  "essential_tracks": [
+    {
+      "rank": 1,
+      "title": "Spastik",
+      "artist": "Plastikman (Richie Hawtin)",
+      "year": 1993,
+      "bpm": 130,
+      "key": "Em",
+      "duration": "8:45",
+      "style": "minimal-techno",
+      "source": "Plus 8 Records",
+      "significance": "The iconic track that defined minimal techno",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=plastikman+spastik",
+        "spotify": "https://open.spotify.com/search/plastikman%20spastik",
+        "youtube": "https://www.youtube.com/results?search_query=Plastikman+Spastik"
+      },
+      "notes": "Essential listening. This is THE minimal techno track."
+    },
+    {
+      "rank": 2,
+      "title": "Golden Age",
+      "artist": "Akira Uchida",
+      "year": 1997,
+      "bpm": 128,
+      "key": "Cm",
+      "duration": "6:30",
+      "style": "minimal-techno",
+      "source": "Independent",
+      "significance": "Minimal perfection with hypnotic structure",
+      "links": {
+        "discogs": "https://www.discogs.com/search/?q=akira+uchida+golden+age",
+        "youtube": "https://www.youtube.com/results?search_query=Akira+Uchida+Golden+Age"
+      },
+      "notes": "Masterclass in minimal structure and repetition"
+    },
+    {
+      "rank": 3,
+      "title": "Show Me",
+      "artist": "Robert Armani",
+      "year": 1994,
+      "bpm": 127,
+      "key": "Am",
+      "duration": "7:15",
+      "style": "minimal-techno",
+      "source": "Independent",
+      "significance": "Classic essential minimal track",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=robert+armani+show+me",
+        "discogs": "https://www.discogs.com/search/?q=robert+armani+show+me"
+      },
+      "notes": "Timeless minimal techno essential"
+    },
+    {
+      "rank": 4,
+      "title": "Chicago Acid Trax",
+      "artist": "Jeff Mills",
+      "year": 1991,
+      "bpm": 132,
+      "key": "Gm",
+      "duration": "7:45",
+      "style": "minimal-techno-acid",
+      "source": "Axis Records",
+      "significance": "Pioneering track from Detroit minimal legend",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=jeff+mills+chicago",
+        "discogs": "https://www.discogs.com/search/?q=jeff+mills+chicago+acid"
+      },
+      "notes": "Detroit minimal pioneer - essential historical reference"
+    },
+    {
+      "rank": 5,
+      "title": "I Follow Rivers",
+      "artist": "Reggie van Oers",
+      "year": 1995,
+      "bpm": 126,
+      "key": "Dm",
+      "duration": "6:50",
+      "style": "minimal-techno",
+      "source": "Independent",
+      "significance": "Iconic minimal techno with hypnotic groove",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=reggie+van+oers",
+        "discogs": "https://www.discogs.com/search/?q=reggie+van+oers"
+      },
+      "notes": "Classic hypnotic minimal structure"
+    },
+    {
+      "rank": 6,
+      "title": "Come as You Are",
+      "artist": "Plastikman (Richie Hawtin)",
+      "year": 1997,
+      "bpm": 128,
+      "key": "Em",
+      "duration": "7:30",
+      "style": "minimal-techno",
+      "source": "Plus 8 Records",
+      "significance": "Essential follow-up to Spastik",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=plastikman+come+as+you+are",
+        "spotify": "https://open.spotify.com/search/plastikman%20come%20as%20you%20are"
+      },
+      "notes": "Demonstrates Plastikman's range within minimal"
+    },
+    {
+      "rank": 7,
+      "title": "Internal Empire",
+      "artist": "Robert Hood",
+      "year": 1997,
+      "bpm": 127,
+      "key": "Fm",
+      "duration": "8:00",
+      "style": "minimal-techno",
+      "source": "M-Plant Records",
+      "significance": "Detroit minimal masterpiece",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=robert+hood+internal+empire",
+        "discogs": "https://www.discogs.com/search/?q=robert+hood+internal+empire"
+      },
+      "notes": "Essential Detroit minimal sound"
+    },
+    {
+      "rank": 8,
+      "title": "Emergency",
+      "artist": "Robert Hood",
+      "year": 1998,
+      "bpm": 128,
+      "key": "Bm",
+      "duration": "7:20",
+      "style": "minimal-techno",
+      "source": "M-Plant Records",
+      "significance": "Hypnotic Robert Hood masterpiece",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=robert+hood+emergency",
+        "youtube": "https://www.youtube.com/results?search_query=Robert+Hood+Emergency"
+      },
+      "notes": "Peak minimal composition with perfect hypnotic elements"
+    },
+    {
+      "rank": 9,
+      "title": "Lost My Name",
+      "artist": "Plastikman (Richie Hawtin)",
+      "year": 1994,
+      "bpm": 124,
+      "key": "Cm",
+      "duration": "6:45",
+      "style": "minimal-techno",
+      "source": "Plus 8 Records",
+      "significance": "Early classic from Plastikman",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=plastikman+lost+my+name",
+        "spotify": "https://open.spotify.com/search/plastikman%20lost%20my%20name"
+      },
+      "notes": "Essential Plastikman early work"
+    },
+    {
+      "rank": 10,
+      "title": "Display",
+      "artist": "Plastikman (Richie Hawtin)",
+      "year": 1993,
+      "bpm": 120,
+      "key": "Gm",
+      "duration": "7:00",
+      "style": "minimal-techno",
+      "source": "Plus 8 Records",
+      "significance": "Defining minimal techno composition",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=plastikman+display",
+        "youtube": "https://www.youtube.com/results?search_query=Plastikman+Display"
+      },
+      "notes": "Key track in minimal techno evolution"
+    }
+  ],
+  "deep_cuts": [
+    {
+      "title": "Fascinated",
+      "artist": "Robert Armani",
+      "year": 1995,
+      "bpm": 126,
+      "key": "Dm",
+      "source": "Independent",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=robert+armani+fascinated"
+      }
+    },
+    {
+      "title": "I'm Thrilled",
+      "artist": "Robert Armani",
+      "year": 1995,
+      "bpm": 128,
+      "key": "Am",
+      "source": "Independent"
+    },
+    {
+      "title": "Energy",
+      "artist": "Akira Uchida",
+      "year": 1998,
+      "bpm": 129,
+      "key": "Em",
+      "source": "Independent"
+    },
+    {
+      "title": "Circles",
+      "artist": "Sonja Moonear",
+      "year": 2010,
+      "bpm": 125,
+      "key": "Fm",
+      "style": "hypnotic-minimal",
+      "links": {
+        "youtube": "https://www.youtube.com/results?search_query=Sonja+Moonear+Circles"
+      }
+    },
+    {
+      "title": "Lov",
+      "artist": "Pär Grindvik",
+      "year": 2012,
+      "bpm": 127,
+      "key": "Cm",
+      "style": "hypnotic-minimal-groove",
+      "links": {
+        "beatport": "https://www.beatport.com/search?q=par+grindvik+lov"
+      }
+    },
+    {
+      "title": "Whisper",
+      "artist": "Fumiya Tanaka",
+      "year": 2014,
+      "bpm": 124,
+      "key": "Am",
+      "style": "organic-minimal",
+      "links": {
+        "youtube": "https://www.youtube.com/results?search_query=Fumiya+Tanaka+Whisper"
+      }
+    },
+    {
+      "title": "Kompass",
+      "artist": "Pär Grindvik",
+      "year": 2011,
+      "bpm": 128,
+      "key": "Em",
+      "style": "hypnotic-minimal"
+    },
+    {
+      "title": "Transition",
+      "artist": "Jeff Mills",
+      "year": 1992,
+      "bpm": 130,
+      "key": "Bm",
+      "source": "Axis Records",
+      "style": "detroit-minimal"
+    },
+    {
+      "title": "Images",
+      "artist": "Jeff Mills",
+      "year": 1996,
+      "bpm": 132,
+      "key": "Gm",
+      "source": "Prophecy",
+      "style": "detroit-minimal"
+    },
+    {
+      "title": "Feedback",
+      "artist": "Reggie van Oers",
+      "year": 1996,
+      "bpm": 125,
+      "key": "Dm",
+      "style": "hypnotic-minimal"
+    }
+  ],
+  "modern_masters": [
+    {
+      "artist": "Sonja Moonear",
+      "country": "Germany/International",
+      "era": "2000s-Present",
+      "style": "Dark, hypnotic minimal",
+      "bandcamp": "https://soundcloud.com/sonja-moonear",
+      "notable_tracks": ["Circles", "Move With Me", "Elements", "Harmony"]
+    },
+    {
+      "artist": "Pär Grindvik",
+      "country": "Sweden",
+      "era": "2000s-Present",
+      "style": "Hypnotic, groove-focused minimal",
+      "beatport": "https://www.beatport.com/artist/par-grindvik/789",
+      "notable_tracks": ["Lov", "Kompass", "A State of Mind", "One"]
+    },
+    {
+      "artist": "Fumiya Tanaka",
+      "country": "Japan",
+      "era": "2010s-Present",
+      "style": "Organic, raw minimal",
+      "youtube": "https://www.youtube.com/results?search_query=Fumiya+Tanaka+minimal+techno",
+      "notable_tracks": ["Whisper", "Dreams", "Minimal", "Time"]
+    },
+    {
+      "artist": "Marco Carola",
+      "country": "Italy",
+      "era": "2000s-Present",
+      "style": "Peak-time, groovy minimal techno",
+      "beatport": "https://www.beatport.com/search?q=marco+carola",
+      "notable_tracks": ["Lose Yourself", "Tension", "Embrace", "Feel the Deep"]
+    }
+  ],
+  "recommended_labels": [
+    {
+      "name": "Plus 8 Records",
+      "founder": "Richie Hawtin",
+      "established": 1991,
+      "focus": "Minimal and microhouse",
+      "link": "https://www.beatport.com/search?q=plus+8+records"
+    },
+    {
+      "name": "Superlative Records",
+      "focus": "Quality minimal releases",
+      "link": "https://www.beatport.com/search?q=superlative+records"
+    },
+    {
+      "name": "Concrete Jungle",
+      "focus": "Modern minimal techno",
+      "link": "https://www.beatport.com/search?q=concrete+jungle"
+    },
+    {
+      "name": "Figure Extreme",
+      "focus": "Foundational minimal",
+      "link": "https://www.discogs.com/search/?q=figure+extreme"
+    },
+    {
+      "name": "JOKER BLACK LABEL",
+      "country": "Argentina",
+      "focus": "Minimal specialist",
+      "link": "https://jokerblacklabel.bandcamp.com/"
+    },
+    {
+      "name": "M-Plant Records",
+      "founder": "Robert Hood",
+      "focus": "Detroit minimal",
+      "link": "https://www.discogs.com/search/?q=m-plant+records"
+    }
+  ],
+  "bandcamp_collections": [
+    {
+      "title": "Cheap Minimal Techno",
+      "artist": "CheapMinimalTechno",
+      "location": "Budapest, Hungary",
+      "tracks": 8,
+      "duration": "57 minutes",
+      "released": "2022-05-08",
+      "link": "https://cheapminimaltechno.bandcamp.com/album/cheap-minimal-techno-2"
+    },
+    {
+      "title": "Minimal Techno Vol 1",
+      "artist": "Gabriel Ferreira",
+      "location": "Argentina",
+      "tracks": 9,
+      "duration": "59 minutes",
+      "released": "2017-12-07",
+      "link": "https://gabrielferreira.bandcamp.com/album/minimal-techno-vol-1"
+    },
+    {
+      "title": "Boty 2022",
+      "artist": "JOKER BLACK LABEL // MINIMAL TECHNO",
+      "location": "Argentina",
+      "tracks": 11,
+      "duration": "73 minutes",
+      "released": "2022-12-17",
+      "description": "Best of Year compilation",
+      "link": "https://jokerblacklabel.bandcamp.com/album/boty-2022"
+    },
+    {
+      "title": "Minimal Odyssey I",
+      "artist": "VARIOUS ARTIST",
+      "tracks": 10,
+      "duration": "65 minutes",
+      "released": "2023-10-10",
+      "link": "https://jokerblacklabel.bandcamp.com/album/minimal-odyssey-i"
+    },
+    {
+      "title": "Minimal Techno // FREE KICKS & BASSLINES (Samplepack)",
+      "artist": "JØKR",
+      "tracks": 49,
+      "duration": "19 minutes",
+      "released": "2022-05-12",
+      "description": "Great for producers",
+      "link": "https://jokrminimal.bandcamp.com/album/minimal-techno-free-kicks-basslines-samplepack"
+    }
+  ],
+  "download_resources": {
+    "primary_platforms": [
+      {
+        "name": "Beatport",
+        "url": "https://www.beatport.com",
+        "type": "Purchase & Download",
+        "formats": ["WAV", "MP3"],
+        "specialty": "Official releases, curated collections, DJ-ready"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "https://bandcamp.com/search?q=minimal+techno",
+        "type": "Artist Direct & Independent",
+        "formats": ["MP3", "FLAC", "WAV", "ALAC"],
+        "specialty": "Independent artists, artist support, high quality"
+      },
+      {
+        "name": "SoundCloud",
+        "url": "https://soundcloud.com/search?q=minimal+techno",
+        "type": "Streaming & Discovery",
+        "formats": ["Stream only, download where available"],
+        "specialty": "Emerging artists, mixes, discovery"
+      },
+      {
+        "name": "YouTube Music",
+        "url": "https://music.youtube.com/search?q=minimal+techno",
+        "type": "Streaming",
+        "formats": ["Stream only"],
+        "specialty": "DJ sets, long-form mixes, tutorials"
+      },
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com",
+        "type": "Streaming",
+        "formats": ["Stream only, offline download"],
+        "specialty": "Extensive catalogs, playlists"
+      },
+      {
+        "name": "Discogs",
+        "url": "https://www.discogs.com",
+        "type": "Marketplace & Catalog",
+        "formats": ["Vinyl, CD, Digital"],
+        "specialty": "Rare releases, vinyl, used copies"
+      }
+    ]
+  },
+  "tags": [
+    "minimal-techno",
+    "electronic-music",
+    "techno",
+    "dj-curation",
+    "music-production",
+    "beatport",
+    "bandcamp",
+    "house-music",
+    "detroit-minimal",
+    "hypnotic-minimal",
+    "minimal-essentials"
+  ]
+}

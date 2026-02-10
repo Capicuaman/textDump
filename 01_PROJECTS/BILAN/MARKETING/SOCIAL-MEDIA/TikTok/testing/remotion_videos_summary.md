@@ -1,10 +1,12 @@
 # 10 TikTok Videos Generated with Remotion
 ## Mexican Spanish Campaign - January 23, 2026
 
-**Status:** ✅ Rendering in progress
+> **NOTE:** The Remotion code has been moved to a separate project. This documentation is kept for reference only.
+
+**Status:** Code moved to separate project
 **Technology:** Remotion (React-based video generation)
-**CSV Source:** `video-generation/src/data/videos-mx-2026-01-23.csv`
-**Output Directory:** `video-generation/out/`
+**Original CSV Source:** `video-generation/src/data/videos-mx-2026-01-23.csv`
+**Original Output Directory:** `video-generation/out/`
 
 ---
 
