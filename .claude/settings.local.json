@@ -19,7 +19,20 @@
       "Bash(lsmod:*)",
       "Bash(pacman -Q:*)",
       "Bash(tailscale status:*)",
-      "Read(//home/capicuaman/Documents/bilan-video/data/**)"
+      "Read(//home/capicuaman/Documents/bilan-video/data/**)",
+      "Bash(ssh:*)",
+      "Bash(tar:*)",
+      "Bash(pkill:*)",
+      "Bash(kill:*)",
+      "Bash(rsync:*)",
+      "Bash(git clone:*)",
+      "Bash(claude mcp add:*)",
+      "mcp__ssh-mcp__exec",
+      "Bash(wc -l:*)",
+      "Bash(du:*)",
+      "Bash(find:*)",
+      "Bash(chmod:*)",
+      "Bash(ls:*)"
     ]
   }
 }

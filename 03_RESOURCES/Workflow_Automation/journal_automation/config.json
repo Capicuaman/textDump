@@ -1,0 +1,41 @@
+{
+  "repositories": [
+    {
+      "name": "textDump",
+      "path": "/home/capicuaman/Documents/textDump",
+      "weight": 1.0,
+      "enabled": true
+    },
+    {
+      "name": "bilan-mx",
+      "path": "/home/capicuaman/Documents/bilan-mx",
+      "weight": 0.8,
+      "enabled": true
+    },
+    {
+      "name": "bilan-video",
+      "path": "/home/capicuaman/Documents/bilan-video",
+      "weight": 1.0,
+      "enabled": true
+    }
+  ],
+  "journal": {
+    "directory": "/home/capicuaman/Documents/textDump/05_JOURNAL/",
+    "template_path": "/home/capicuaman/Documents/textDump/05_JOURNAL/daily-note-template.md"
+  },
+  "thresholds": {
+    "high_activity": 50,
+    "medium_activity": 20,
+    "min_commits": 1
+  },
+  "features": {
+    "preserve_manual_edits": true,
+    "auto_generate_tags": true,
+    "create_related_notes": true
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "file": "journal_agent.log"
+  }
+}

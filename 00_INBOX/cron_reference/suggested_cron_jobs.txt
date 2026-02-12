@@ -1,0 +1,105 @@
+# ============================================================================
+# SUGGESTED CRON JOBS FOR WORKFLOW OPTIMIZATION
+# ============================================================================
+
+# --------------------------------------------------------------------------
+# 1. GIT REPOSITORY MAINTENANCE
+# --------------------------------------------------------------------------
+
+# Fetch updates from remotes every 2 hours (doesn't merge, just fetches)
+0 */2 * * * cd /home/capicuaman/Documents/textDump && git fetch --all >> /home/capicuaman/logs/git_fetch.log 2>&1
+
+# Weekly git garbage collection (optimize repos) - Sunday 2am
+0 2 * * 0 cd /home/capicuaman/Documents/textDump && git gc --auto >> /home/capicuaman/logs/git_gc.log 2>&1
+
+# Check for uncommitted changes and send reminder - end of workday
+0 20 * * 1-5 cd /home/capicuaman/Documents/textDump && git status --short | grep -q . && echo "You have uncommitted changes in textDump" >> /home/capicuaman/logs/git_reminders.log
+
+# --------------------------------------------------------------------------
+# 2. BACKUP AUTOMATION
+# --------------------------------------------------------------------------
+
+# Daily backup at 1am (when you're asleep)
+0 1 * * * rsync -avz --delete /home/capicuaman/Documents/textDump/ /path/to/backup/textDump_backup/ >> /home/capicuaman/logs/backup.log 2>&1
+
+# Weekly backup to external location - Sunday 3am
+0 3 * * 0 rsync -avz /home/capicuaman/Documents/ /media/external_drive/documents_backup_$(date +\%Y\%m\%d)/ >> /home/capicuaman/logs/backup_weekly.log 2>&1
+
+# --------------------------------------------------------------------------
+# 3. SYSTEM MAINTENANCE
+# --------------------------------------------------------------------------
+
+# Update package database daily at 6am (Manjaro/Arch)
+0 6 * * * /usr/bin/pacman -Sy >> /home/capicuaman/logs/pacman_sync.log 2>&1
+
+# Clear package cache monthly - first day at 3am
+0 3 1 * * /usr/bin/paccache -r >> /home/capicuaman/logs/pacman_cache.log 2>&1
+
+# Clean temporary files daily at 4am
+0 4 * * * find /tmp -type f -atime +7 -delete >> /home/capicuaman/logs/tmp_clean.log 2>&1
+
+# --------------------------------------------------------------------------
+# 4. JOURNAL & PRODUCTIVITY
+# --------------------------------------------------------------------------
+
+# Your existing journal automation (already set up!)
+0 10,12,14,16,18,20 * * * /usr/bin/python3 /home/capicuaman/Documents/textDump/03_RESOURCES/Workflow_Automation/journal_automation/journal_agent.py --live >> /home/capicuaman/Documents/textDump/03_RESOURCES/Workflow_Automation/journal_automation/cron.log 2>&1
+
+# Weekly summary - generate at end of Sunday
+0 23 * * 0 /usr/bin/python3 /path/to/weekly_summary.py >> /home/capicuaman/logs/weekly_summary.log 2>&1
+
+# Monthly review reminder - first day at 9am
+0 9 1 * * echo "Monthly review day! Check last month's journals." >> /home/capicuaman/logs/reminders.log
+
+# --------------------------------------------------------------------------
+# 5. FILE ORGANIZATION
+# --------------------------------------------------------------------------
+
+# Organize downloads folder - daily at 11pm
+0 23 * * * /home/capicuaman/scripts/organize_downloads.sh >> /home/capicuaman/logs/organize.log 2>&1
+
+# Find and archive old files - first Sunday of month at 4am
+0 4 1-7 * 0 find /home/capicuaman/Downloads -type f -mtime +90 -exec mv {} /home/capicuaman/Archives/old_downloads/ \; >> /home/capicuaman/logs/archive.log 2>&1
+
+# --------------------------------------------------------------------------
+# 6. DEVELOPMENT ENVIRONMENT
+# --------------------------------------------------------------------------
+
+# Update Python packages weekly - Monday 5am
+0 5 * * 1 /usr/bin/pip list --outdated >> /home/capicuaman/logs/pip_outdated.log 2>&1
+
+# Check disk space daily at 8am
+0 8 * * * df -h | grep -E '^/dev/' >> /home/capicuaman/logs/disk_usage.log
+
+# --------------------------------------------------------------------------
+# 7. WORK-SPECIFIC AUTOMATION
+# --------------------------------------------------------------------------
+
+# Start of day setup - 9:45am weekdays (15 min before work)
+45 9 * * 1-5 /home/capicuaman/scripts/morning_setup.sh >> /home/capicuaman/logs/morning.log 2>&1
+
+# End of day cleanup - 8:15pm weekdays
+15 20 * * 1-5 /home/capicuaman/scripts/evening_cleanup.sh >> /home/capicuaman/logs/evening.log 2>&1
+
+# --------------------------------------------------------------------------
+# 8. MONITORING & ALERTS
+# --------------------------------------------------------------------------
+
+# Check if critical services are running - every 15 minutes during work
+*/15 9-20 * * * systemctl is-active --quiet postgresql || echo "PostgreSQL is down!" >> /home/capicuaman/logs/service_alerts.log
+
+# Monitor repository sizes - daily at 7am
+0 7 * * * du -sh /home/capicuaman/Documents/*/  >> /home/capicuaman/logs/repo_sizes.log
+
+# --------------------------------------------------------------------------
+# 9. PERSONAL REMINDERS
+# --------------------------------------------------------------------------
+
+# Lunch reminder - 1pm weekdays
+0 13 * * 1-5 notify-send "Lunch Time" "Take a break!" 2>/dev/null
+
+# Stand up / stretch reminder - every 2 hours during work
+0 10,12,14,16,18 * * 1-5 notify-send "Stretch Break" "Time to stand up and move!" 2>/dev/null
+
+# End of work reminder - 7:45pm weekdays
+45 19 * * 1-5 notify-send "Work Day Ending Soon" "Start wrapping up!" 2>/dev/null
